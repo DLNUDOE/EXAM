@@ -1,0 +1,202 @@
+          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+          <html xmlns="http://www.w3.org/1999/xhtml">
+          <head>
+              <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+              <title>DLNU DreamOnline 考试系统 </title>
+              <!--the base static resource start here-->
+              <link rel="stylesheet" href="../../css/exam.css" type="text/css">
+              <script type="text/javascript" src="../../js/exam/jquery-1.7.1.js"></script>
+              <script type="text/javascript" src="../../js/exam/clock.js"></script>
+              <!-- the base static resource is end here      -->
+              <!--load the css selectively-->
+           <link rel="stylesheet" href="../../art/skins/default.css">
+               <link rel="stylesheet" href="../../css/preview.css">
+              <!--a block for the sub ftl to override it, and included when no override ,head position for loaded before what depend it -->
+          <script type="text/javascript" src="../../art/artDialog.js"></script>
+          <script type="text/javascript" src="../../js/jquery.cookie.js"></script>
+          <script type="text/javascript" src="../../js/template.js"></script>
+          <script type="text/javascript" src="../../js/template-syntax.js"></script>
+          <style type="text/css">
+          #p-title{
+                 
+                  margin: 2px;
+                  padding: 2px;
+                  font-size: 20px;
+                  font-weight: bold;
+                  color: #000;
+                  width: 300px;
+                  outline: none;
+                  border: none;
+                  border-bottom: 1px solid rgb(226, 28, 28);
+               
+          }
+          .field-item{
+    margin-left: 23px;
+    margin-right: 70px;
+          }
+          </style>
+          </head>
+
+          <body debugger-onbeforeunload="return CloseEvent();" debugger-onunload="UnLoadEvent()">
+          <div id="top_nav" class="fixed">     
+               <div class="top">
+                  <div class="logo">
+                      <img id="logo" src="../../img/exam/logotest.png"
+                    style="float:left" width="201" height="34" alt="Dream-Online" title="Dream-Online">
+                      <span id='template-title' style='line-height: 24px;font-weight:bold;color:#00FF00'>预览试卷</span>        
+                  </div>    
+                  <div class="navi">
+                                                    
+                  </div>   
+                  <div class="backclock">
+                      <div id="backtobottom"><img src="../../img/exam/backtobottom.gif" title="滚至底部" style="width:20px;margin-top:5px;"/></div>
+                  </div>
+              </div>    
+          </div>
+           <div id="main" style="margin-bottom: 10px;">
+             <div class="main-top paperbg" id="main_top"> 
+              <div class="console-buttons">
+                  <a href="#"  class="button-action add-group" >添加分组</a>
+                  <a href="#" class="button-action add-item">添加小题</a>
+                  <a href="#" class="button-action add-item" id="gyfnice">刷新</a>
+                  <a href="#" class="button-action edit-item">编辑（改数、删题）</a>
+              </div>
+          </div> 
+           <div class="main-body paperbg" id="main_body">
+                  <div class="paperTitle" id="paperTitle">
+                      <h2>试卷名称:<input type="text" id="p-title" name="title" style="margin-left:20px;padding-left:25px;width:410px;"></h2>
+                        <div class="field-item">
+                      <h3 style="display:inline;padding-right: 20px;">请选择课程:</h3>
+                      <select id="backselect" value="">
+                            <option value="-1">-------请选择课程--------</option>
+                      </select>
+                      </div>
+                          <h3><span>出卷人（</span><span id="p_name"></span>）</h3>
+                  </div>
+              <div id="content"></div>
+          <script id="gyfnicetest" type="text/html">
+                  <span><h3 style="text-align:center">满分： <a id="totalScore"><%data.sumscore[0]%></a></h3> </span>
+                  <div class="paperContent" id="paperContent">
+                  <%each data.groups as group index%> 
+           <h3 class="questionList gp-title" > <%index+1%>、<span><%group.title%></span> </h3>
+              <h3 class="gp-desc">共 <%group.questions.length%> 题</h3>
+              <div>
+                   <%each group.questions as question gindex%>
+                   <%if question.type == 1%>
+                   <li>
+                  <div class="stem"><span><%gindex+1%>.</span><%echo question.stem.title%> <em class="score"> （<span><%group.scoreMap[question.id]%>分</span>） </em></div>
+                   <ul class="options">
+                    <%each question.stem.option as opt index%>
+                      <li class="opt-item">
+                     <input value="<%data.aoption[index]%>" type="radio" disabled name="<%index%>"/>
+                      <%data.aoption[index]%>.<%opt%>
+                      </li>
+                    <%/each%> 
+                    <div class="aswT">参考答案：<%question.answer%></div>
+                    <a href="#" class="delete-item"></a>                
+                  </ul>
+                  </li>
+                  <%else if question.type == 2%>
+                   <li>
+                  <div class="stem"><span><%gindex+1%>.</span><%echo question.stem.title%> <em class="score"> （<span><%group.scoreMap[question.id]%>分</span>） </em></div>
+                   <ul class="options">
+                    <%each question.stem.option as opt index%>
+                      <li class="opt-item">
+                     <input value="<%data.aoption[index]%>" type="radio" disabled name="<%index%>"/>
+                      <%data.aoption[index]%>.<%opt%>
+                      </li>
+                    <%/each%> 
+                    <div class="aswT">参考答案：<%question.answer%></div>
+                    <a href="#" class="delete-item"></a>                
+                  </ul>
+                  </li>
+                  <%else if question.type==3%>
+                  <li>
+                          <div class="topic-question">
+                              <div class="content">
+                                   <span class="label" data-id="<%question.id%>" data-type="<%question.type%>"><%gindex+1%>.</span>
+                                  <span class="stem"><%echo question.stem.title%></span><span class="score">(<%group.scoreMap[question.id]%>分)</span>                             
+                                  <div class="answer">
+                                      <span>答案：</span>
+                                     <span class="blank-aswlist" style="margin: 2px;padding: 2px;border: 1px solid red;"> 
+                                          <%each question.answer as basw%>
+                                              <strong  class="asw-tag"><%basw%></strong>                                  
+                                          <%/each%>
+                                      </span>
+                                  </div>
+                              </div>
+                  </li>
+                   <%else if question.type==4%>
+                  <li>    
+                   <div class="topic-item">
+                      <div class="content">
+                     <span class="label" data-id="<%question.id%>" data-id="<%question.type%>"><%gindex+1%>.</span><span class="stem"><%echo question.stem.title%></span> <span class="score">(<%group.scoreMap[question.id]%>分)</span>                            
+                                  <ul class="options opts-judge">
+                                      <li class="opt-item opt-judge">
+                                           <input type="radio" name="<%gindex%>"/><span>正确</span>
+                                      </li>   
+                                       <li class="opt-item opt-judge">
+                                          <input type="radio" name="<%gindex%>"/><span>错误</span>                           
+                                      </li>           
+                                  </ul>
+                                  <div class="answer">
+                                      <span>答案：</span>
+                                      <span><%if question.answer=1 %> 正确 <%else%> 错误</span><%/if%>
+                                  </div>
+                              </div>      
+                  </li>
+                  <%else if question.type==5%>    
+                  <li>
+                          <div class="topic-question">
+                              <div class="content">
+                              <span class="label" data-id="<%question.id%>" data-id="<%question.type%>"><%gindex+1%>.</span><div class="stem"><%echo question.stem.title%></div><span class="score">(<%group.scoreMap[question.id]%>分)</span>
+                                  <div class="tablet">
+                                      <textarea name="" id="" cols="30" rows="10" style="color: #333;  font-size: 15px;  height: 206px;  max-height: 206px;  max-width: 600px;  min-height: 206px;  min-width: 600px;  padding: 6px;  width: 600px;  "></textarea>
+                                  </div>
+                                  <div class="answer">
+                                      <span>答案：</span>
+                                      <div><%question.answer%></div>
+                                  </div>
+                              </div>
+                  </li>
+
+                  <%/if%>
+                  <%/each%>   
+              <%/each%>
+          </div>
+          </div>
+          </div>    
+          </div>
+          <div class="vimiumReset vimiumHUD" style="right: 150px; opacity: 0; display: none;"></div>
+          </script>
+          <a href="#" id="submit-paper" style="margin-left: 320px;margin-bottom: 15px;margin-top: 20px;color: rgb(0, 61, 255);">提交试卷</a>
+           <div id="locker"  ></div>
+          <div id="to_top" class="fixed" style="display: none;"> 回到顶部</div>
+           <script type="text/javascript" src="../../js/newpreview.js"></script>
+          <script type="text/javascript" src="../../js/testSimple.js"> </script>
+           <script type="text/javascript">
+               previewApp.run();
+           </script>
+     <script type="text/javascript">
+         function GetRequest()
+        {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if(url.indexOf("?") != -1)
+        {
+          var str = url.substr(1);
+            strs = str.split("&");
+          for(var i = 0; i < strs.length; i ++)
+            {
+             theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+         };
+        var creat=GetRequest();
+        document.getElementById('p_name').innerHTML=creat.name;
+        $('#p_name').val(creat.name);
+    </script>
+     </body>
+    </html>

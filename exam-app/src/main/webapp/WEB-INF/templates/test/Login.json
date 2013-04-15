@@ -1,0 +1,9 @@
+{
+	success:true,
+	msg:"",	
+	data:{
+		id: '20090814222',
+		name: 'zhangjie alex',
+		age: 22 
+	}
+}

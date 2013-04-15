@@ -1,0 +1,50 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'artTemplate' ]
+2 info using npm@1.2.11
+3 info using node@v0.8.21
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose read json F:\alex\gitRepository\doe\exam-app\src\main\webapp\static\package.json
+6 verbose read json F:\alex\gitRepository\doe\exam-app\src\main\webapp\static\package.json
+7 verbose cache add [ 'artTemplate', null ]
+8 verbose cache add name=undefined spec="artTemplate" args=["artTemplate",null]
+9 verbose parsed url { pathname: 'artTemplate',
+9 verbose parsed url   path: 'artTemplate',
+9 verbose parsed url   href: 'artTemplate' }
+10 silly lockFile fa71a2fa-artTemplate artTemplate
+11 verbose lock artTemplate C:\Users\Administrator\AppData\Roaming\npm-cache\fa71a2fa-artTemplate.lock
+12 silly lockFile fa71a2fa-artTemplate artTemplate
+13 silly lockFile fa71a2fa-artTemplate artTemplate
+14 verbose addNamed [ 'artTemplate', '' ]
+15 verbose addNamed [ null, '' ]
+16 silly lockFile 0a0a19f4-artTemplate artTemplate@
+17 verbose lock artTemplate@ C:\Users\Administrator\AppData\Roaming\npm-cache\0a0a19f4-artTemplate.lock
+18 silly addNameRange { name: 'artTemplate', range: '', hasData: false }
+19 verbose url raw artTemplate
+20 verbose url resolving [ 'https://registry.npmjs.org/', './artTemplate' ]
+21 verbose url resolved https://registry.npmjs.org/artTemplate
+22 info trying registry request attempt 1 at 10:51:48
+23 http GET https://registry.npmjs.org/artTemplate
+24 http 404 https://registry.npmjs.org/artTemplate
+25 silly registry.get cb [ 404,
+25 silly registry.get   { server: 'CouchDB/1.2.1 (Erlang OTP/R15B03)',
+25 silly registry.get     date: 'Sun, 17 Mar 2013 02:51:56 GMT',
+25 silly registry.get     'content-type': 'application/json',
+25 silly registry.get     'content-length': '52',
+25 silly registry.get     'cache-control': 'must-revalidate' } ]
+26 silly lockFile 0a0a19f4-artTemplate artTemplate@
+27 silly lockFile 0a0a19f4-artTemplate artTemplate@
+28 error 404 'artTemplate' is not in the npm registry.
+28 error 404 You should bug the author to publish it
+28 error 404
+28 error 404 Note that you can also install from a
+28 error 404 tarball, folder, or http url, or git url.
+29 error System Windows_NT 6.1.7601
+30 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "artTemplate"
+31 error cwd F:\alex\gitRepository\doe\exam-app\src\main\webapp\static
+32 error node -v v0.8.21
+33 error npm -v 1.2.11
+34 error code E404
+35 verbose exit [ 1, true ]

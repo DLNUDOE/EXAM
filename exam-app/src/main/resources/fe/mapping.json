@@ -1,0 +1,114 @@
+{
+    /*after login*/
+    "^/$":"index.ftl",
+    "^/index$":"index.ftl",
+    "^/index.html$":"index.ftl",
+    /*main page*/
+    "^/$":"main.ftl",
+    "^/index.html":"main.ftl",
+
+    /*college object*/
+    "college/list.do":"college.list.ftl",
+    "college/add.do":"college.add.ftl",
+    "college/mod.do":"raw",
+
+    /*major object*/
+    "major/list.do":"major.list.ftl",
+    "major/add.do":"major.add.ftl",
+    "major/mod.do":"raw",
+
+    /*class object*/
+    "class/list.do":"class.list.ftl",
+    "class/add.do":"class.add.ftl",
+    "class/mod.do":"raw",
+
+    /*teacher object*/
+    "teacher/list.do":"teacher.list.ftl",
+    "teacher/add.do":"raw",
+    "teacher/mod.do":"raw",
+    "teacher/del.do":"raw",
+    /*@teacher course*/
+    "teacher/course/mod.do":"raw",
+    "teacher/course/list.do":"raw",
+    /*@teacher login info*/
+    "teacher/login/user.do":"raw",
+    "teacher/get/stuAnswer.do":"raw",
+
+     /*@teacher login */
+
+    "teacher/login.do":"raw",
+
+    "/teacher/get/paper.html$":"exam/preview.ftl",
+    "/teacher/intel/paper.html$":"exam/preview.ftl",
+    "teacher/readover.do":"readover.ftl",
+	/*student object*/    
+    "student/list.do":"student.list.ftl",
+    "student/add.do":"raw",
+    "student/mod.do":"raw",
+    "student/del.do":"raw",
+    "student/add/batch.do":"raw",
+    "student/login.do":"raw",
+    "/student/get/paper.html$":"exam/studentresult.ftl",
+    /*student exam*/
+    "/stuexam/get/examlist.html$":"exam/task.ftl",
+
+    /*iproom object*/
+    "iproom/list.do":"iproom.list.ftl",
+    "iproom/mod.do":"raw",
+    "iproom/add.do":"raw",
+    "iproom/del.do":"raw",
+
+    /*course object*/
+    "course/list.do":"course.list.ftl",
+    "course/add.do":"raw",
+    "course/del.do":"raw",
+    "course/mod.do":"raw",
+
+    /*question object*/
+    "question/list.do":"question.list.ftl",
+    "question/add.do":"raw",
+    "question/del.do":"raw",
+    "question/mod.do":"raw",
+    "question/kp/tip.do":"raw",
+
+    /*paper object*/
+    "paper/add.do":"raw",
+    "paper/list.do":"paper.list.ftl",
+    "paper/del.do":"raw",
+
+    //stu exam
+    "^/panel.html$":"exam/panel.ftl",
+    "^/BeHappy.html$":"exam/exam.ftl",
+    "^/readover.html$":"exam/readover.ftl",
+
+    /*exam object */
+    "exam/add.do":"raw",
+    "exam/list.do":"exam.list.ftl",
+    "exam/stu/add.do":"raw",
+    "exam/stu/del.do":"raw",
+    "exam/cheating.do":"raw",
+    "exam/examing.do":"examing.list.ftl",
+    "exam/stu/list.do":"examing.student.ftl",
+    /*test transition*/
+    "submit/asw.do":"raw",
+    "commit.do":"raw",
+    "exam/examing/addstu.do":"raw",
+    "^/sync/asw.do":"raw",
+    "^/prexam.do":"raw",
+
+
+
+    /*readover paper*/
+    "judge/students.do":"raw",
+    /*invigilate object*/
+    "^/exam/status.do":"raw",
+    "exam/stu/status.do":"student.status.ftl",
+
+    /*manage*/
+    "^/manage/stu/stat.do":"raw",
+
+    /*judge paper*/
+    "judge/students.do":"raw",
+    "judge/answers.do":"raw",
+    "judge/score.do":"raw"
+}

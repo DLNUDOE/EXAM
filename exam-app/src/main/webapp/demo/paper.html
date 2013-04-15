@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title></title>
+	<!--<script type="text/javascript" src="../static/js/jquery-1.8.0.js"></script>
+	  <script type="text/javascript" src="../static/js/template.js"></script>
+	  <script type="text/javascript" src="../static/js/template-syntax.js"></script> 
+	 <script type="text/javascript" src="../static/js/paper.js"></script> -->
+	 
+	   
+	  <script type="text/javascript" src="../static/sea-modules/seajs/1.3.1/sea.js"></script>	 
+	  <link rel="stylesheet" href="../static/css/paper.css" />
+	  <link rel="stylesheet" href="../static/art/skins/simple.css" />
+
+	 <style type="text/css">
+	 	.wrapper
+{
+	width:960px;
+	background:#fff;
+	margin:0 auto;
+}
+
+.wrapper .header
+{
+	background:#fff;
+	text-align:center;
+	margin:20px 0 0;
+	padding:36px 0 0 0;
+}
+
+.c-time
+{
+	font-size:14px;
+	margin:8px;
+	text-align: left;
+}
+
+.wrapper .footer
+{
+	text-align:center;
+	padding:20px;
+}
+
+.boots-button
+{
+	display:inline-block;
+	margin-bottom:0;
+	font-size:18px;
+	color:#fff;
+	text-shadow:0 1px 1px rgba(255,255,255,0.75);
+	vertical-align:middle;
+	cursor:pointer;
+	background-color:#0F4FA8;
+	background-image:linear-gradient(tobottom,#ffffff,#e6e6e6);
+	background-repeat:repeat-x;
+	border:1px solid #CCC;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
+	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
+	box-shadow:inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
+	width:160px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) #b3b3b3;
+}
+
+.boots-button:hover{
+	background: rgb(13, 60, 124);
+}
+#p-title{
+	margin: 2px;
+	padding: 2px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000;
+	width: 300px;
+	outline: none;
+	border:none;
+	border-bottom: 1px solid #ddd;
+}
+ .headre-item{
+ 	padding-top: 8px;
+ 	text-align: left;
+ 	padding-left: 280px;
+ }
+ .headre-item select{
+ 	width: 200px;
+ }
+	 </style>	
+</head>
+<body>
+	<div class="wrapper" >
+		<div class="header">
+			<h2>标题<input type="text" id="p-title" name="title"/><span id="username">(王玲芬)</span></h2>
+		 	<div class="headre-item">课程
+		 		<select name="courseid" id="courseid">
+					<option value="1">请选择学院</option>
+				</select>
+			</div>		 
+		</div>
+		<div class="main" id="paper-content"></div>
+		<div class="footer">
+			<a href="#" class="boots-button">提交试卷</a>
+		</div>
+	</div>
+	<script style='text/javascript'>
+	function querystring(name) {
+			var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+			return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+		};
+	seajs.config({
+		base:"../static",
+	    alias: {
+	        'paper':"output/paper/0.0.1/paper",
+	        'jquery':  'js/jquery-1.8.0.js' ,/*global for paper*/
+	        'template':  'js/template.js' ,/*global for paper*/
+	        'template-syntax':  'js/template-syntax.js', /*global for paper*/
+	        'artDialog':  'art/artDialog.js'  ,
+	        'extjs':"../extjs/ext.js",	        
+	        'localPaper':"../app/store/LocalPaper.js"
+	    },
+	    preload : ['jquery',"template","template-syntax","artDialog","extjs" ],
+	    debug:true
+	});
+
+	seajs.use("paper",function(paper){
+		Ext.Loader.setConfig({
+			enabled:true,
+			paths:{
+				"Exam.store":"../app/store",
+				"Ext":"../extjs/src"
+			}
+		});
+		var remote=querystring('remote'),
+		name=querystring('name'),
+		id=querystring('id');
+		 
+		var localPaper=Ext.create("Exam.store.LocalPaper");
+		var p=paper.init({
+				ele: document.getElementById("paper-content"),
+				url: "../test/Paper.json" ,
+				localPaper:localPaper,
+				remote:parseInt(remote) 
+		});	
+		$('#username').text("(出卷人："+name+")");
+	/*	   $.ajax({
+			type: "get",
+			url: "../teacher/course/list.do",
+			dataType: 'json',
+			data: {
+				id:id
+			},
+			success: function(res, successful) {
+				if (!res.success) {
+					alert(res.msg);
+					return;
+				}
+				var data=res.data;
+				$('#courseid').empty();
+				debugger;
+				for(var i=0;i<data.length;i++){
+					var item=data[i];
+					$('#courseid').append($("<option/>").val(item.id).text(item.name));
+				}
+			},
+			error: function(options, msg) {
+				 
+				alert(msg);
+			}
+		});*/
+		function getHeader(){
+			var ptitle=$('#t-title').text();
+			var pcourseid=$('#courseid option:selected').val();
+			var pcname=$('#courseid option:selected').text();
+			return {
+				cid:courseid,
+				creator:name,
+				cname:pcname,
+				title:title	,
+				c_time:+new Date()
+			};
+		};
+		$('.boots-button').click(function(e){
+			var group=p.serialize();
+			var header=getHeader();
+			var data=$.extend({
+				content:group
+			},header);
+			$.ajax({
+			type: "get",
+			url: "../paper/add.do",
+			dataType: 'json',
+			data:data,
+			success: function(res, successful) {
+				if (!res.success) {
+					alert(res.msg);
+					return;
+				}
+				var dlg = art.dialog({
+				title: "提示",
+				lock: true,
+				background: 'gray', // 背景色
+				opacity: 0.87, // 透明度
+				content: '试卷添加成功',
+				ok: function() {
+					localPaper.load();
+					localPaper.clear();
+					localPaper.sync();
+					localPaper.save();			
+					return true;
+				} 
+			});
+			},
+			error: function(options, msg) {
+				 
+				alert(msg);
+			}
+		});
+		});
+	});	 			 		
+				
+			 
+	</script>
+</body>
+</html>

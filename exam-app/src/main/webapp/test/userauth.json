@@ -1,0 +1,118 @@
+ {
+	success: true,
+	msg: "ok",
+	data: [{
+		text: "信息管理",
+		id: 1,
+		expanded: true,
+		data: [{
+			id: 11,
+			admin:true,
+			text: '院系管理',
+			clsPath:"Exam.view.tab.College",
+			xtype:"tabcollege",
+			leaf: true
+		}, {
+			id: 12,
+			admin:true,
+			text: '教师管理',
+			clsPath:"Exam.view.tab.Teacher",
+			xtype:"tabteacher",
+			leaf: true
+		}, {
+			id: 13,
+			text: '学生管理',
+			clsPath:"Exam.view.tab.Student",
+			xtype:"tabstudent",
+			leaf: true
+		}, {
+			id: 14,
+			text: '机房IP管理',
+			clsPath:"Exam.view.tab.IPRoom",
+			xtype:"tabiproom",
+			leaf: true
+		}, {
+			id: 15,
+			text: '课程管理',
+			clsPath:"Exam.view.tab.Course",
+			xtype:"tabcourse",
+			leaf: true
+		}, {
+			id: 16,
+			text: '个人信息',
+			clsPath:"Exam.view.tab.User",
+			xtype:"tabuser",
+			leaf: true
+		}]
+	}, {
+		text: '试卷管理',		
+		id: 2,
+		data: [{
+			id: 21,
+			text: '新建试卷',
+			xtype:"tabpaper",
+			clsPath:"Exam.view.tab.Paper",
+			leaf: true
+		},{
+			id: 24,
+			text: '试卷列表',
+			xtype:"tabpaper",
+			clsPath:"Exam.view.tab.PaperList",
+			xtype:"tabpaperlist",
+			leaf: true
+		}, {
+			id: 25 ,
+			text: '批阅试卷',			 
+			xtype:"tabpaperreadover",
+			clsPath:"Exam.view.tab.PaperROList",
+			leaf: true
+		}]
+	}, {
+		text: "题库管理",
+		id: 3,
+		data: [{
+			id: 31,
+			text: '新建题目',
+			clsPath:"Exam.view.tab.TopicAdder",
+			xtype:"tabtopic",
+			leaf: true
+		}, {
+			id: 32,
+			text: '题目列表',
+			clsPath:"Exam.view.tab.TopicBank",
+			xtype:"tabtopicbank",
+			leaf: true
+		}]
+	}, {
+		text: '考试管理',
+		id: 5,
+		data: [{
+			id: 51,
+			text: '新建考试',
+			xtype:"tabexamwizard",
+			clsPath:"Exam.view.tab.ExamWizard",
+			leaf: true
+		}, {
+			id: 52,
+			text: '考试列表',
+			clsPath:"Exam.view.tab.ExamList",
+			xtype:"tabexamlist",
+			leaf: true
+		}]
+	}, {
+		text: "实时监控",
+		id: 4,
+		data: [{
+			id: 41,
+			text: '考试监控',
+			clsPath:"Exam.view.tab.Monitor",
+			xtype:"tabmonitor",
+			leaf: true
+		}, {
+			id: 42,
+			text: '强制注销',
+			clsPath:"Exam.view.tab.Logout",
+			leaf: true
+		}]
+	}]
+}

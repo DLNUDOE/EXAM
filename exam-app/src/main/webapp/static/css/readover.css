@@ -1,0 +1,152 @@
+.main
+{
+	width:900px;
+	position:relative;
+	margin:0 auto;
+}
+
+.mark
+{
+	position:relative;
+	font-size:12px;
+	margin-bottom:400px;
+	padding-top:4px;
+}
+
+.mark span
+{
+	background:#ddd;
+	padding:8px;
+}
+
+.mark .score
+{
+	color:green;
+	padding-right:20px;
+	border-left:1px solid #eee;
+}
+
+.mark .score:hover
+{
+	font-weight:700;
+}
+
+.mark .score-item:hover
+{
+	color:orange;
+}
+
+.score-wrapper
+{
+	position:absolute;
+	bottom:17px;
+	left:0;
+	font-size:0;
+	background:#ddd;
+	display:none;
+	border:1px solid #d2d6d5;
+	border-bottom:none;
+	padding:8px;
+}
+
+.mark:hover .score-wrapper
+{
+	display:block;
+}
+
+.score-wrapper .score-item
+{
+	background:#000;
+	font-size:16px;
+	text-align:center;
+	margin-right:8px;
+	margin-bottom:8px;
+	float:left;
+	width:40px;
+	height:28px;
+	line-height:28px;
+	color:#fff;
+	text-decoration:none;
+	box-shadow:0 0 2px gray;
+	border-radius:2px;
+}
+
+.score-wrapper .score-item:hover
+{
+	box-shadow:0 0 6px #000;
+	font-weight:700;
+}
+
+.main-top
+{
+	height:auto;
+}
+
+.read-over-title
+{
+	text-align:left;
+	margin:12px 0;
+}
+
+.readover-console
+{
+	padding-bottom:50px;
+	overflow:auto;
+	zoom:1;
+}
+
+.field-item
+{
+	overflow:auto;
+	zoom:1;
+	text-align:left;
+	padding:4px;
+}
+
+.field-item label
+{
+	float:left;
+	width:60px;
+	text-align:right;
+	padding:4px;
+}
+
+.field-item .submit
+{
+	margin-left:100px;
+	padding:4px;
+}
+
+.list-nav
+{
+	position:fixed;
+	width:70px;
+	left:50%;
+	top:200px;
+	margin-left: 420px;
+	background:#000;
+}
+
+.list-nav .list-bar
+{
+	border-bottom:1px solid #050000;
+	border-top:1px solid #4e4646;
+	width:100%;
+	display:block;
+	text-align:center;
+	height:28px;
+	line-height:28px;
+	color:#fff;
+	cursor:pointer;
+}
+
+.list-nav .list-info
+{
+	cursor:default;
+}
+
+.list-nav .list-bar:hover
+{
+	color:orange;
+}
+

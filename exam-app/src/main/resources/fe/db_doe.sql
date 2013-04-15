@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS `t_teacher`;
+CREATE TABLE `t_teacher` (
+  `id` CHAR(10) NOT NULL COMMENT '账号',
+  `password` VARCHAR(255) NOT NULL COMMENT '密码',
+  `name` VARCHAR(255) NOT NULL COMMENT '姓名',
+  `collegeid` INT DEFAULT NULL COMMENT '学院',
+  `info` VARCHAR(255) DEFAULT NULL COMMENT '信息备注',
+  `role` int NOT NULL DEFAULT 0 COMMENT '角色',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;

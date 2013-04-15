@@ -1,0 +1,937 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta http-equiv="pragma" content="no-cache" /> 
+  <meta http-equiv="cache-control" content="no-store, must-revalidate" /> 
+  <meta http-equiv="expires" content="wed, 26 feb 1997 08:21:57 gmt" /> 
+  <meta http-equiv="expires" content="0" /> 
+   <title></title>
+   <link rel="stylesheet" href="../ke/themes/default/default.css" type="text/css"></link>
+   <script type="text/javascript" src="../ke/kindeditor.js"></script>
+   <script type="text/javascript" src="../ke/lang/zh_CN.js"></script>
+   <script type="text/javascript" src="../js/jquery-1.8.0.js"></script>
+   <script type="text/javascript" src="../js/json2.js"></script>
+   <style type='text/css'>
+     body {
+  margin: 0;
+  padding: 40px 0 ;
+  width: 100%;
+  background: #000;
+}
+body * {
+  font: normal normal normal 14px Arial;
+}
+#wraper {
+  width: 800px;
+  margin: 0 auto;
+  border: 4px solid #EBEBEB;
+  background: #CDCDB4;
+  padding: 10px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#course label,#kplist label,#diff label ,#qtype {
+  font: normal normal bold 16px Arial;
+  color: Black;
+}
+#course p,#kplist p,#diff p {
+  margin: 0px;
+  padding: 6px 8px 6px 8px ;
+  overflow: auto;
+  zoom: 1;
+}
+#course p span,#kplist p span,#diff p span {
+  float: left;
+  font: normal normal normal 12px/20px Arial;
+  height: 20px;
+  padding: 5px 6px 5px 6px;
+  background: #B9D3EE;
+  margin: 4px 0 0 8px;
+  color: #363636;
+  border: 2px solid #EDEDED;
+  cursor: pointer;
+  display: inline ;
+  white-space: nowrap;
+  position: relative;
+}
+#course p span: hover,#kplist p span: hover,#diff p span: hover {
+  background: #C1CDCD;
+  color: Black;
+}
+#course p span em, #kplist p span em,#diff p span em {
+  position: absolute;
+  right: -10px;
+  bottom: -4px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  vertical-align;
+  line-height: 20px;
+  font-style: normal normal bold 16px Arial;
+  color: Green;
+  background: url(../img/icon-duihao.png);
+}
+#tab-nav {
+  position: relative;
+  padding: 0px;
+  height: 32px;
+}
+#tab-container {
+  padding: 16px;
+}
+#tab-nav div {
+  position: absolute;
+  height: 100%;
+  top: 2px;
+  z-index: 1000;
+}
+#tab-nav a {
+  float: left;
+  border: 2px solid Gray;
+  background: Gray;
+  cursor: pointer;
+  margin-right: 4px;
+  border-bottom: none }
+#tab-nav a.tab-active {
+  background: White;
+  border-color: #DBDBDB;
+}
+#tab-nav a span {
+  font: normal normal bold 14px Arial;
+  height: 16px;
+  padding: 6px 12px 6px 12px;
+  float: left;
+  color: #A6A6A6 }
+#tab-nav a span.tab-active {
+  border-bottom: 2px solid White;
+  color: #6B8E23;
+}
+#tab-panel {
+  border: 2px solid #DBDBDB;
+  padding: 8px;
+  background: White;
+}
+.none {
+  display: none
+}
+#tab-panel .panel {
+  }
+#radio ul li ,#checkbox ul li {
+  padding: 6px;
+}
+#radio ul li label ,#checkbox ul li label, #radio ul li input.inputTxt, #checkbox ul li input.inputTxt {
+  padding: 4px;
+  font-size: 14px;
+}
+#radio ul li label, #checkbox ul li label {
+  font-size: 16px;
+}
+#radio ul li input.inputTxt,#checkbox ul li input.inputTxt {
+  width: 600px;
+}
+#blank-tip {
+  color: #787878;
+}
+#blank-tip a {
+  color: Black;
+}
+#blank-tip a: hover {
+  color: Blue;
+}
+.judge-opt span {
+  margin-right: 40px;
+}
+.buttons {
+  padding: 12px 12px 12px 28px;
+  text-align: center;
+  overflow: auto;
+  zoom: 1;
+}
+.buttons input {
+  cursor: pointer;
+  border: none;
+  margin-right: 4px;
+  background: #3775C7;
+  padding: 6px;
+  font: normal normal bold 14px Arial;
+  color: White;
+  float: left;
+}
+.buttons input: hover {
+  background: #4A708B
+}
+.buttons input.q-submit {
+  float: none;
+  line-height: 28px;
+  letter-spacing: 8px;
+  padding: 8px 22px 8px 22px;
+}
+#lock {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: Black;
+  height: 1000px;
+  display: none;
+}
+#lock div {
+  text-align: center;
+  width: 100%;
+  color: White;
+  font: normal normal bold 50px/50px Arial ;
+  z-index: 10001;
+  position: fixed;
+  _position: absolute;
+  top: 100px;
+  left: 0;
+}
+#lock div span {
+  padding: 20px;
+  border: 2px solid #DBDBDB;
+  font-weight: bold;
+  background: Black;
+  color: #6CA6CD;
+}
+   </style>
+   <script type="text/javascript" >
+      String.prototype.trim = function () {
+                   return this .replace(/(^\s*)|(\s*$)/g, '' );
+      };
+      
+      function loading(){
+         $('#lock').css('opacity',0.8).show();
+         setTimeout(function(){
+            $('#lock').hide();
+         },1000);
+      };
+      function qInit(key){
+        var q={
+          radio:'添加单选题',
+          checkbox:'添加多选题',
+          judge:'添加判断题',
+          blank:'添加填空题',
+          subject:'添加主观题',
+          'subject-asw':'添加主观题答案' 
+        };
+        return q[key];
+      }
+     $(function(){
+        $('#tab-nav a').click(function(){
+           var index=$(this).index('#tab-nav a');
+           $(this).addClass('tab-active').siblings().removeClass('tab-active');
+           
+           $('#tab-nav a span').removeClass('tab-active') ;
+           $(this).children('span').addClass('tab-active');
+           
+           $('#tab-panel .panel').hide().eq(index).show();
+           
+          
+				 
+           
+        });
+        /*create subject answer*/
+        KindEditor.create("textarea[name=subject-asw]", {
+                      resizeType : 1,
+                      allowPreviewEmoticons : false,
+                      cssPath : '../ke/plugins/code/prettify.css',
+	                  uploadJson : '../ke/jsp/upload_json.jsp',
+					  fileManagerJson : '../ke/jsp/file_manager_json.jsp',
+                      items : [
+        'undo', 'redo', 'cut', 'copy', 'paste' ,'|',				          
+				        'plainpaste', 'wordpaste', '|', 
+				        'removeformat',  'underline', 'selectall','clearhtml','|',          
+				        'table',  'code', 'image','|',
+				        'source','|','fullscreen','preview', 'about'
+],
+                       afterCreate:function(){
+                        this.html(qInit('subject-asw'));
+                    }
+				});
+				
+				
+        var textname=$('#tab-panel .panel').each(function(index,item){
+           var textname= $(item).find('textarea').attr('name'); 
+           KindEditor.create("textarea[name='"+textname+"']", {
+                     resizeType : 1,
+                      allowPreviewEmoticons : false,
+                      cssPath : '../ke/plugins/code/prettify.css',
+	                  uploadJson : '../ke/jsp/upload_json.jsp',
+					  fileManagerJson : '../ke/jsp/file_manager_json.jsp',
+                      allowPreviewEmoticons : false,
+                      items :[
+				        'undo', 'redo', 'cut', 'copy', 'paste' ,'|',				          
+				        'plainpaste', 'wordpaste', '|', 
+				        'removeformat',  'underline', 'selectall','clearhtml','|',          
+				        'table',  'code', 'image','|',
+				        'source','|','fullscreen','preview', 'about'
+                    ], 
+                    afterCreate:function(){
+                        this.html(qInit(textname));
+                    }
+				});
+        });
+          
+          $('#course p span').live('click',function(){
+             var obj=$(this).find('em');  
+             if(obj.length>=1)
+             {return;}
+             else {
+              
+              var course={cid:$(this).attr('title')};
+             // alert($(this).attr('title'));
+               $(this).append('<em/>').siblings().find('em').remove('');
+                   $.ajax({ type:"post", url:"admin/info/get_object_kplist", data:{data:JSON.stringify(course)}, dataType:"json",
+						   success:function(rs){
+						 
+							  if(!rs.success)
+							  {alert(rs.message);return;}
+							     var data=rs.data;
+							     $('#kplist p').empty();
+							      if(data.length==0){
+							        $('#kplist p').append(
+							            $("<span/>").attr('title','').text('当前课程还没有没有设置知识点')
+							        );return;
+							      }
+							       
+							     for(var i=0;i<data.length;i++){
+							      $('#kplist p').append(
+							        $("<span/>").attr('title',data[i][0]).text(data[i][1])
+							      );
+							     }
+						      },
+							  error:function(status,error){
+							 			alert(error);	 
+					 		  }
+		        });
+             }
+         });
+         
+         $('#diff p span').click(function(){
+             var obj=$(this).find('em');
+             if(obj.length>=1)
+             {return;}
+             else
+             {$(this).append('<em/>').siblings().find('em').remove(''); }
+         });
+         
+         $('#kplist p span').live('click',function(){
+             var obj=$(this).find('em');
+             if(obj.length>=1)
+             {$(this).find('em').remove();}
+             else
+             {$(this).append('<em/>');}
+         });
+           /*get the courseid ,kplist,diff degree*/
+           function getBaseInfo(){
+             var info={courseid:'',kplist:'',diff:'',invalid:true};
+              $('#course p span').each(function(index,item){
+                 var obj=$(this).find('em');
+                 if(obj.length>=1)
+                 {info['courseid']= $(obj).parent().attr('title');}
+              });
+              
+              $('#course p span').each(function(index,item){
+                 var obj=$(this).find('em');
+                 if(obj.length>=1)
+                 {info['courseid']= $(obj).parent().attr('title');}
+              });
+              
+              var kplist=[];
+                $('#kplist p span').each(function(index,item){
+                 var obj=$(this).find('em');
+                  if(obj.length>=1)
+                 {kplist.push( $(obj).parent().attr('title'));}
+               });
+               info['kplist']=kplist.join('_');
+               
+               $('#diff p span').each(function(index,item){
+                 var obj=$(this).find('em');
+                 if(obj.length>=1)
+                 {info['diff']= $(obj).parent().attr('title');}
+              });
+              
+              if(info['courseid']=='' || info['kplist']=='' || info['diff']=='')
+              {info['invalid']=false;}
+              return info;
+           }
+          /*add-radio*/
+          $('#add-radio').click(function(){
+           var desc= $('#radio').find('iframe').contents().find('body').html();
+           var options={A:'',B:'',C:'',D:''};
+           var stdasw=false;
+           var flag=true;
+           if(desc==qInit('radio'))
+           {alert(qInit('radio')+'题干');return;}
+           $('#radio ul li').each(function(index,item){
+             var label=$(item).children('input[type=radio]').val();
+             var text=$(item).children('input[type=text]').val().trim();
+             var checked=$(item).children('input[type=radio]').attr('checked');
+              
+             if(checked)
+             {stdasw=label;}
+             if(text==''){
+              flag=false;
+              //$(item).focus().select();
+              alert('愉悦出题过程中，是否忘记了填写选项？');
+              return false;
+             }
+             options[label]=text;
+         
+           });
+           if(flag==false)
+           {return;}
+           if(stdasw==false)
+           {alert('请选择正确选项');return;}
+           
+           
+           var info=getBaseInfo();
+           if(info['invalid']==false)
+           {alert('请填写题目的头部基本信息');return;}
+          
+           var data={"qtype":"radio","desc":"","options":{},"stdasw":"B","courseid":"1","kplist":"6","diff":"简单"};
+           data['courseid']=info['courseid'];
+           data['kplist']=info['kplist'];
+           data['diff']=info['diff'];
+           data['desc']=desc;
+           data['stdasw']=stdasw;
+           data['options']=options;
+           
+            
+           
+         $.ajax({type:"post", url:"admin/update/create_topic_radio", data:{data:JSON.stringify(data)}, dataType:"json",
+				 success:function(rs){
+				         
+						  if(!rs.success){alert(rs.message);return;}
+						   loading();
+						  $('#radio').find('iframe').contents().find('body').html('');
+						  $('#radio ul li input[type=text]').val('');
+						  $('#radio ul li input[type=radio]').attr('checked',false);
+						},
+				 error:function(status,error){
+						 
+				 }				 
+		    }); 
+           
+          });
+          
+          /*checkbox*/
+          $('#remove-chkbox').click(function(){
+            if($('#checkbox ul li').length<=4)
+            {alert('低于选项基本数目');return;}
+            else{
+             $('#checkbox ul li').last().remove();
+            }
+            
+          });
+          
+          $('#add-chkbox').click(function(){
+            var len=$('#checkbox ul li').length;
+            if(len>=9)
+            {alert('超出选项最大数目');return;}
+            else{
+              var labelist=['A','B','C','D','E','F','G','H','I'];
+              $('#checkbox ul').append(
+                $("<li/>").append(
+                                $("<label/>").text(labelist[len]+'.'),
+                                "<input type='text' class='inputTxt'  name='A'/>",
+                                $("<input type='checkbox' name='checkbox' value='A' />").val(labelist[len])
+                           )
+                         
+              );
+            }
+          });
+          
+          $('#add-checkbox').click(function(){
+           var desc= $('#checkbox').find('iframe').contents().find('body').html().trim();
+           var options=[];
+           var stdasw=[];
+           var flag=true;
+            if(desc==qInit('checkbox'))
+           {alert(qInit('checkbox')+'题干');return;}
+           $('#checkbox ul li').each(function(index,item){
+             var label=$(item).children('input[type=checkbox]').val();
+             var text=$(item).children('input[type=text]').val().trim();
+             var checked=$(item).children('input[type=checkbox]').attr('checked');
+              
+             if(checked)
+             {stdasw.push(label);}
+             if(text==''){
+              flag=false;
+              //$(item).focus().select();
+              alert('愉悦出题过程中，是否忘记了填写选项？');
+              return false;
+             }
+             var optitem={};
+             optitem[label]=text;
+             options.push(optitem);
+           
+           });
+           if(flag==false)
+           {return;}
+           if(stdasw.length==0)
+           {alert('请选择正确选项');return;}
+           
+           
+           var info=getBaseInfo();
+           if(info['invalid']==false)
+           {alert('请填写题目的头部基本信息');return;}
+   
+           var data={"qtype":"checkbox","desc":"","options":[],"stdasw":"B","courseid":"1","kplist":"6","diff":"简单"};
+           data['courseid']=info['courseid'];
+           data['kplist']=info['kplist'];
+           data['diff']=info['diff'];
+           
+           data['desc']=desc;
+           data['stdasw']=stdasw.join('_');
+           data['options']=options;
+           
+         $.ajax({type:"post", url:"admin/update/create_topic_checkbox", data:{data:JSON.stringify(data)}, dataType:"json",
+				 success:function(rs){
+						  if(!rs.success){alert(rs.message);return;}
+						  loading();
+						  $('#checkbox').find('iframe').contents().find('body').html('');
+						  $('#checkbox ul li input[type=text]').val('');
+						  $('#checkbox ul li input[type=checkbox]').attr('checked',false);
+						},
+				 error:function(status,error){
+						 
+				 }				 
+		    }); 
+           
+          });
+          
+          
+          
+         $('#add-judge').click(function(){
+            var desc= $('#judge').find('iframe').contents().find('body').html().trim();
+           
+           var stdasw=1;
+           var flag=true;
+             if(desc==qInit('judge'))
+           {alert(qInit('judge')+'题干');return;}
+           $('#judge .judge-opt span input[type=radio]').each(function(index,item){
+              var checked=$(item).attr('checked');
+              if(checked)
+             {stdasw=$(item).val();}
+           });
+           
+            var info=getBaseInfo();
+           if(info['invalid']==false)
+           {alert('请填写题目的头部基本信息');return;}
+           
+           var data={"qtype":"checkbox","desc":"","options":{},"stdasw":"B","courseid":"1","kplist":"6","diff":"简单"};
+           data['courseid']=info['courseid'];
+           data['kplist']=info['kplist'];
+           data['diff']=info['diff'];
+           
+           data['desc']=desc;
+           data['stdasw']=stdasw;
+           
+           
+             $.ajax({type:"post", url:"admin/update/create_topic_judge", data:{data:JSON.stringify(data)}, dataType:"json",
+				 success:function(rs){
+						  if(!rs.success){alert(rs.message);return;}
+						  loading();
+						  $('#judge').find('iframe').contents().find('body').html('');
+						  $('#judge ul li input[type=text]').val('');
+						  $('#judge ul li input[type=radio]').attr('checked',false);
+						},
+				 error:function(status,error){
+						 
+				 }				 
+		    });
+         }); 
+          
+          
+           $('#create-blank').click(function(){
+            
+           
+         
+         
+          /*step one ---get the input items' values*/  
+            var blanklist=[];
+             var flag=-1;
+           $('#blank').find('iframe').contents().find('body').find(':text').each(function(index,item){
+              var  text=$(item).val();
+               var textitem={};
+              textitem[index]=text;                       
+              blanklist.push(textitem);
+           }); 
+          
+             
+              /*step two ---clear usefulless input, u*/  
+           var desc= $('#blank').find('iframe').contents().find('body').html().trim(); 
+            if(desc==qInit('blank'))
+           {alert(qInit('blank')+'题干');return;}          
+           var reg=new RegExp("</u><u>","g");           
+           desc=desc.replace(reg,'');
+           $('#blank').find('iframe').contents().find('body').html(desc);
+          
+          
+          
+          
+           /*step three ---put back the inut values*/  
+           if(blanklist.length!=0)
+           $('#blank').find('iframe').contents().find('body').find(':text').each(function(index,item){
+               $(item).val(blanklist[index][index]);                                     
+           });
+           
+           /*step four ---replace any element with underline css with input*/ 
+          $('#blank').find('iframe').contents().find('body').find('u').each(function(index,item){
+            var  text=$(item).text();
+             $(item).replaceWith($("<input type='text' value='' />").val(text)); 
+          });
+          
+          $('#blank').find('iframe').contents().find('body').find('span').each(function(index,item){
+          if($(item).css('text-decoration')=='underline'){
+             var  text=$(item).text();
+             $(item).replaceWith($("<input type='text' value='' />").val(text));
+             
+             }
+          });
+          
+           
+           
+          
+          
+        
+        /*step five ---get the number of the inputs*/ 
+         blanklist=[];
+          $('#blank').find('iframe').contents().find('body').find(':text').each(function(index,item){
+              var  text=$(item).val();
+               var textitem={};
+              textitem[index]=text;                       
+              blanklist.push(textitem);
+           }); 
+          
+          if(blanklist.length==0)/*stem has input?*/
+          {alert('观测到缺少文本域，是否忘记了下划线操作?');return ;}
+         
+           
+              
+          for(var i=0;i<blanklist.length;i++){
+          var str=blanklist[i][i];
+          
+            if($.trim(str)==''){
+             alert('第  '+(i+1)+' 个空答案为空，请填写！');return
+            }
+          }
+          
+            var info=getBaseInfo();
+           if(info['invalid']==false)
+           {alert('请填写题目的头部基本信息');return;}
+          
+         }); 
+
+
+		$('#add-blank').click(function(){
+            
+           
+         
+         
+          /*step one ---get the input items' values*/  
+            var blanklist=[];
+             var flag=-1;
+           $('#blank').find('iframe').contents().find('body').find(':text').each(function(index,item){
+              var  text=$(item).val();
+               var textitem={};
+              textitem[index]=text;                       
+              blanklist.push(textitem);
+           }); 
+          
+             
+              /*step two ---clear usefulless input, u*/  
+           var desc= $('#blank').find('iframe').contents().find('body').html().trim(); 
+            if(desc==qInit('blank'))
+           {alert(qInit('blank')+'题干');return;}          
+           var reg=new RegExp("</u><u>","g");           
+           desc=desc.replace(reg,'');
+           $('#blank').find('iframe').contents().find('body').html(desc);
+          
+          
+          
+          
+           /*step three ---put back the inut values*/  
+           if(blanklist.length!=0)
+           $('#blank').find('iframe').contents().find('body').find(':text').each(function(index,item){
+               $(item).val(blanklist[index][index]);                                     
+           });
+           
+           /*step four ---replace any element with underline css with input*/ 
+          $('#blank').find('iframe').contents().find('body').find('u').each(function(index,item){
+            var  text=$(item).text();
+             $(item).replaceWith($("<input type='text'  value='' />").val(text)); 
+          });
+          
+          $('#blank').find('iframe').contents().find('body').find('span').each(function(index,item){
+          if($(item).css('text-decoration')=='underline'){
+             var  text=$(item).text();
+             $(item).replaceWith($("<input type='text'  value='' />").val(text));
+             
+             }
+          });
+          
+           
+           
+          
+          
+        
+        /*step five ---get the number of the inputs*/ 
+         blanklist=[];
+          $('#blank').find('iframe').contents().find('body').find(':text').each(function(index,item){
+              var  text=$(item).val();
+               var textitem={};
+              textitem[index]=text;                       
+              blanklist.push(textitem);
+           }); 
+          
+          if(blanklist.length==0)/*stem has input?*/
+          {alert('观测到缺少文本域，是否忘记了下划线操作?');return ;}
+         
+           
+              
+          for(var i=0;i<blanklist.length;i++){
+          var str=blanklist[i][i];
+          
+            if($.trim(str)==''){
+             alert('第  '+(i+1)+' 个空答案为空，请填写！');return
+            }
+          }
+          
+          
+            
+            var info=getBaseInfo();
+           if(info['invalid']==false)
+           {alert('请填写题目的头部基本信息');return;}
+           
+        var data={"qtype":"fillblank","desc":"","blanklist":[{"0":"n-i+1"}],"courseid":"1","kplist":"11","diff":"简单"} ;
+           data['courseid']=info['courseid'];
+           data['kplist']=info['kplist'];
+           data['diff']=info['diff'];
+           
+           data['desc']=desc;
+           data['blanklist']= blanklist;
+            
+         $.ajax({type:"post", url:"admin/update/create_topic_blank", data:{data:JSON.stringify(data)}, dataType:"json",
+				 success:function(rs){
+						  if(!rs.success){alert(rs.message);return;}
+						   loading();
+						  $('#blank').find('iframe').contents().find('body').html('');
+						 },
+				 error:function(status,error){
+						alert(error); 
+				 }				 
+		    });
+         }); 
+                  
+         /*add-subject*/
+          $('#add-subject').click(function(){
+            var desc= $('#subject').find('iframe:first').contents().find('body').html().trim();
+            var stdasw= $('#subject').find('iframe:last').contents().find('body').html().trim();
+              if(desc==qInit('subject'))
+           {alert(qInit('subject')+'题干');return;}
+            if(stdasw==qInit('subject-asw'))
+           {alert(qInit('subject')+'答案');return;}
+           if(desc=='' || stdasw=='')
+           {alert('编辑框内容不能为空!');return;}
+            var info=getBaseInfo();
+           if(info['invalid']==false)
+           {alert('请填写题目的头部基本信息');return;}
+         
+          var data={"qtype":"fillblank","desc":"","blanklist":[{"0":"n-i+1"}],"courseid":"1","kplist":"11","diff":"简单"} ;
+           data['courseid']=info['courseid'];
+           data['kplist']=info['kplist'];
+           data['diff']=info['diff'];
+           
+           data['desc']=desc;
+           data['stdasw']= stdasw;
+           
+           
+             $.ajax({type:"post", url:"admin/update/create_topic_short", data:{data:JSON.stringify(data)}, dataType:"json",
+				 success:function(rs){
+						  if(!rs.success){alert(rs.message);return;}
+						  loading();
+						  $('#subject').find('iframe').contents().find('body').html('');
+						 },
+				 error:function(status,error){
+						alert(error); 
+				 }				 
+		    });
+         }); 
+     });
+     
+     /*init the data*/
+     $(function(){
+       $.ajax({ type:"post", url:"admin/info/get_object_teacher_course_list", dataType:"json",
+							  success:function(rs){
+							 
+							  if(!rs.success)
+							  {alert(rs.message);return;}
+							     var data=rs.data;
+							      if(data.length==0){
+							        $('#course p').append(
+							            $("<span/>").attr('title','').text('您还没有注册课程')
+							        );return;
+							      }
+							       
+							     for(var i=0;i<data.length;i++){
+							      $('#course p').append(
+							        $("<span/>").attr('title',data[i][0]).text(data[i][1])
+							      );
+							     }
+						      },
+							  error:function(status,error){
+							 			alert(error);	 
+					 		  }
+		  });
+     });
+     
+   </script>
+ </head>
+ <body>
+     <div id='wraper'>
+              <div id='course'>
+              	<label> 课程：</label>
+              	<p>
+              		<!--<span title='1'>课程1<em> </em></span>
+              		<span title='2'>课程1 </span>
+              	--></p>
+              </div>
+               <div id='kplist'>
+              	<label> 知识点：</label>
+              	<p>
+              		<span title=''>点击课程获取知识点（示例）<em> </em></span><!--
+              		 <span title='2'>知识点1 </span>
+              	--></p>
+              </div>
+               <div id='diff'>
+              	<label> 难度：</label>
+              	<p>
+              		<span title='简单'>简单<em > </em></span>
+              		<span title='中等'>中等 </span>
+              		<span title='困难'>困难 </span>
+              	</p>
+              </div>
+              <div id='qtype'>题型：</div>
+             <div id='tab-container'>
+               <div id='tab-nav'>
+		              <div >
+		                   <a class='tab-active'><span class='tab-active'>单选题</span></a>
+		                  <a><span >多选题</span></a>
+		                  <a><span>判断题</span></a>
+		                   <a><span>填空题</span></a>
+		                 <a><span>主观题</span></a>
+		                  
+		              </div>
+                
+             </div>
+             <div id='tab-panel'>
+              
+                  <div id='radio'  class='panel'>
+                       <form>
+                      <textarea class='alex-input' name="radio" style="width:740px;height:200px;visibility:hidden;"> </textarea>  
+                    </form>
+                      <ul>
+                       <li>
+                         <label>A.</label><input type='text' class='inputTxt'  name='A'/><input type='radio' name='radio' value='A' />
+                       </li>
+                        <li>
+                         <label>B.</label><input type='text' class='inputTxt' name='B'/><input type='radio' name='radio' value='B' />
+                       </li>
+                        <li>
+                         <label>C.</label><input type='text' class='inputTxt'  name='C'/><input type='radio' name='radio' value='C' />
+                       </li>
+                        <li>
+                         <label>D.</label><input type='text' class='inputTxt' name='D'/><input type='radio' name='radio' value='D' />
+                       </li>
+                      </ul>
+                      <div class='buttons'>
+                         <input type='button' class='q-submit' id='add-radio' value='提交'/>
+                      </div>
+                 </div>
+                 
+                  <div id='checkbox' class='panel none'>
+                   <form>
+                      <textarea class='alex-input' name="checkbox" style="width:740px;height:200px;visibility:hidden;"> </textarea>  
+                    </form>
+                    <ul>
+                       <li>
+                         <label>A.</label><input type='text' class='inputTxt'  name='A'/><input type='checkbox' name='checkbox' value='A' />
+                       </li>
+                        <li>
+                         <label>B.</label><input type='text' class='inputTxt' name='B'/><input type='checkbox' name='checkbox' value='B' />
+                       </li>
+                        <li>
+                         <label>C.</label><input type='text' class='inputTxt'  name='C'/><input type='checkbox' name='checkbox' value='C' />
+                       </li>
+                        <li>
+                         <label>D.</label><input type='text' class='inputTxt' name='D'/><input type='checkbox' name='checkbox' value='D' />
+                       </li>
+                      </ul>
+                      <div class='buttons'>
+                         <input type='button' id='remove-chkbox' value='减少选项'/>
+                         <input type='button' id='add-chkbox' value='增加选项'/>
+                         
+                         <input type='button' class='q-submit' id='add-checkbox' value='提交'/>
+                      </div>
+                  </div>
+                  
+                  <div  id='judge' class='panel  none' style='height:500px;'>
+                     <form>
+                      <textarea class='alex-input' name="judge" style="width:740px;height:200px;visibility:hidden;"> </textarea>  
+                    </form> 
+                     <div class='judge-opt'>
+                       <span><input type='radio' value=1  name='judge'  id='judge-yes' checked="checked"/><label for='judge-yes'>正确</label></span>
+                        <span><input type='radio' value=0  name='judge' id='judge-no'/><label for='judge-no'>错误</label></span>
+                     </div>
+                      <div class='buttons'>
+                         <input type='button' class='q-submit' id='add-judge' value='提交'/>
+                      </div>
+                 </div>
+                 
+                 <div id='blank'   class='panel none'>
+                    <form>
+                      <textarea class='alex-input' name="blank" style="width:740px;height:200px;visibility:hidden;"> </textarea>  
+                    </form>
+                    <p id='blank-tip'>
+                     出题技巧：<br /><br />
+                         1. 粘贴完整的题目到编辑框，将作为答案的部分用下划线划上 <br /><br />
+                         2. 所有的带有下划线的部分将被替换为填空的文本域，注意取消无用的下划线，避免生成无用的考题<br /><br />
+                         3. 点击"<span style='color:#3775C7'>生成</span>"按钮，预览处理的题干内容，将看到实际的填空题，如果有无用的下划线，请立即<span style='text-decoration: line-through;color:Black'>清除</span><br /><br />
+                         4. 注意题目的排版，单行内容以编辑框不出现水平滚动条为基准
+                    </p>
+                    
+                    <div class='buttons'>
+                        <input type='button' class='q-submit' id='create-blank' value='生成' />
+                         <input type='button' class='q-submit' id='add-blank' value='提交' />
+                    </div>
+                 </div>
+                 
+                  <div id='subject'class='panel  none'>
+                     <form>
+                      <textarea class='alex-input' name="subject" style="width:740px;height:200px;visibility:hidden;"> </textarea>  
+                    </form> 
+                    <br/><br/>
+                    <form>
+                      <textarea class='alex-input' name="subject-asw" style="width:740px;height:200px;visibility:hidden;margin-top:20px;">添加主观题答案</textarea>  
+                    </form>
+                     <div class='buttons'>
+                         <input type='button' class='q-submit' id='add-subject' value='提交'/>
+                      </div> 
+                 </div> 
+             
+             </div>
+         </div>
+          
+     </div>
+     <div id='lock' >
+          <div><span>添加成功 ^_^！</span></div>
+       </div>
+ </body>
+ </html>

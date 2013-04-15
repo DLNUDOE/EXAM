@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{
+		font-family: "Microsoft Yahei";
+	}
+		.main{
+			width:900px;
+			margin: 0 auto;
+			position: relative;
+		}
+		.mark{
+			position: relative;
+			 font-size: 12px;
+			 margin-bottom: 400px;
+		}
+		.mark label,.mark .score{
+			padding: 8px;
+			background: #ddd; 
+			
+		}
+		.mark .score{
+			color: green;
+			padding-right: 20px;
+		}
+		.mark .score:hover{
+			font-weight: bold;
+		}
+		.score-wrapper{
+			position: absolute;
+			top:17px;
+			left: 0px;
+			 font-size: 0;
+			background: #ddd;
+			padding: 8px; display: none; 
+		}
+		.mark:hover .score-wrapper{
+			display: block;
+		}
+		.score-wrapper .score-item{
+			 
+			background: #000;	
+			font-size: 16px;	
+			text-align: center;	
+			 margin-right: 8px;
+			 margin-bottom: 8px;
+			 float: left;
+			 width: 40px;
+			 height: 28px;
+			 line-height: 28px;
+			 color: #fff;
+			 text-decoration: none;
+			 box-shadow: 0 0 2px gray;
+			 border-radius: 2px;
+		}
+		.score-wrapper .score-item:hover{
+			box-shadow:  0 0 6px #000;
+			font-weight: bold;
+		}
+		.list-nav{
+			position: absolute;
+			width: 70px;
+			left: -100px;
+			top: 200px;
+			background: #000;
+		}
+		.list-nav .list-bar{
+			/* background: url(../static/img/glyphicons-halflings-white.png) -300px -100px no-repeat; */
+			border-bottom: 1px solid rgb(5, 0, 0);
+			border-top: 1px solid rgb(78, 70, 70);
+			width: 100%;
+			display: block;
+			text-align: center;
+			height: 28px;
+			line-height: 28px;
+			color: #fff;
+			cursor: pointer;
+		}
+		.list-nav .list-next{
+			 
+		}
+		.list-nav .list-info{
+			cursor: default;
+		}
+		.list-nav .list-bar:hover{
+			color: orange;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="mark">
+			<label >得分:</label><span class="score">22</span>		
+			<div class="score-wrapper">				 
+				<a href="" class="score-item">1</a><a href="" class="score-item">2</a>		 				
+				<a href="" class="score-item">1</a><a href="" class="score-item">2</a>		
+				<a href="" class="score-item">15</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">15</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">15</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">1</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">2</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">2</a>		
+				<a href="" class="score-item">1</a><a href="" class="score-item">2</a>		
+			</div>
+		</div> 
+			<div class="mark">
+			<label >得分:</label><span class="score">22</span>		
+			<div class="score-wrapper">				 
+				<a href="" class="score-item">1</a><a href="" class="score-item">2</a>		 				
+				<a href="" class="score-item">1</a><a href="" class="score-item">2</a>		
+				<a href="" class="score-item">15</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">15</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">15</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">1</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">2</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">2</a>		
+				<a href="" class="score-item">1</a><a href="" class="score-item">2</a>		
+			</div>
+		</div> 
+			<div class="mark">
+			<label >得分:</label><span class="score">22</span>		
+			<div class="score-wrapper">				 
+				<a href="" class="score-item">1</a><a href="" class="score-item">2</a>		 				
+				<a href="" class="score-item">1</a><a href="" class="score-item">2</a>		
+				<a href="" class="score-item">15</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">15</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">15</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">1</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">23</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">2</a>		
+				<a href="" class="score-item">14</a><a href="" class="score-item">2</a>		
+				<a href="" class="score-item">1</a><a href="" class="score-item">2</a>		
+			</div>
+		</div>
+		<div class="list-nav">
+			<span class='list-prev list-bar'>
+				上一个
+			</span>
+			<span class='list-info list-bar'>22/30</span>
+			<span class='list-next list-bar'>下一个</span>
+		</div> 
+	</div>
+</body>
+</html>

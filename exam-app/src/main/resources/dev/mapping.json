@@ -1,0 +1,8 @@
+{
+    "^/panel.html$":"exam/panel.ftl",
+    "^/BeHappy.html$":"exam/exam.ftl",
+    "^/paper/get.do$":"test/paper.ftl",
+    "^/teacher/intel/paper.do$":"test/paper.ftl",
+
+    "^/.*\\.do":"raw"
+}

@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>doe</artifactId>
+        <groupId>doe</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>exam-app</artifactId>
+    <packaging>war</packaging>
+
+    <name>exam-app</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <build>
+        <finalName>exam</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources/base</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources/${conf-dir}</directory>
+            </resource>
+        </resources>
+    </build>
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <conf-dir>dev</conf-dir>
+            </properties>
+        </profile>
+        <profile>
+            <id>online</id>
+            <properties>
+                <conf-dir>online</conf-dir>
+            </properties>
+        </profile>
+        <profile>
+            <id>fe</id>
+            <properties>
+                <conf-dir>fe</conf-dir>
+            </properties>
+        </profile>
+    </profiles>
+    <dependencies>
+        <!-- modules dependence-->
+        <dependency>
+            <groupId>doe</groupId>
+            <artifactId>exam-biz</artifactId>
+        </dependency>
+        <!--3rd path dependence-->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+		<!--<dependency>-->
+  			<!--<groupId>jxl</groupId>-->
+  			<!--<artifactId>jxl</artifactId>-->
+  			<!--<version>1.0</version>-->
+  			<!--<classifier>jxl</classifier>-->
+		<!--</dependency>-->
+        <dependency>
+            <groupId>net.sourceforge.jexcelapi</groupId>
+            <artifactId>jxl</artifactId>
+        </dependency>
+
+        <!-- for test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+  			<groupId>org.easymock</groupId>
+  			<artifactId>easymock</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.rapid-framework</groupId>
+            <artifactId>rapid-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+    </dependencies>
+</project>

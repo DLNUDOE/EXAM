@@ -1,0 +1,15 @@
+{
+	"name":"paper",
+	"version":"0.0.1",
+	"root":"output",
+	"output":{		 
+		"paper.js":"*" ,
+		"main.js":"."
+	},	 
+	"spmConfig":{
+		"build":{
+			"src":"./",
+			"to":"../../{{root}}/{{name}}/{{version}}"
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+    "success": true,
+    "msg": "",
+    "data": [{
+        "cid": 11,
+        "name": "计算机",
+        "data": []
+    }, {
+        "cid": 2,
+        "name": "外语学院",
+        "data": []
+    }]
+}

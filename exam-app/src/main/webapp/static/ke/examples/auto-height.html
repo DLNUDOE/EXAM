@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Auto Height Examples</title>
+		<style>
+			form {
+				margin: 0;
+			}
+			textarea {
+				display: block;
+			}
+		</style>
+		<script charset="utf-8" src="../kindeditor-min.js"></script>
+		<script charset="utf-8" src="../lang/zh_CN.js"></script>
+		<script>
+			KindEditor.ready(function(K) {
+				K.create('textarea[name="content"]', {
+				    width:400,
+                      resizeType : 1,
+                      allowPreviewEmoticons : false,
+                      cssPath : '../ke/plugins/code/prettify.css',
+	                  uploadJson : '../ke/jsp/upload_json.jsp',
+					  fileManagerJson : '../ke/jsp/file_manager_json.jsp',
+                      items : [
+        'undo', 'redo', 'cut', 'copy', 'paste' ,'|',				          
+				        'plainpaste', 'wordpaste', '|', 
+				        'removeformat',  'underline', 'selectall','clearhtml','|',          
+				        'table',  'code', 'image','|',
+				        'source','|','fullscreen','preview', 'about'
+],
+                       afterCreate:function(){
+                        this.html(qInit('subject-asw'));
+                    }
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h3>自动调整高度</h3>
+		<form>
+			<textarea name="content" style="width:590px;"></textarea>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,125 @@
+<%each store as group index%> 
+	<div class="gp-topic">
+		<h2 class='gp-title'><%index+1%>、<span><%group.title%></span></h2>
+		<h4 class="gp-desc"><span><%group.desc%></span></h4>
+		<%if group.questions.length  %>
+			<%each group.questions as item qIndex%>	
+				<%if item.type == 1%>
+					<div class="topic-item">
+						<div class="label" data-id="<%item.id%>" data-type="<%item.type%>"><%qIndex+1%>.</div>
+						<span class="score">(<%group.scoreMap[item.id]%>分)</span>
+						<div class="content">
+							<div class="stem"><%echo item.stem.title%></div>
+							<ul class="options">
+								<%each item.stem.option as opt oIndex%>
+									<li class="opt-item">
+										<div class="opt-label"><span><%$labelMaker(oIndex+65)%>.</span><input value="<%$labelMaker(oIndex+65)%>" type="radio" name="<%qIndex%>"/></div>
+										<div class="opt-field"><%opt%></div>
+									</li>
+								<%/each%>						 		 	
+							</ul>
+							<div class="answer">
+								<span>答案：<%item.answer%></span>
+								<span> </span>
+							</div>
+						</div>
+						<div class="item-op">					 
+							<span class="op-del"> 删除 </span>
+							<span class="op-mod"> 修改 </span>							 
+						</div>
+					</div>
+				<%else if item.type==2%>
+					<div class="topic-item">
+						<div class="label" data-id="<%item.id%>" data-type="<%item.type%>"><%qIndex+1%>.</div>
+						<span class="score">(<%group.scoreMap[item.id]%>分)</span>
+						<div class="content">
+							<div class="stem"><%echo item.stem.title%></div>
+							<ul class="options">
+								<%each item.stem.option as opt oIndex%>
+									<li class="opt-item">
+										<div class="opt-label"><span><%$labelMaker(oIndex+65)%>.</span><input value="<%$labelMaker(oIndex+65)%>" type="checkbox" name="<%qIndex%>"/></div>
+										<div class="opt-field"><%opt%></div>
+									</li>
+								<%/each%>						 		 	
+							</ul>
+							<div class="answer">
+								<span>答案：<%item.answer%></span>
+								<span> </span>
+							</div>
+						</div>
+						<div class="item-op">					 
+							<span class="op-del"> 删除 </span>
+							<span class="op-mod"> 修改 </span>									 
+						</div>
+					</div>
+				<%else if item.type==3%>
+					<div class="topic-item">
+						<div class="label" data-id="<%item.id%>" data-type="<%item.type%>"><%qIndex+1%>.</div>
+						<span class="score">(<%group.scoreMap[item.id]%>分)</span>
+						<div class="content">
+							<div class="stem"><%echo item.stem.title%></div>							 
+							<div class="answer">
+								<span>答案：</span>
+								<span class="blank-aswlist"> 
+									<%each item.answer as basw%>
+										<strong  class="asw-tag"><%basw%></strong>									
+									<%/each%>
+								</span>
+							</div>
+						</div>
+						<div class="item-op">					 
+							<span class="op-del"> 删除 </span>
+							<span class="op-mod"> 修改 </span>							 
+						</div>
+					</div>
+				<%else if item.type==4%>	
+					<div class="topic-item">
+						<div class="label" data-id="<%item.id%>" data-id="<%item.type%>"><%qIndex+1%>.</div>
+						<span class="score">(<%group.scoreMap[item.id]%>分)</span>
+						<div class="content">
+							<div class="stem"><%echo item.stem.title%></div>			 				
+							<ul class="options opts-judge">
+								<li class="opt-item opt-judge">
+									 <input type="radio" name="<%qIndex%>"/><span>正确</span>
+								</li>	
+								 <li class="opt-item opt-judge">
+								 	<input type="radio" name="<%qIndex%>"/><span>错误</span>							 
+								</li>	 		
+							</ul>
+							<div class="answer">
+								<span>答案：</span>
+								<span><%item.answer%></span>
+							</div>
+						</div>			 
+						<div class="item-op">					 
+							<span class="op-del"> 删除 </span>
+							<span class="op-mod"> 修改 </span>						 
+						</div>
+					</div>	
+				<%else if item.type==5%>	
+					<div class="topic-item">
+						<div class="label" data-id="<%item.id%>" data-id="<%item.type%>"><%qIndex+1%>.</div>
+						<span class="score">(<%group.scoreMap[item.id]%>分)</span>
+						<div class="content">
+							<div class="stem"><%echo item.stem.title%></div>
+							<div class="tablet">
+							 	<textarea name="" id="" cols="30" rows="10"></textarea>
+							 	<label class="tip-statistics">0/<%$subjectLimit%></label>
+							</div>
+							<div class="answer">
+								<span>答案：</span>
+								<div><%item.answer%></div>
+							</div>
+						</div>
+						<div class="item-op">					 
+							<span class="op-del"> 删除 </span>
+							<span class="op-mod"> 修改 </span>								 
+						</div>
+					</div>
+				<%else%>
+					未知类型	
+				<%/if%>
+			<%/each%>
+		<%/if%>
+	</div>
+<%/each%>

@@ -1,0 +1,22 @@
+<tpl for=".">
+	<div class="topic-item">
+		<div class="topic-item-header">
+			<span class="topic-item-id">{id}.</span>
+			<div class="topic-item-operation">
+				<span class="topic-item-edit">✎编辑</span>
+				<span class="topic-item-delete">×删除</span>
+			</div>
+		</div>
+		<div class="topic-item-body">
+			<div class="topic-item-desc">{[values.stem.title]}</div>			 		
+		</div>
+		<div class="topic-item-footer">			
+			<span>参考答案：
+				<tpl for="answer">
+					<span class="blank-asw-item">{.}</span>					 
+				</tpl>
+			</span>
+			{[this.showAdderA4UI(false)]}
+		</div>
+	</div>
+</tpl>

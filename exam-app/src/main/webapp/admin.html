@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title></title>
+	<script type="text/javascript" src="static/js/jquery-1.8.0.js"></script>
+	<style type="text/css">
+ body { padding:50px 100px; font:13px/150% "Microsoft Yahei", Verdana, Tahoma, sans-serif;background: url(static/img/bg.gif) repeat; }
+
+/* tutorial */
+
+input, textarea { 
+	padding: 9px;
+	border: solid 1px #E5E5E5;
+	outline: 0;
+	font: normal 13px/100% Verdana, Tahoma, sans-serif;
+	width: 200px;
+	background: #FFFFFF url('bg_form.png') left top repeat-x;
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	}
+
+textarea { 
+	width: 400px;
+	max-width: 400px;
+	height: 150px;
+	line-height: 150%;
+	}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus { 
+	border-color: #C9C9C9; 
+	-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+	}
+
+.form label { 
+	margin-left: 10px; 
+	color: #999999; 
+	}
+
+.submit input {
+	width: auto;
+	padding: 9px 15px;
+	background: #3F4042;
+	border: 0;
+	font-size: 14px;
+	color: #FFFFFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	cursor:pointer;
+	}
+.submit input:hover{
+	background:black;
+}
+	</style>
+ 
+</head>
+<body>
+	<div class='top'>
+		<a href=""> <img src="static/img/logo.png" alt="" /></a>
+	</div>
+		<form class="form"  >
+
+		<p class="name">
+			<input autofocus type="text" name="id" id="userid">
+			<label for="name">账号</label>
+		</p>
+
+		<p class="password">
+			<input type="password" name="password" id="password">
+			<label for="password">密码</label>
+		</p>
+
+		 
+
+		 
+		<p class="submit">
+			<input type="button" id='submit' value="登录">
+		</p>
+
+	</form>
+	<script type="text/javascript">
+		window.eDomain={
+			static:'',
+			webroot:'/exam/'
+		};
+		var loginApp=(function(){
+			var forbiddenSpace=function(){
+				$('#userid,#password').keydown(function(e){
+					if(e.keyCode==32){
+						return false;
+					}
+				});
+			};
+			var enterKeyEvent=function(){
+
+				$('#userid').keydown(function(e){
+
+					if(e.keyCode==13){
+						 document.getElementById('password').focus();
+					}
+				});
+				$('#password').keydown(function(e){
+					if(e.keyCode==13){
+						 document.getElementById('submit').focus();
+					}
+				});
+			};
+			var onFormSubmit=function(){
+				$('input[type=button]').click(function(e){
+					debugger;
+					localStorage.removeItem('courseid');
+					var userid=$('#userid').val(),
+					  password=$('#password').val();
+					  userid=$.trim(userid);
+					  password=$.trim(password);
+					  if(userid==''){
+					  	document.getElementById('userid').focus();
+					  }
+					  if(password==''){
+					  	document.getElementById('password').focus();
+					  }
+					  if(password =='' || userid==''){
+					  	return false;
+					  }
+
+					  $.ajax({
+					  	//url:eDomain.getURL('teacher/login/login'),
+					  	url:"teacher/login.do",
+					  	type:'post',
+					  	dataType:'json',
+					  	data:{
+					  		user:userid,
+					  		password:password
+					  	},
+					  	success:function(res,successful){
+					  	 
+					  		if(!res.success){
+					  			alert(res.msg);
+					  			return;
+					  		}else{
+                                  if(!res.data.pass){
+                                      alert(res.data.msg);
+                                  }else{
+                                      location.href='./index.html';
+                                  }
+                              }
+					  	},
+					  	error:function(options,errorMsg){
+					  		throw new Error('login error:'+errorMsg+'.');
+					  	}
+					  });
+					  
+					 e.preventDefault();
+					  return false;
+				});
+			};
+			function autoLogin(){
+				var password="123456",
+				uid="20132013";
+				$('#userid').val(uid);
+				$('#password').val(password);
+			    $("#submit").trigger("click");
+			};
+			var bindEvents=function(){
+				forbiddenSpace();
+				enterKeyEvent();
+				onFormSubmit();
+			};
+			var init=function(){
+				bindEvents();
+				autoLogin();
+			};
+			return {
+				init:init
+			};
+		})();
+		loginApp.init();
+	</script>
+</body>
+</html>

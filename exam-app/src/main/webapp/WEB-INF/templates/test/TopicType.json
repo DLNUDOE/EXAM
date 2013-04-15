@@ -1,0 +1,11 @@
+{
+	success:true,
+	msg:"",	
+	data:[
+		{id:1, name:"单选题",type:'radio',order:1},
+		{id:2, name:"多选题",type:'checkbox',order:12},
+		{id:3, name:"判断题",type:'judge',order:11},
+		{id:4, name:"填空题",type:'blank',order:14},
+		{id:5, name:"简答题",type:'subject',order:123},
+	]
+}

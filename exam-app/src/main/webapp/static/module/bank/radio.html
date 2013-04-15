@@ -1,0 +1,24 @@
+<tpl for=".">
+	<div class="topic-item">
+		<div class="topic-item-header">
+			<span class="topic-item-id">{id}.</span>
+			<div class="topic-item-operation">
+				<span class="topic-item-edit" data-op="edit">✎编辑</span>
+				<span class="topic-item-delete" data-op="delete">×删除</span>
+			</div>
+		</div>		
+		<div class="topic-item-body">
+			<div class="topic-item-desc">{[values.stem.title]}</div>
+			<ul class="topic-item-options">
+				<tpl for="stem.option">
+					<li><label>{[String.fromCharCode(64+xindex)]}.</label>
+					<span>{[values]}</span></li>
+				</tpl>
+			</ul>			
+		</div>
+		<div class="topic-item-footer">
+			<span>参考答案：{answer}</span>
+			{[this.showAdderA4UI(false)]}
+		</div>
+	</div>
+</tpl>

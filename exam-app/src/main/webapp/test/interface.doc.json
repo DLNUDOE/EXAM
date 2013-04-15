@@ -1,0 +1,1609 @@
+用户登录
+url = user / login method = post
+request {
+	userid: 'zhangaaa',
+	param: {
+		password: '123456'
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+用户登录后获取自己的信息
+url = user / info method = get
+request {
+	userid: 'zhangeaaa'
+}
+response {
+	success: true,
+	msg: "",
+	data: {
+		id: '20090814222',
+		name: 'zhangjie alex',
+		auth: 'admin',
+		/*admin teatcher*/
+		college: '计算机',
+		collegeid: 1
+	}
+}
+
+用户的权限树
+url = user / authority method = get
+request {
+	userid: 'zhangeaaa',
+	param: {
+		auth: 'admin',
+		/*admin teatcher*/
+	}
+}
+response {
+	success: true,
+	msg: "ok",
+	data: [{
+		text: "信息管理",
+		id: 1,
+		expanded: true,
+		data: [{
+			id: 11,
+			text: '院系管理',
+			leaf: true
+		}, {
+			id: 12,
+			text: '教师管理',
+			leaf: true
+		}, {
+			id: 13,
+			text: '学生管理',
+			leaf: true
+		}, {
+			id: 14,
+			text: '机房IP管理',
+			leaf: true
+		}, {
+			id: 15,
+			text: '课程管理',
+			leaf: true
+		}, {
+			id: 16,
+			text: '个人信息',
+			leaf: true
+		}]
+	}, {
+		text: '试卷管理',
+		id: 2,
+		data: [{
+			id: 21,
+			text: '组建试卷',
+			leaf: true
+		}, {
+			id: 22,
+			text: '智能出卷',
+			leaf: true
+		}, {
+			id: 23,
+			text: '在线出卷',
+			leaf: true
+		}, {
+			id: 24,
+			text: '试卷列表',
+			leaf: true
+		}, {
+			id: 25,
+			text: '批阅试卷',
+			leaf: true
+		}]
+	}, {
+		text: "题库管理",
+		id: 3,
+		data: [{
+			id: 31,
+			text: '新建题目',
+			leaf: true
+		}, {
+			id: 32,
+			text: '题目列表',
+			leaf: true
+		}]
+	}, {
+		text: '考试管理',
+		id: 5,
+		data: [{
+			id: 51,
+			text: '新建考试',
+			leaf: true
+		}, {
+			id: 52,
+			text: '考试列表',
+			leaf: true
+		}]
+	}, {
+		text: "实时监控",
+		id: 4,
+		data: [{
+			id: 41,
+			text: '考试监控',
+			leaf: true
+		}, {
+			id: 42,
+			text: '强制注销',
+			leaf: true
+		}]
+	}]
+}
+
+读取学院树，仅管理员拥有此权限
+url = college / readtree method = get
+request {}
+response {
+	success: true,
+	msg: '',
+	data: [{
+		id: 1,
+		name: '计算机',
+		data: [{
+			id: 11,
+			name: '计算机科学与技术',
+			data: [{
+				id: 111,
+				name: '计科091',
+				leaf: true
+			}, {
+				id: 112,
+				name: '计科092',
+				leaf: true
+			}, {
+				id: 113,
+				name: '计科093',
+				leaf: true
+			}]
+		}, {
+			id: 12,
+			name: '软件工程',
+			data: [{
+				id: 121,
+				name: '软件091',
+				leaf: true
+			}, {
+				id: 122,
+				name: '软件092',
+				leaf: true
+			}, {
+				id: 123,
+				name: '软件093',
+				leaf: true
+			}]
+		}]
+	}, {
+		id: 2,
+		name: "外语学院",
+		data: [{
+			id: 21,
+			name: '日语学院',
+			data: []
+		}, {
+			id: 22,
+			name: '英语学院',
+			data: [{
+				id: 221,
+				name: '英语091',
+				leaf: true
+			}]
+		}]
+	}]
+}
+
+添加学院机构节点：学院、专业、班级
+url = college / addnode method = post
+request( * ) {
+	param:{			
+		type: "marjor" /*type=college|major|grade*/
+		college: "计算机"
+		collegeid: "1"
+		major: "计算机科学与技术发的"
+		majorid: 22,
+		grade: '计科094'
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+获取学院列表
+url = college / readlist method = get
+request {
+	param: null
+}
+response {
+	success: true,
+	msg: "",
+	data: [{
+		id: 1,
+		name: "计算机"
+	}, {
+		id: 2,
+		name: "商学院"
+	}, {
+		id: 3,
+		name: "经管学院"
+	}, {
+		id: 4,
+		name: "国际贸易"
+	}, {
+		id: 5,
+		name: "旅游管理"
+	}]
+}
+
+获取专业列表—— > 通过学院id
+url = major / readlist method = get
+request {
+	param: {
+		collegeid: 1 /*计算机id collegeid=-1|1-n,-1为返回空数组*/
+	}
+}
+response {
+	success: true,
+	msg: "",
+	data: [{
+		id: 11,
+		name: "计算机科学与技术"
+	}, {
+		id: 12,
+		name: "软件工程"
+	}, {
+		id: 13,
+		name: "网络工程"
+	}]
+}
+
+获取班级列表—— > 通过专业id
+url = grade / readlist method = get
+request {
+	param: {
+		majorid: 11 /*计算机科学与技术专业id majorid=-1|1-n,-1为返回空数组*/
+	}
+}
+response {
+	success: true,
+	msg: "",
+	data: [{
+		id: 111,
+		name: "计科091"
+	}, {
+		id: 112,
+		name: "计科092"
+	}, {
+		id: 113,
+		name: "计科093"
+	}, {
+		id: 114,
+		name: "计科094"
+	}, {
+		id: 115,
+		name: "计科095"
+	}]
+}
+
+获取教师列表，用于管理教师的信息：教师课程、教师权限、教师的基本信息
+url = teacher / read method = get
+request {
+	param: {
+		collegeid: 1,
+		query: '张',
+		page: 2,
+		start: 25,
+		/*与page相关的参数，可选*/
+		limit: 25
+	}
+}
+response {
+	success: true,
+	msg: "",
+
+	data: {
+		total: 222,
+		data: [{
+			id: "jackiezhangjie",
+			name: '张杰',
+			collegeid: 11,
+			college: "计算机",
+			courses: [{
+				id: 22,
+				name: '网络编程'
+			}, {
+				id: 1,
+				name: '高等数学'
+			}]
+		}, {
+			id: "lixiaoliu",
+			name: '李晓牛',
+			collegeid: 11,
+			college: "计算机",
+			courses: [{
+				id: 22,
+				name: '网络编程'
+			}, {
+				id: 1,
+				name: '高等数学'
+			}]
+		}]
+	}
+}
+
+添加教师
+url = teacher / add method = post
+request {
+	userid: 'lixiaoniu',
+	param: {
+		name: '李晓牛',
+		password: 'lixiaoniu',
+		college: '1',
+		collegeid: '计算机'
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+
+
+删除教师，可批量删除
+url = teacher / delete method = post
+request {
+	param: {
+		'id[]': ['lixiaoniu', 'lixiaoniu2']
+	}
+}
+response {
+	success: true,
+	msg: null,
+	data: null
+}
+
+更新教师的基本信息
+url = teacher / update method = post
+request {
+	param: {
+		id: 'lixiaoniu',
+		name: '李晓牛',
+		//password:'lixiaoniu',
+		college: '1',
+		collegeid: '计算机'
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+获取课程列表
+url = course / readlist method = get
+request {
+	param: {
+		college: '计算机',
+		collegeid: 1,
+		query: 'web设计',
+		page: 1,
+		start: 0,
+		limit: 25
+	}
+}
+response {
+	success: true,
+	msg: "",
+	data: {
+		total: 222,
+		data: [{
+			id: 1,
+			name: 'Web前端研发基础',
+			collegeid: 2,
+			college: "计算机",
+			kpoint: [{
+				id: 1,
+				name: 'css与html基础'
+			}, {
+				id: 2,
+				name: 'javascript开发'
+			}, {
+				id: 3,
+				name: 'websocket实时通讯'
+			}]
+		}, {
+			id: 2,
+			name: 'Web前端研发中级',
+			collegeid: 2,
+			college: "计算机",
+			kpoint: [{
+				id: 1,
+				name: 'css与html基础'
+			}, {
+				id: 2,
+				name: 'javascript开发'
+			}, {
+				id: 3,
+				name: 'websocket实时通讯'
+			}]
+		}, {
+			id: 3,
+			name: 'Web前端研发高级',
+			collegeid: 2,
+			college: "计算机",
+			kpoint: [{
+				id: 1,
+				name: 'css与html基础'
+			}, {
+				id: 2,
+				name: 'javascript开发'
+			}, {
+				id: 3,
+				name: 'websocket实时通讯'
+			}]
+		}]
+	}
+}
+
+获取知识点—— > courseid
+url = kpoint / readlist method = get
+request {
+	param: {
+		courseid: 1,
+		course: ''
+	}
+}
+response {
+	success: true,
+	msg: true,
+	data: [{
+		id: 1,
+		name: '树与二叉树'
+	}, {
+		id: 2,
+		name: '矩阵'
+	}]
+}
+
+添加课程
+url = course / add method = post
+request {
+	param: {
+		name: 'ddafds',
+		collegeid: 22,
+		college: "旅游管理",
+		addkpoint: ['新知识点1', '新知识点2', '新知识点3']
+	}
+}
+response {
+	success: true,
+	msg: "",
+	data: null
+}
+
+修改课程
+url = course / update method = get
+request {
+	param: {
+		id: 22,
+		name: 'ddafds',
+		collegeid: 22,
+		college: "旅游管理",
+		addkpoint: ['新知识点1', '新知识点2', '新知识点3'],
+		deletekpoint: [11, 12, 13]
+	}
+}
+response {
+	success: true,
+	msg: "",
+	data: null
+}
+
+教师课程注册、删除
+url = teacher / update / course method = post
+request {
+	userid: 'adminid',
+	param: {
+		id: 'teacgerid',
+		collegeid: 11,
+		addlist: [11, 12],
+		removelist: [13, 14]
+	}
+}
+response {
+	success: true,
+	msg: "",
+	data: null
+}
+
+教师权限管理，勾选权限树
+url = teacher / setauthority method = post
+request {
+	userid: 'adminid',
+	param: {
+		teacherid: 'daddasd',
+		tree: [ /*勾选了id=22的父节点中的4个子节点，id=23的父节点中的2个子节点*/ {
+			id: 22,
+			children: [22, 22, 33, 44]
+		}, {
+			id: 23,
+			children: [1, 233]
+		}]
+	}
+}
+
+返回教师id = teacherid注册的全部课程信息
+url = course / registered method = get
+request {
+	param: {
+		id: 'teacherid'
+	}
+}
+response {
+	success: true,
+	msg: "",
+	data: {
+		total: 222,
+		data: [{
+			id: 1,
+			name: 'Web前端研发基础',
+			collegeid: 2,
+			college: "计算机",
+			kpoint: [{
+				id: 1,
+				name: 'css与html基础'
+			}, {
+				id: 2,
+				name: 'javascript开发'
+			}, {
+				id: 3,
+				name: 'websocket实时通讯'
+			}]
+		}, {
+			id: 2,
+			name: 'Web前端研发中级',
+			collegeid: 2,
+			college: "计算机",
+			kpoint: [{
+				id: 1,
+				name: 'css与html基础'
+			}, {
+				id: 2,
+				name: 'javascript开发'
+			}, {
+				id: 3,
+				name: 'websocket实时通讯'
+			}]
+		}, {
+			id: 3,
+			name: 'Web前端研发高级',
+			collegeid: 2,
+			college: "计算机",
+			kpoint: [{
+				id: 1,
+				name: 'css与html基础'
+			}, {
+				id: 2,
+				name: 'javascript开发'
+			}, {
+				id: 3,
+				name: 'websocket实时通讯'
+			}]
+		}]
+	}
+}
+
+
+获取学生信息管理表
+url = student / readlist method = get
+request {
+	param: {
+		college: '计算机',
+		collegeid: 11,
+		major: '',
+		majorid,
+		22
+		grade: '',
+		gradeid: 111,
+		query: 'studentid like 20009****',
+		page: 1,
+		start: 0,
+		limit: 25
+	}
+}
+response {
+	success: true,
+	msg: "",
+	data: {
+		total: 222,
+		data: [{
+			id: "12",
+			name: '张杰',
+			college: "计算机",
+			collegeid: 1,
+			major: '软件工程',
+			major: 22,
+			grade: '软件091',
+			gradeid: 22
+		}, {
+			id: "liii",
+			name: '张杰2',
+			college: "计算机",
+			collegeid: 1,
+			major: '软件工程',
+			majo: 22,
+			grade: '软件091',
+			gradeid: 22
+		}]
+	}
+}
+
+添加学生
+url = student / add method = post
+request {
+	param: {
+		id: '',
+		name: '',
+		password: '',
+		college: "计算机",
+		collegeid: 1,
+		major: '软件工程',
+		majo: 22,
+		grade: '软件091',
+		gradeid: 22
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+url = student / update method = post
+request {
+	param: {
+		id: '',
+		name: '',
+		password: '',
+		college: "计算机",
+		collegeid: 1,
+		major: '软件工程',
+		majo: 22,
+		grade: '软件091',
+		gradeid: 22
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+删除学生，可批量删除
+url = student / delete method = post
+request {
+	param: {
+		'id[]': ['2009081430', '2009081430']
+	}
+}
+response {
+	success: true,
+	msg: null,
+	data: null
+}
+
+批量导入学生 (文件是个例外)
+url = student / addfile method = post
+request {
+	file: 'excel文件'
+}
+response {
+	success: true,
+	msg: null,
+	data: null
+}
+
+获取机房IP信息列表
+url = iproom / readlist method = get
+request {
+	param: {
+		query: 'iproomname**',
+		page: 1,
+		start: 0,
+		limit: 25
+	}
+}
+response {
+	success: true,
+	msg: "",
+	data: [{
+		id: 3,
+		name: "二教5楼大机房",
+		iprange: '222.222.222',
+		capacity: 102 /*容纳人数*/
+	}, {
+		id: 4,
+		name: "二教5楼大机房",
+		iprange: '222.222.222',
+		capacity: 102 /*容纳人数*/
+	}, {
+		id: 5,
+		name: "二教5楼大机房",
+		iprange: '222.222.222',
+		capacity: 102 /*容纳人数*/
+	}, {
+		id: 6,
+		name: "二教5楼大机房",
+		iprange: '222.222.222',
+		capacity: 102 /*容纳人数*/
+	}]
+}
+
+添加机房
+url = iproom / add method = post
+request {
+	param: {
+		name: '二教5楼大机房(2)',
+		iprange: '222.222.222',
+		capacity: 102 /*容纳人数*/
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+删除机房记录
+url = iproom / delete method = post
+request {
+	param: {
+		id: 22,
+		name: '二教5楼大机房(2)',
+		iprange: '222.222.222',
+		capacity: 102 /*容纳人数*/
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+获取题目列表
+url = topic / readlist method = get
+request {
+	param: {
+		type: 'radio' /*type=radio|checkbox|judge|blank|subject*/
+		courseid: 22,
+		course: '',
+		kpointid: 222,
+		kpoint: 'websocket实时通讯'
+		rating: 2,
+		/*rating=-1,1,2,3,4,5*/
+		query: 'words of topid descriptin **',
+		page: 2,
+		limit: 20
+	}
+}
+response(为了看到不同题目的不同组织方式，不同类型题目都放在了response.data里头) {
+	success: true,
+	msg: "",
+	data: {
+		total: 100,
+		data: [{
+			id: 12,
+			type: 'radio',
+			desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+			answer: 'C',
+			options: [{
+				label: "A",
+				text: '选A不能选B'
+			}, {
+				label: "B",
+				text: '选C不能选A'
+			}, {
+				label: "C",
+				text: '选A就错了'
+			}, {
+				label: "D",
+				text: '选B不能选D'
+			}],
+			rating: 3
+		}, {
+			id: 2,
+			type: 'checkbox',
+			desc: "多选题",
+			answer: 'BC',
+			options: [{
+				label: "A",
+				text: '选A不能选B'
+			}, {
+				label: "B",
+				text: '选C不能选A'
+			}, {
+				label: "C",
+				text: '选A就错了'
+			}, {
+				label: "C",
+				text: '选A就错了'
+			}, {
+				label: "E",
+				text: '选B不能选D'
+			}],
+			rating: 3
+		}, {
+			id: 22,
+			type: 'judge',
+			desc: "判断题判断题判断题判断题判断题",
+			answer: true,
+			rating: 3
+		}, {
+			id: 32,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2：<input type='text' />",
+			answer: ['输入框1答案', '输入框2答案'],
+			rating: 3
+		}, {
+			id: 322,
+			type: 'subject',
+			desc: "简答题简单",
+			answer: '来点靠谱的解释',
+			rating: 3
+		}]
+	}
+}
+
+
+添加5类题型，应答相同单选题
+url = topic / add / radio method = post
+request(radio) {
+	param: {
+		id: 1,
+		type: 'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer: 'C',
+		rating: 3,
+		options: [{
+			label: "A",
+			text: '选A不能选B'
+		}, {
+			label: "B",
+			text: '选C不能选A'
+		}, {
+			label: "C",
+			text: '选A就错了'
+		}, {
+			label: "D",
+			text: '选B不能选D'
+		}]
+	}
+}
+
+
+url = topic / add / checkbox method = post
+request(checkbox) {
+	param: {
+		id: 1,
+		type: 'checkbox',
+		desc: "多选题",
+		answer: 'AC',
+		rating: 3,
+		options: [{
+			label: "A",
+			text: '选A不能选B'
+		}, {
+			label: "B",
+			text: '选C不能选A'
+		}, {
+			label: "C",
+			text: '选A就错了'
+		}, {
+			label: "D",
+			text: '选B不能选D'
+		}, {
+			label: "E",
+			text: '好吧！！'
+		}]
+	}
+}
+
+
+url = topic / add / judge method = post
+request(judge) {
+	param: {
+		id: 1,
+		type: 'judge',
+		desc: "判断题",
+		answer: true,
+		/*answer=true|false*/
+		rating: 3
+	}
+}
+
+
+url = topic / add / blank method = post
+request(blank) {
+	param: {
+		id: 1,
+		type: 'blank',
+		desc: "填空题，输入框1：<input type='text' />输入框2：<input type='text' />",
+		answer: ['输入框1答案', '输入框2答案'],
+		rating: 3
+	}
+}
+
+
+url = topic / add / subject method = post
+request(subject) {
+	param: {
+		id: 1,
+		type: 'subject',
+		desc: "简答题",
+		answer: "来点靠谱的答案吧",
+		rating: 3
+	}
+}
+
+//以5类题目上应答如下
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+
+删除题目
+url = topic / delete method = post
+request {
+	userid: '',
+	param: {
+		id: 1,
+		type: 'radio'
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+新建试卷
+url = paper / add / build method = post
+request {
+	userid: '',
+	param: {
+		createdor: 'teacherid',
+		papername: '数据结构测试',
+		courseid: '',
+		course: '',
+		open: false,
+		papercontent: {
+			'radio[]': [{
+				id: 1,
+				score: 3
+			}, {
+				id: 2,
+				score: 3
+			}],
+			'checkbox[]': [{
+				id: 11,
+				score: 6
+			}, {
+				id: 22,
+				score: 6
+			}],
+			'judge[]': [{
+				id: 111,
+				score: 4
+			}, {
+				id: 222,
+				score: 4
+			}],
+			'blank[]': [{
+				id: 1111,
+				score: 2
+			}, {
+				id: 2222,
+				score: 4
+			}],
+			/*1111题每个空格2分，2222题每个空格4分*/
+			'subject[]': [{
+				id: 11111,
+				score: 4
+			}, {
+				id: 22222,
+				score: 4
+			}]
+		}
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+更新试卷，主要是分值
+url = paper / update / build method = post
+request {
+	userid: '',
+	param: {
+		paperid: 11,
+		id: 'teacherid',
+		papername: '数据结构测试',
+		'radio[]': [{
+			id: 1,
+			score: 3
+		}, {
+			id: 2,
+			score: 3
+		}],
+		'checkbox[]': [{
+			id: 11,
+			score: 6
+		}, {
+			id: 22,
+			score: 6
+		}],
+		'judge[]': [{
+			id: 111,
+			score: 4
+		}, {
+			id: 222,
+			score: 4
+		}],
+		'blank[]': [{
+			id: 1111,
+			score: 2
+		}, {
+			id: 2222,
+			score: 4
+		}],
+		/*1111题每个空格2分，2222题每个空格4分*/
+		'subject[]': [{
+			id: 11111,
+			score: 4
+		}, {
+			id: 22222,
+			score: 4
+		}]
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+删除试卷
+url = paper / delete / build method = post
+request {
+	userid: 'teacherid',
+	param: {
+		paperid: 11
+	}
+}
+
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+删除试卷中的某道题目
+url = paper / delete / topic method = post
+request {
+	userid: '',
+	param: {
+		paperid: 1,
+		topicid: 22,
+		type: 'radio'
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+更新5类题目，如果paperid不存在，则更细题库中的题目
+url = topic / update method = post
+request(radio) {
+	param: {
+		paperid: 1,
+		topicid: 22,
+		type: 'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer: 'C',
+		rating: 3,
+		options: [{
+			label: "A",
+			text: '选A不能选B'
+		}, {
+			label: "B",
+			text: '选C不能选A'
+		}, {
+			label: "C",
+			text: '选A就错了'
+		}, {
+			label: "D",
+			text: '选B不能选D'
+		}]
+	}
+}
+request(checkbox) {
+	param: {
+		paperid: 1,
+		topicid: 22,
+		type: 'checkbox',
+		desc: "多选题",
+		answer: 'AC',
+		rating: 3,
+		options: [{
+			label: "A",
+			text: '选A不能选B'
+		}, {
+			label: "B",
+			text: '选C不能选A'
+		}, {
+			label: "C",
+			text: '选A就错了'
+		}, {
+			label: "D",
+			text: '选B不能选D'
+		}, {
+			label: "E",
+			text: '好吧！！'
+		}]
+	}
+}
+
+request(judge) {
+	param: {
+		paperid: 1,
+		topicid: 22,
+		type: 'judge',
+		desc: "判断题",
+		answer: true,
+		/*answer=true|false*/
+		rating: 3
+	}
+}
+
+request(blank) {
+	param: {
+		paperid: 1,
+		topicid: 22,
+		type: 'blank',
+		desc: "填空题，输入框1：<input type='text' />输入框2：<input type='text' />",
+		answer: ['输入框1答案'，'输入框2答案'],
+		rating: 3
+	}
+}
+
+request(subject) {
+	param: {
+		paperid: 1,
+		topicid: 22,
+		type: 'subject',
+		desc: "简答题",
+		answer: "来点靠谱的答案吧",
+		rating: 3
+	}
+}
+
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+添加一场考试，分为2个步骤第一步，添加考试基本信息
+url = exam / add / info
+request {
+	userid: '',
+	param: {
+		examname: '数据结构测试',
+		paperid: 11,
+		papername: '数据结构测试',
+		delegator: ['teacher1', 'teacher2'],
+		/*该场考试的批阅老师*/
+		date: '2012-12-12',
+		starttime: '11:30',
+		duration::120,
+		/*minutes*/
+		remarks: 'remarks 将被拿到考试列表中',
+		creator: 'alex',
+		updatetime: '2012-11-11'
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: {
+		id: 121
+	}
+}
+
+修改考试基本信息
+url = exam / update / info
+request {
+	param: {
+		examid: 121,
+		examname: '数据结构测试',
+		paperid: 11,
+		papername: '数据结构测试',
+		delegator: ['teacher1', 'teacher2'],
+		/*该场考试的批阅老师*/
+		date: '2012-12-12',
+		starttime: '11:30',
+		duration::120,
+		/*minutes*/
+		remarks: 'remarks 将被拿到考试列表中',
+		creator: 'alex',
+		updatetime: '2012-11-11'
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: {
+		id: 121
+	}
+}
+
+第二步，添加考试成员
+url = exam / add / members
+request {
+	param: {
+		examid: 121,
+		'member[]': ['2009081430', '2009081428', '2009081431']
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+删除考试中的成员
+url = exam / delete / members
+request {
+	param: {
+		examid: 121,
+		'member[]': ['2009081430', '2009081428', '2009081431']
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}
+
+
+获得考试的成员
+url = exam / read / members
+request {
+	param: {
+		examid: 121,
+		college: '计算机',
+		collegeid: 11,
+		major: '',
+		majorid: 22,
+		grade: '',
+		gradeid: 111,
+		query: 'studentid like 20009****',
+		page: 1,
+		start: 0,
+		limit: 25
+	}
+}
+response {
+	success: true,
+	msg: "",
+	data: {
+		total: 222,
+		data: [{
+			id: "12",
+			name: '张杰',
+			college: "计算机",
+			collegeid: 1,
+			major: '软件工程',
+			major: 22,
+			grade: '软件091',
+			gradeid: 22
+		}, {
+			id: "liii",
+			name: '张杰2',
+			college: "计算机",
+			collegeid: 1,
+			major: '软件工程',
+			majo: 22,
+			grade: '软件091',
+			gradeid: 22
+		}]
+	}
+}
+
+读取考试列表
+url = exam / readlist method = get
+request {
+	param: {
+		query: 'examid,examname',
+		college: 11,
+		collegeid: '',
+		course: '',
+		courseid: 22,
+		stauts: 1,
+		/*status=-1,0,1   ;-1未开始，0进行中，1已考过*/
+		page: 2,
+		limit: 22
+	}
+}
+response {
+	success: true,
+	msg: "",
+	data: [{
+		examid: 121,
+		examname: '数据结构测试',
+		paperid: 11,
+		papername: '数据结构测试',
+		delegator: ['teacher1', 'teacher2'],
+		date: '2012-12-12',
+		starttime: '11:30',
+		duration::120,
+		remarks: 'remarks 将被拿到考试列表中',
+		creator: 'alex',
+		updatetime: '2012-11-11'
+	}, {
+		examid: 121,
+		examname: '数据结构测试',
+		paperid: 11,
+		papername: '数据结构测试',
+		delegator: ['teacher1', 'teacher2'],
+		date: '2012-12-12',
+		starttime: '11:30',
+		duration::120,
+		remarks: 'remarks 将被拿到考试列表中',
+		creator: 'alex',
+		updatetime: '2012-11-11'
+	}]
+}
+
+获取试卷列表, 试卷时当前老师所创建的试卷，状态为：对学院公开，仅自己可见，对学院公开则可以对同学院的所有老师可见
+url = paper / readlist method = get
+request {
+	userid: '',
+	param: {
+		query: '试卷名字***',
+		page: 1,
+		limit: 25
+	}
+}
+
+response {
+	success: true,
+	msg: ''
+	data: {
+		total: 122,
+		data: [ /*open 用于设置试卷公开性，所以这个列表中的试卷既包含自己建立的，又包含同学院其它老师公开的*/ {
+			id: 1,
+			name: '数据结构测试',
+			course: '',
+			courseid: 1,
+			open: false,
+			creator: '我自己的',
+			creatorid: '我自己的id',
+			time: '2012-12-12'
+		}, {
+			id: 2,
+			name: '数据结构测试',
+			course: '',
+			courseid: 1,
+			open: true,
+			creator: '我自己的',
+			creatorid: '我自己的id',
+			time: '2012-12-12'
+		}, {
+			id: 3,
+			name: '数据结构测试',
+			course: '',
+			courseid: 1,
+			open: true,
+			creator: '别人',
+			creatorid: '别人的id',
+			time: '2012-12-12'
+		}]
+	}
+}
+
+获取试卷的基本信息，试卷的信息，时间，创建者实名，试卷内容
+url = paper / preview method = get
+request {
+	userid: 'alex',
+	param: {
+		paperid: 122
+	}
+}
+response { /*建议吧试卷内容也存下来，方便改试卷，而不是试卷中的题目*/
+	success: true,
+	msg: ''
+	data: {
+		papername: '',
+		creator: '',
+		college: '计算机',
+		collegeid: 1,
+		papercontent: {
+			'radio[]': [{
+				id: 1,
+				score: 4,
+				type: 'radio',
+				desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+				answer: 'C',
+				options: [{
+					label: "A",
+					text: '选A不能选B'
+				}, {
+					label: "B",
+					text: '选C不能选A'
+				}, {
+					label: "C",
+					text: '选A就错了'
+				}, {
+					label: "D",
+					text: '选B不能选D'
+				}],
+				rating: 3
+			}],
+			'checkbox[]': [{
+				id: 1,
+				score: 4,
+				type: 'checkbox',
+				desc: "多选题",
+				answer: 'AC',
+				options: [{
+					label: "A",
+					text: '选A不能选B'
+				}, {
+					label: "B",
+					text: '选C不能选A'
+				}, {
+					label: "C",
+					text: '选A就错了'
+				}, {
+					label: "D",
+					text: '选B不能选D'
+				}, {
+					label: "E",
+					text: '好吧！！'
+				}, ],
+				rating: 3
+			}],
+			'judge[]': [{
+				id: 1,
+				score: 4,
+				type: 'judge',
+				desc: "判断题",
+				answer: true,
+				/*answer=true|false*/
+				rating: 3
+			}],
+			'blank[]': [{
+				id: 1,
+				score: 4,
+				/*每个空4分*/
+				type: 'blank',
+				desc: "填空题，输入框1：<input type='text' />输入框2：<input type='text' />",
+				answer: ['输入框1答案'，'输入框2答案'],
+				rating: 3
+			}],
+			'subject[]': [{
+				id: 1,
+				score: 4,
+				type: 'subject',
+				desc: "简答题",
+				answer: "来点靠谱的答案吧",
+				rating: 3
+			}]
+		}
+	}
+}
+
+
+
+获取试卷答案
+url = paper / answer method = get
+request {
+	userid: '',
+	param: {
+		paperid: 122
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: {
+		radio: { /*那类题型没有就是null 如:radio:null*/
+			111: 'A',
+			123: 'B'
+		},
+		checkbox: {
+			112: 'AC',
+			13: 'BE'
+		},
+		judge: {
+			1112: true,
+			13: false
+		},
+		blank: {
+			12: ['空1答案', '空2答案'],
+			14: ['空1答案', '空2答案', '空3答案']
+		},
+		subject: {
+			122: "说点跟答案相关的提示",
+			1: ".....didadi"
+		}
+	}
+}
+
+批量获取学生的答案
+url = student / answer method = get
+request {
+	userid: '',
+	param: {
+		examid: 122,
+		paperid: 122,
+		studentid: '2009081430'
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: {
+		radio: { /*那类题型没有就是null 如:radio:null*/
+			111: 'A',
+			123: 'B'
+		},
+		checkbox: {
+			112: 'AC',
+			13: 'BE'
+		},
+		judge: {
+			1112: true,
+			13: false
+		},
+		blank: {
+			12: ['空1答案', '空2答案'],
+			14: ['空1答案', '空2答案', '', '空4答案'] /*******注意控3人家没作答，一定要返回空*/
+		},
+		subject: {
+			122: "说点跟答案相关的提示",
+			1: ".....didadi"
+		}
+	}
+}
+
+
+批阅试卷, 提交某个学生在考试中的某道题的分数，只能批阅填空题和简答题
+url = paper / readover method = post
+request {
+	userid:'dasf',
+	param: {
+		examid: 121,
+		paperid: 223,
+		studentid: '2009081430'
+		topicid: 1,
+		score: 4
+	}
+}
+response {
+	success: true,
+	msg: '',
+	data: null
+}

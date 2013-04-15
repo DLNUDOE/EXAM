@@ -1,0 +1,480 @@
+/*@start the exam css*/
+body {
+	background: #c0cff6 url(../img/exam/style0bg1.jpg) repeat    ;
+	color: #333;
+	font: 15px/1.5 Tahoma,"hiragino sans gb",Helvetica,Arial;
+	font-family: Tahoma, 'hiragino sans gb', Helvetica, Arial;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#locker{
+	_width: 100%;
+	_height: 100%;
+	background: #000;
+	position: absolute;
+	
+	top: -40px;
+	right: 0;
+	bottom: -40px;
+	left: 0;
+	opacity: 0.618;
+	_filter:alpha(opacity:50);
+	display: none;
+	z-index: 1000;
+
+}
+body ul,div,a,em { list-style: none; margin: 0; padding: 0; }
+
+.fixed { position: fixed; _position: absolute; }
+
+.paperbg { background-image: url(../img/exam/paper.png); }
+
+#top_nav {
+	background: url(../img/exam/style0nav.png) repeat-x top left;
+	color: #fff;
+	font-size: 14px;
+	height: 34px;
+	left: 0;
+	top: 0; 
+	width: 100%;
+	z-index: 1000;
+	_top: expression(eval(document.documentElement.scrollTop));
+}
+
+.top {
+	height: 34px;
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+	width: 800px;
+}
+
+.navi {
+	height: 34px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.logo { float: left; height: 34px; }
+input{
+	background: transparent;
+}
+.navi .navi-item {
+	cursor: pointer;
+	float: left;
+	height: 20px;
+	margin-left: 2px;
+	padding: 6px;
+	position: relative;
+	*padding: 5px;
+}
+
+.navi .navi-item:hover { background: #0D0A08; }
+
+.navi .userName { color: #6F0; font-weight: bold; }
+
+.navi-app {
+	background: #444;
+	display: none;
+	left: 0;
+	position: absolute;
+	top: 100%;
+	width: 88px;
+}
+
+.navi-app .app-item {
+	background: #0D0A08;
+	color: #fff;
+	font: bold 12px/20px Arial;
+	height: 20px;
+	margin-bottom: 1px;
+	padding: 8px 0 8px 0;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
+.navi-app-hvr { display: block; }
+
+.navi-app .app-item:hover { color: #B3EE3A; }
+
+#main {
+ margin: 40px auto 40px auto;
+border-radius: 4px;
+width: 800px;
+position: relative;
+}
+#main:before, #main:after {
+z-index: -1;
+position: absolute;
+content: "";
+bottom: 15px;
+left: 16px;
+width: 300px;
+height: 100px;
+max-width: 300px;
+background: rgba(0, 0, 0, 0.7);
+box-shadow: 0 30px 20px 10px rgba(0, 0, 0, 0.7);
+-webkit-box-shadow: 0 30px 20px 10px rgba(0, 0, 0, 0.7);
+background: rgba(0, 0, 0, 0.7);
+-webkit-box-shadow: 0 15px 10px rgba(0,0,0, 0.7);
+-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+-webkit-transform: rotate(-3deg);
+-moz-transform: rotate(-3deg);
+-o-transform: rotate(-3deg);
+}
+#main:after {
+-webkit-transform: rotate(3deg);
+-moz-transform: rotate(3deg);
+-o-transform: rotate(3deg);
+right: 16px;
+left: auto;
+}
+.main-top {  background:#fff;  height: 98px; }
+
+.main-body {
+	background:#fff;
+	overflow: auto;
+	zoom: 1;
+}
+
+.main-footer {  background:#fff; height: 36px; }
+
+.paperTitle { text-align: center; }
+
+.paperTitle h2 { padding: 0 30px; }
+
+.paperContent { margin: 0; padding: 0 60px; }
+
+.paperContent li span * { color: #333 !important; font-family: Tahoma, 'hiragino sans gb', Helvetica, Arial !important; }
+
+.paperContent li span,.paperContent li .font,.paperContent li em { color: inherit !important; font-family: Tahoma, 'hiragino sans gb', Helvetica, Arial !important; font-size: 14px !important; }
+
+.paperContent li:hover { background: #eee;; color: #000;  }
+
+.paperContent li { 
+	margin: 5px; padding:8px;
+	border-radius: 4px;
+}
+
+.paperContent li em.score {
+	color: #787878;
+	font-size: 12px;
+	margin-left: 12px;
+	white-space: nowrap;
+}
+
+.paperContent li span { display: inline; white-space: normal !important; }
+
+.paperContent li span p,.paperContent li span div { display: inline !important; white-space: normal !important; }
+
+.paperContent li span br { display: none !important; }
+
+.paperContent li div { margin: 5px 0; }
+
+.paperContent li span strong { font-weight: normal; }
+
+.paperContent li label { cursor: pointer; }
+
+.paperContent li .optionanswer { cursor: pointer; }
+
+.blank-question input {
+	border: none;
+	border-bottom: 1px solid #787878;
+	font-weight: bold;
+	outline: none;
+	padding: 0 4px 0 4px;
+}
+
+#to_top {
+	background-image: url(../img/exam/totop.png);
+	background-position: -5px -5px;
+	bottom: 25px;
+	cursor: pointer;
+	display: none;
+	height: 56px;
+	margin-right: -470px;
+	right: 50%;
+	text-indent: -9999px;
+	width: 56px;
+	_top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight));
+}
+
+#to_top:hover { background-position: -5px -68px; }
+
+#answer_card {
+	overflow: hidden;
+	right: 0;
+	top: 150px;
+	width: 26px;
+	z-index: 999;
+}
+
+#answer_card dl {
+	background: #F8F8F8;
+	border: 3px solid #eee;
+	padding: 10px;
+	width: 225px;
+	z-index: 1000;
+}
+
+#answer_card dl dt { font-size: 14px; font-weight: 600; margin: 5px 0; }
+
+#answer_card dl dd {
+	display: inline-block;
+	height: 22px;
+	line-height: 22px;
+	margin: 2px;
+	text-align: center;
+	width: 26px;
+	zoom: 1;
+	*display: inline;
+}
+
+.done { background: #C0E4FA !important; }
+
+#answer_card dl dd a {
+	background: #ddd;
+	color: #666;
+	display: block;
+	font-size: 12px;
+	height: 100%;
+	text-decoration: none;
+	width: 100%;
+}
+
+.optioninput {
+	display: inline-block;
+	vertical-align: top;
+	zoom: 1;
+	*display: inline;
+}
+
+.manyoptioninput {
+	background-image: url(../img/exam/checkbox.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 20px;
+	padding-left: 25px;
+	vertical-align: top;
+	zoom: 1;
+	*display: inline;
+}
+
+.checked { background-position: 0 -20px; }
+
+.optionanswer {
+	display: inline-block;
+	width: 550px;
+	zoom: 1;
+	*display: inline;
+}
+
+ 
+
+#submitpaper {
+	background: #0D0A08;
+	cursor: pointer;
+	display: block;
+	float: left;
+	font-weight: 600;
+	height: 20px;
+	margin-left: 10px;
+	padding: 6px 15px 6px 15px;
+}
+
+ol li div textarea {
+	border: 1px solid #787878;
+	color: #333;
+	font-size: 15px;
+	height: 206px;
+	max-height: 206px;
+	max-width: 600px;
+	min-height: 206px;
+	min-width: 600px;
+	padding: 6px;
+	width: 600px;
+}
+
+.emphasize { font-weight: bold; }
+
+#submitpaper:hover { background: #104E8B; color: #B3EE3A; }
+
+.backclock { position: absolute; right: -60px; top: 0px; }
+
+#backtobottom {
+	cursor: pointer;
+	height: 32px;
+	text-align: center;
+	width: 40px;
+}
+
+#backtobottom:hover { background: #0D0A08; }
+
+#username {
+	 
+	background: url(../img/exam/userpic.png) 0 6px no-repeat;
+	color: #6C3;
+	cursor: pointer;
+	float: left;
+	font-weight: 600;
+	margin-left: 160px;
+	padding: 4px 4px 4px 22px;
+}
+
+#username:hover {
+	background-position: 0 -20px;
+	 
+}
+
+.clockbg {
+	 
+	background: #0D0A08;
+	display: block;
+	float: left;
+	font-weight: 600;
+	height: 33px;
+	line-height: 33px;
+	margin-left: 10px;
+	padding: 0 20px;
+}
+
+.clockbg:hover {
+	background-color: green;
+	color: #fff;
+	padding: 60px; 
+	font-size: 30px;
+}
+
+.clock {
+	background: url(../img/exam/clocknao.png) no-repeat 0 5px;
+	color: #6C3;
+	display: block;
+	float: left;
+	height: 33px;
+	line-height: 33px;
+	padding-left: 30px;
+}
+
+#lock {
+	background: #fff;
+	display: none;
+	height: 1000px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10000;
+}
+
+#lock span {
+	color: #fff;
+	font: normal normal bold 16px/16px Arial;
+	left: 0;
+	position: fixed;
+	text-align: center;
+	top: 100px;
+	width: 100%;
+	z-index: 10001;
+	_position: absolute;
+	_top: expression(eval(document.documentElement.scrollTop));
+}
+.lengthLimit { color: #787878; font-weight: bold; }
+.lengthWarning { color: #CD2626 !important; display: none; margin-left: 10px; }
+
+/*@end exam css*/
+
+/*@start standard answer*/
+
+#paperContent { position: relative; }
+#paperContent input { background: #fff; }
+#paperContent textarea { background: #fff; border: 1px solid #787878; }
+.aswT { color: gray; position: relative; }
+.aswT .blan-asw-item{
+	background: #ddd;
+padding: 2px 4px;
+border-radius: 2px;
+}
+.blankAsw { border-bottom: 1px solid gray; margin: 6px; }
+#analysis-type { display: none; font-family: 'Microsoft Yahei'; font-weight: bold; }
+#analysis-type a { color: #000; margin-left: 208px; text-decoration: none; }
+#analysis-type a:hover { }
+#analysis-type a img { }
+.icon-analysis-pie {
+	background: url(../Images/icon/analysis-bar.png) no-repeat;
+	float: right;
+	height: 20px;
+	line-height: 100%;
+}
+#chart-box {
+	background: #26383D;
+	border: 2px solid #43627D;
+	color: #fff;
+	display: none;
+	font-size: 14px;
+	height: 380px;
+	padding: 2px;
+	position: fixed;
+	right: -2px;
+	top: 250px;
+	width: 480px;
+	z-index: 1000;
+	_position: absolute;
+	_top: expression(eval(document.documentElement.scrollTop)+250);
+}
+#chart-title { border-bottom: 1px solid #000 ; position: relative; white-space: nowrap; }
+#chart-content { border-top: 1px solid #7EA5AF; }
+.a-type {
+	background: #437E90;
+	color: orange;
+	margin-right: 4px;
+	padding: 2px;
+	text-decoration: none;
+}
+.a-type img { border: none; position: relative; top: 4px; }
+#chart-spin {
+	background: #43627D;
+	cursor: pointer;
+	font-family: Verdana;
+	font-size: 20px;
+	height: 100px;
+	left: -36px;
+	line-height: 100px;
+	position: absolute;
+	text-align: center;
+	top: 100px;
+	width: 32px;
+}
+ol li .delete-item {
+	background: url(../img/glyphicons-halflings.png) -48px -96px;
+color: red;
+cursor: pointer;
+display: none;
+font-family: "Misrosoft Yahei";
+height: 6px;
+width: 6px;
+padding: 4px;
+position: absolute;
+right: -4px;
+text-align: center;
+top: -6px;
+}
+ol li:hover .delete-item {
+	 font-weight: bold;
+	 display: block;
+ }
+ol li { position: relative; }
+/*@end standard answer*/
+
+/*start preview css*/
+#submit-paper{
+	float:left;width:100px;height:40px;
+	text-align: center;
+	line-height: 40px;
+	color: #999;
+	background: #000;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../static/css/index.css" />
+	<script type="text/javascript" src='../static/js/jquery-1.8.0.js'></script>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="mod-tag-wrapper">
+		<div class="mod-tag-body" >
+			<div class="tag-item-list" >
+				<div class="tag-item">
+					<span class="tag-name">
+						的司法斯蒂芬
+					</span>
+					<a href="#" title="删除" class="tag-close" onclick="return false;">
+						×
+					</a>
+				</div>
+				<div class="tag-item">
+					<span class="tag-name">
+						fdsaffdsaf
+					</span>
+					<a href="#" title="删除" class="tag-close" onclick="return false;">
+						×
+					</a>
+				</div>
+				<div class="tag-item">
+					<span class="tag-name">
+						发的萨芬dfsa
+					</span>
+					<a href="#" title="删除" class="tag-close" onclick="return false;">
+						×
+					</a>
+				</div>
+			</div>
+			<input id="tagInput" placeholder="添加标签，以逗号或回车隔开" class="tag-cursor"
+			type="text" autocomplete="off" />
+		</div>	 
+	</div>
+ 
+<script type="text/javascript">
+	tagApp=(function(e){
+		var onComponentFocus=function(){
+			$('.mod-tag-wrapper').click(function(e){
+				debugger;
+				$(this).find('input');
+			});
+		};
+		var bindEvents=function(){
+			onComponentFocus();
+		};
+		var init=function(){
+			bindEvents();
+		};
+		return {
+			init:init
+		};
+	})();
+	tagApp.init();
+</script>
+</body>
+</html>

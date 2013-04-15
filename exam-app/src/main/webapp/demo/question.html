@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../static/css/scroll.css" />
+	<link rel="stylesheet" href="../static/art/skins/default.css" />
+ 
+	<script charset="utf-8" src="../static/ke/kindeditor-min.js"></script>
+	<script charset="utf-8" src="../static/ke/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="../static/js/config.js"></script>
+	<script charset="utf-8" src="../static/js/jquery-1.8.0.js"></script>
+	<script charset="utf-8" src="../static/js/jquery.cookie.js"></script>
+	<script charset="utf-8" src="../static/art/artDialog.js"></script>
+	<link rel="stylesheet" href="../static/css/topic.add.css?time=1132132" />
+</head>
+<body>
+	<div class="wrapper">
+		<div class="tab-bars-warpper">
+			<div class="tab-bars">
+				<a class="tab-bar active " data-type="1"> 单选题 </a>			
+				<a class="tab-bar" data-type="2"> 多选选题 </a>
+				<a class="tab-bar" data-type="3"> 填空题 </a>
+				<a class="tab-bar" data-type="4"> 判断题 </a>
+				<a class="tab-bar" data-type="5"> 主观题 </a>
+				<a class="tab-bar" data-type="6"> 混合题 </a>
+			</div>
+		</div>
+		<div class="tab-panel-wrapper"   >
+			<div class="tab-frame radio-frame"> <!-- start radio -->
+				<div class="mod-tabpanel">
+					<div class="tabpanel-editor">
+						<h2> <span>Step1、</span>题目基本信息</h2>	
+						<div class="combolist">
+							<label for="">学院：</label>
+							<input  type="text" readonly  class="input-field t-college"/>
+							<label for="">课程：</label>
+							<span class="select"><input type="text" readonly class="select-field"><i>▼</i>
+								<ul>
+								  <li><a href="#">会话失效，重新登录 </a></li>								  
+								</ul>
+							</span>
+						</div>
+						<h2> <span>Step2、</span>输入题干</h2>	
+						<div class="editor-wrapper">
+						   <textarea name="content" id="radio-stem" style="width:590px;height:300px;"></textarea>
+						</div>
+					</div>
+					<div class="tabpanel-console">
+						<h2> <span>Step3、</span>题目基本信息</h2>	
+						<ul class="options-panel">
+							<li class="option"><label for="">A.</label><input type="text" class="option-field"/><input type="radio" name="radio-option"><a href="#" class="delete-item"></a></li>
+							<li class="option"><label for="">B.</label><input type="text" class="option-field"/><input type="radio" name="radio-option"><a  href="#"class="delete-item"></a></li>
+							<li class="option"><label for="">C.</label><input type="text" class="option-field"/><input type="radio" name="radio-option"><a  href="#"class="delete-item"></a></li>
+							<li class="option"><label for="">D.</label><input type="text" class="option-field"/><input type="radio" name="radio-option"><a  href="#"class="delete-item"></a></li>					 
+							<li class="last"><a href="#">+</a></li>
+						</ul>
+						<h2> <span>Step、</span>添加知识点</h2>
+						<div class="tag-container">
+							<div class="mod-tag-wrapper">
+							<div class="mod-tag-body" >
+								<ul class="tag-item-list" >
+									<!-- <li class="tag-item">
+															 	<span class="tag-name">简单标签</span>
+															 	<a href="#" title="删除" class="tag-close" onclick="return false;">×</a>
+															 </li> -->						 
+								</ul>
+							</div>
+							<input id="tagInput" placeholder="添加标签，以逗号或回车隔开" class="tag-cursor"
+							type="text" autocomplete="off" />
+							<div class="complete-wrapper">
+							<ul class="complete-list">				 
+								 
+							</ul>
+						</div>
+						</div>
+						
+						</div>
+						 
+					</div>
+					<div class="clear">
+						<div class="buttons">
+							<a href="javascript:void(0)" class="button button-submit">提交</a>
+						</div>
+					</div>
+				</div>
+			</div> <!-- end radio -->
+			<div class="tab-frame checkbox-frame"><!--  start  checkbox-->
+				<div class="mod-tabpanel">
+					<div class="tabpanel-editor">
+						<h2> <span>Step1、</span>题目基本信息</h2>	
+						<div class="combolist">
+							<label for="">学院：</label>
+							<input  type="text" readonly  class="input-field t-college"/>
+							<label for="">课程：</label>
+							<span class="select"><input type="text" readonly class="select-field"><i>▼</i>
+								<ul>
+								  <li><a href="#">会话失效，重新登录 </a></li>
+								  
+								</ul>
+							</span>
+						</div>
+						<h2> <span>Step2、</span>输入题干</h2>	
+						<div class="editor-wrapper">
+						   <textarea name="content" style="width:590px;height:300px;"></textarea>
+						</div>
+					</div>
+					<div class="tabpanel-console">
+						<h2> <span>Step3、</span>题目基本信息</h2>	
+						<ul class="options-panel">
+							<li class="option"><label for="">A.</label><input type="text" class="option-field"/><input type="checkbox" name="checkbox-option"><a href="#" class="delete-item"></a></li>
+							<li class="option"><label for="">B.</label><input type="text" class="option-field"/><input type="checkbox" name="checkbox-option"><a  href="#"class="delete-item"></a></li>
+							<li class="option"><label for="">C.</label><input type="text" class="option-field"/><input type="checkbox" name="checkbox-option"><a  href="#"class="delete-item"></a></li>	
+							<li class="option"><label for="">D.</label><input type="text" class="option-field"/><input type="checkbox" name="checkbox-option"><a  href="#"class="delete-item"></a></li>				 
+							<li class="last"><a href="#">+</a></li>
+						</ul>
+						<h2> <span>Step、</span>添加知识点</h2>
+						<div class="tag-container">
+							<div class="mod-tag-wrapper">
+							<div class="mod-tag-body" >
+								<ul class="tag-item-list" >
+									<!-- <li class="tag-item">
+															 	<span class="tag-name">简单标签</span>
+															 	<a href="#" title="删除" class="tag-close" onclick="return false;">×</a>
+															 </li> -->						 
+								</ul>
+							</div>
+							<input id="tagInput" placeholder="添加标签，以逗号或回车隔开" class="tag-cursor"
+							type="text" autocomplete="off" />
+							<div class="complete-wrapper">
+							<ul class="complete-list">				 
+								 
+							</ul>
+						</div>
+						</div>
+						
+						</div>
+						 
+					</div>
+					<div class="clear">
+						<div class="buttons">
+							<a href="javascript:void(0)" class="button button-submit">提交</a>
+						</div>
+					</div>
+				</div>
+			</div> <!-- end checkbox -->
+			<div class="tab-frame blank-frame"><!--  start  blank-->
+				<div class="mod-tabpanel">
+					<div class="tabpanel-editor">
+						<h2> <span>Step1、</span>题目基本信息</h2>	
+						<div class="combolist">
+							<label for="">学院：</label>
+							<input  type="text" readonly  class="input-field t-college"/>
+							<label for="">课程：</label>
+							<span class="select"><input type="text" readonly class="select-field"><i>▼</i>
+								<ul>
+								  <li><a href="#">会话失效，重新登录 </a></li>
+								  
+								</ul>
+							</span>
+						</div>
+						<h2> <span>Step2、</span>输入题干</h2>	
+						<div class="editor-wrapper" id="blank-editor-wrapper"  >
+						   <textarea id="blank-editor" style="width:590px;height:300px;"></textarea>
+						</div>
+					</div>
+					<div class="tabpanel-console">
+						<h2> <span>Step3、</span>题目基本信息</h2>	
+						<ul class="options-panel">
+							<li class="option"><label for="">空1.</label><input type="text" class="option-field"/> <a href="#" class="delete-item"></a></li>
+							 			 
+							<li class="last"><a href="#">+</a></li>
+						</ul>
+						<h2> <span>Step、</span>添加知识点</h2>
+						<div class="tag-container">
+							<div class="mod-tag-wrapper">
+							<div class="mod-tag-body" >
+								<ul class="tag-item-list" >
+									<!-- <li class="tag-item">
+															 	<span class="tag-name">简单标签</span>
+															 	<a href="#" title="删除" class="tag-close" onclick="return false;">×</a>
+															 </li> -->						 
+								</ul>
+							</div>
+							<input id="tagInput" placeholder="添加标签，以逗号或回车隔开" class="tag-cursor"
+							type="text" autocomplete="off" />
+							<div class="complete-wrapper">
+							<ul class="complete-list">				 
+								 
+								 
+							</ul>
+						</div>
+						</div>
+						
+						</div>
+						 
+					</div>
+					<div class="clear">
+						<div class="buttons">
+							<a href="javascript:void(0)" class="button button-submit">提交</a>
+						</div>
+					</div>
+				</div>
+			</div><!-- end blank -->
+			<div class="tab-frame judge-frame"><!--  start  judge-->
+				<div class="mod-tabpanel">
+					<div class="tabpanel-editor">
+						<h2> <span>Step1、</span>题目基本信息</h2>	
+						<div class="combolist">
+							<label for="">学院：</label>
+							<input  type="text" readonly  class="input-field t-college"/>
+							<label for="">课程：</label>
+							<span class="select"><input type="text" readonly class="select-field"><i>▼</i>
+								<ul>
+								  <li><a href="#">会话失效，重新登录 </a></li>
+								  
+								</ul>
+							</span>
+						</div>
+						<h2> <span>Step2、</span>输入题干</h2>	
+						<div class="editor-wrapper">
+						   <textarea name="content" style="width:590px;height:300px;"></textarea>
+						</div>
+					</div>
+					<div class="tabpanel-console">
+						<h2> <span>Step3、</span>题目基本信息</h2>	
+						<ul class="options-panel">
+							<li class="option"><label for="">正确.</label> <input type="radio" name="radio-option" value=1 />  </li>
+							<li class="option"><label for="">错误.</label> <input type="radio" name="radio-option" value=0 />  </li>							
+						</ul>
+						<h2> <span>Step、</span>添加知识点</h2>
+						<div class="tag-container">
+							<div class="mod-tag-wrapper">
+							<div class="mod-tag-body" >
+								<ul class="tag-item-list" >
+									<li class="tag-item">
+										<span class="tag-name">简单标签</span>
+										<a href="#" title="删除" class="tag-close" onclick="return false;">×</a>
+									</li>						 
+								</ul>
+							</div>
+							<input id="tagInput" placeholder="添加标签，以逗号或回车隔开" class="tag-cursor"
+							type="text" autocomplete="off" />
+							<div class="complete-wrapper">
+							<ul class="complete-list">				 
+								 
+							</ul>
+						</div>
+						</div>
+						
+						</div>
+						 
+					</div>
+					<div class="clear">
+						<div class="buttons">
+							<a href="javascript:void(0)" class="button button-submit">提交</a>
+						</div>
+					</div>
+				</div>
+			</div><!-- end judge -->
+			<div class="tab-frame subject-frame"><!--  start  subject-->
+				<div class="mod-tabpanel">
+					<div class="tabpanel-editor">
+						<h2> <span>Step1、</span>题目基本信息</h2>	
+						<div class="combolist">
+							<label for="">学院：</label>
+							<input  type="text" readonly  class="input-field t-college"/>
+							<label for="">课程：</label>
+							<span class="select"><input type="text" readonly class="select-field"><i>▼</i>
+								<ul>
+								  <li><a href="#">会话失效，重新登录 </a></li>
+								  
+								</ul>
+							</span>
+						</div>
+						<h2> <span>Step2、</span>输入题干</h2>	
+						<div class="editor-wrapper">
+						   <textarea name="content" style="width:590px;height:300px;"></textarea>						
+						</div>
+						<h2> <span>Step3、</span>输入答案</h2>	
+						<div class="answer-wrapper">
+						   <textarea name="content" id="subject-answer" style="width:590px;height:300px;"></textarea>						
+						</div>
+					</div>
+					<div class="tabpanel-console">
+						 
+						<h2> <span>Step4、</span>添加知识点</h2>
+						<div class="tag-container">
+							<div class="mod-tag-wrapper">
+							<div class="mod-tag-body" >
+								<ul class="tag-item-list" >
+									<li class="tag-item">
+										<span class="tag-name">简单标签</span>
+										<a href="#" title="删除" class="tag-close" onclick="return false;">×</a>
+									</li>						 
+								</ul>
+							</div>
+							<input id="tagInput" placeholder="添加标签，以逗号或回车隔开" class="tag-cursor"
+							type="text" autocomplete="off" />
+							<div class="complete-wrapper">
+							<ul class="complete-list">				 
+								 
+							</ul>
+						</div>
+						</div>
+						
+						</div>
+						 
+					</div>
+					<div class="clear">
+						<div class="buttons">
+							<a href="javascript:void(0)" class="button button-submit">提交</a>
+						</div>
+					</div>
+				</div>
+			</div><!-- end subject -->
+		</div>
+	</div>
+	<script type="text/javascript" src="../static/js/topicCore.js"></script>
+	<script type="text/javascript">
+		KindEditor.ready(function(K) {
+			K.create('textarea[name="content"]', {
+				resizeType: 1,
+				allowPreviewEmoticons: false,
+				minHeight: 220,
+				//cssPath: '../ke/plugins/code/prettify.css',
+				uploadJson: '../ke/jsp/upload_json.jsp',
+				fileManagerJson: '../ke/jsp/file_manager_json.jsp',
+				allowPreviewEmoticons: false,
+				pasteType: 1, //设置粘贴类型，0:禁止粘贴, 1:纯文本粘贴, 2:HTML粘贴
+				items: [
+					'undo', 'redo', 'cut', 'copy', 'paste', '|',
+					'plainpaste', 'wordpaste', '|',
+					'removeformat', 'underline', 'selectall', 'clearhtml', '|',
+					'table', 'code', 'image', '|',
+					'source', '|', 'fullscreen', 'preview', 'about'],
+				afterCreate: function() {
+
+				}
+			});
+			var blankKE=K.create('#blank-editor', {
+				resizeType: 1,
+				allowPreviewEmoticons: false,
+				minHeight: 220,
+				//cssPath: '../ke/plugins/code/prettify.css',
+				uploadJson: '../ke/jsp/upload_json.jsp',
+				fileManagerJson: '../ke/jsp/file_manager_json.jsp',
+				allowPreviewEmoticons: false,
+				pasteType: 1, //设置粘贴类型，0:禁止粘贴, 1:纯文本粘贴, 2:HTML粘贴
+				items: [
+					'undo', 'redo', 'cut', 'copy', 'paste', '|',
+					'plainpaste', 'wordpaste', '|',
+					'removeformat', 'underline', 'selectall', 'clearhtml', '|',
+					'table', 'code', 'image', '|',
+					'source', '|', 'fullscreen', 'preview', 'about'],
+				afterCreate: function() {
+
+				}
+			});
+			eUserInfo = top.window.eUserInfo || {};
+			$('.tab-frame .t-college').val(eUserInfo.college.name).data("collegeid", eUserInfo.collegeid);
+			var course = topicCore.course.create($('.select'), {
+				id: eUserInfo.id || -111,
+				url: "../teacher/course/list.do",
+				store: []
+			});
+			var radio = topicCore.radio.create($('.radio-frame .options-panel'), null);
+			var checkbox = topicCore.checkbox.create($('.checkbox-frame .options-panel'), {optLenth:5});
+			var blank = topicCore.blank.create($('.blank-frame .options-panel') ,{ke:blankKE});
+			var judge = topicCore.judge.create($('.judge-frame .options-panel') );
+			var tag = topicCore.tag.create($('.tag-container'), {
+				url: "/test/taglist.json"
+			});
+
+			$('.tab-bar').click(function() {
+				$(this).addClass('active').siblings().removeClass('active');
+				var index = $(this).index('.tab-bar');
+				$('.tab-frame').hide().eq(index).show();
+			}).eq(0).trigger('click');
+
+			$('.button-submit').click(function(e) {
+				 
+				var type = $(".tab-bar.active").attr("data-type");
+				var options = [];
+				var answer="";
+				var index = parseInt(type) - 1;
+				var editor = null;
+				if (type == 1) {
+					options = radio.getOptions();
+					answer=radio.getAnswer();
+					if (topicCore.util.checkOptions(options) == false) {
+						alert('检测到空选项');
+						return;
+					}
+				}
+				if (type == 2) {
+					options = checkbox.getOptions();
+					answer=checkbox.getAnswer();
+					if (topicCore.util.checkOptions(options) == false) {
+						alert('检测到空选项');
+						return;
+					}
+				}
+				if(type==3){
+					answer=blank.getBlanks();
+					var inputList=topicCore.util.getBlankList('#blank-editor-wrapper');
+					if(answer.length!=inputList.length){
+						alert('检测到输入框数目不合理');
+						return false;
+					}
+					if (topicCore.util.checkOptions(answer) == false) {
+						alert('检测到输入框为空');
+						return;
+					}
+					editor = $('.editor-wrapper').eq(index).find("iframe").contents().find("body");
+					editor.find('input[type=text]').removeAttr('value');
+					editor.find('input[type=text]').replaceWith("<input type='text' value='' />");
+					debugger;
+				}
+                if (type == 4) {
+					answer = judge.getChecked();	
+
+				}
+				if (type ==5) {
+					answer = $('.answer-wrapper').find("iframe").contents().find("body").html();					 
+				}
+				
+				  editor = $('.editor-wrapper').eq(index).find("iframe").contents().find("body");
+				 
+				var topic = topicCore.proxy.getTopic({
+					type: type,
+					courseid: course.getValue(index).cid,
+					stem: {
+						title: editor.html(),
+						option: options||[]
+					},
+					kp: tag.getTags($('.tab-frame').eq(index).find('.tag-item-list'))||'',
+					answer: answer 
+				});
+
+				topicCore.proxy.submitTopic(topic, "../" + eDomain.getURL("question/add"), {
+					ke: editor,
+					tag: $('.mod-tag-wrapper').eq(index),
+					opt: $(".options-panel").eq(index)
+				});
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+	success: true,
+	msg: "",
+	data: {
+		total: 222,
+		data: [{
+			id: "jackiezhangjie",
+			name: '张杰',
+			collegeid: 1,
+			college: "计算机"
+		}, {
+			id: "lixiaoliu",
+			name: '李晓牛',
+			collegeid: 2,
+			college: "旅游管理"
+		}]
+	}
+}

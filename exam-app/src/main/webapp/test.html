@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title></title>
+	 <style type="text/css">
+	ul,ol {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.topic-item {
+	font-size:12px;
+	background:#EFEFEF;
+	margin:4px 12px;
+	border-radius:8px;
+}
+.topic-item:hover {
+	background:#ddd;
+}
+.topic-item-header {
+	position:relative;
+	height:2px;
+}
+.topic-item-id {
+	position:absolute;
+	left:12px;
+	top:8px;
+}
+.topic-item-operation {
+	position:absolute;
+	right:16px;
+	top:8px;
+}
+.topic-item-edit,.topic-item-delete {
+	cursor:pointer;	
+}
+.topic-item-edit {
+	margin-right:16px;
+}
+.topic-item-edit:hover{
+	color:green;
+}
+.topic-item-delete:hover{
+	color:red;
+}
+.topic-item-body {
+	padding:12px 120px 0px 36px;
+}
+
+.topic-item-options {
+	padding:6px  16px;
+}
+.topic-item-options li {
+	margin-bottom:2px;
+}
+.topic-item-options li label {
+	margin-right:4px;
+}
+.topic-item-footer {
+	position:relative;
+	padding:0 0 6px 36px;
+	height:16px;
+}
+.topic-item-msg-rating {
+	margin-left:20px;
+}
+.add-to-a4 {
+	position:absolute;
+	right:16px;
+	padding:4px;
+	background:#ddd;
+	cursor:pointer;
+	top:-8px;
+}
+span.add-to-a4:hover {
+	background:orange;
+	font-weight:bold;
+}
+/**
+ * 查看试卷，模仿购物车
+ */
+#scanPaper{
+	width:100px;
+	height:100px;
+	background-color: #FFB515;
+	padding:8px;
+	border-radius:8px;
+
+	color: #FEF4E9;
+	border: solid 1px #DA7C0C;
+	background: #F78D1D;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FAA51A), to(#F47A20));
+	background: -moz-linear-gradient(top, #FAA51A, #F47A20);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#faa51a", endColorstr="#f47a20");	
+	zoom: 1;
+	vertical-align: baseline;
+	margin: 0 2px;
+	outline: none;
+	cursor: pointer;
+	text-decoration: none;
+
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .2); 
+}
+#scanPaper:hover{
+	background: #F47C20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F88E11), to(#F06015));
+	background: -moz-linear-gradient(top, #F88E11, #F06015);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f88e11", endColorstr="#f06015");
+}
+#scanPaper .a4-header{
+	height:30px;
+	border-bottom:1px solid #ddd;
+}
+#scanPaper .a4-header a{
+	line-height:30px;
+	float:left;
+	height:100%;
+	width:100%;
+	text-decoration:none;
+	color:#FEF4E9;
+}
+#scanPaper .a4-header a:hover{
+	color:#111;
+}
+#scanPaper .a4-content{
+	color:#ddd;
+	height:16px;
+	padding:4px;
+}
+#scanPaper .a4-content span:hover{
+	color:red;
+}
+#scanPaper .a4-footer{
+	position:relative;
+	height:16px;
+}
+#scanPaper .a4-footer .a4-delete{
+	position:absolute;
+	right:0px;
+	top:-18px;
+	font-size:10px;
+	-webkit-text-size-adjust:none;
+	color:#a66c00;
+	text-align:center;
+	line-height:16px;
+	text-decoration:none;
+	width:16px;
+	height:16px;
+	border-radius:8px;
+	background:#bf8d30;
+}
+#scanPaper .a4-footer .a4-delete:hover{
+	color:red;
+	background:#fff;
+	text-shadow:0 0 0 transparent, 0 1px 1px #FF0;
+}
+	</style>
+</head>
+<body>
+	<div class="navi-item">
+		<span>jdjd</span>
+		 <img src="http://localhost/apps/exam/static/img/datiqin.jpg" alt="" width=100 /> 
+	</div>
+	<hr />
+	 
+ 	<div class="topic-item">
+		<div class="topic-item-header">
+			<span class="topic-item-id">12.</span>
+			<div class="topic-item-operation">
+				<span class="topic-item-edit">✎编辑</span>
+				<span class="topic-item-delete">×删除</span>
+			</div>
+		</div>		
+		<div class="topic-item-body">
+			<div class="topic-item-desc">			
+				 fdsafkjad地方能看见阿斯顿回复fdsafkjad地方能看见阿斯顿回复fdsafkjad地方能看见阿斯顿回复fdsafkjad地方能看见阿斯顿回复fdsafkjad地方能看见阿斯顿回复fdsafkjad地方能看见阿斯顿回复  放大镜看撒范德萨放大镜看撒范德萨放大镜看撒范德萨放大镜看撒范德萨放大镜看撒范德萨放大镜看撒范德萨放大镜看撒范德萨放大镜看撒范德萨放大镜看撒范德萨放大镜看撒范德萨 
+			</div>
+			<ul class="topic-item-options">
+				<li><label  >A.</label><span>dsafkjad地方能看见阿斯顿回复  放大镜看</span></li>
+				<li><label  >B.</label><span>dsafkjad地方能看见阿斯顿回复  放大镜看</span></li>
+				<li><label  >C.</label><span>dsafkjad地方能看见阿斯顿回复  放大镜看</span></li>		
+				<li><label  >D.</label><span>dsafkjad地方能看见阿斯顿回复  放大镜看</span></li>		
+			</ul>			
+		</div>
+		<div class="topic-item-footer">
+			<span>参考答案：A</span>
+			<span class="topic-item-msg-rating">难度系数：5</span>
+			<span class="add-to-a4">添加到A4纸</span>
+		</div>
+	</div>
+	<hr />
+	<div id="scanPaper">
+		<div class="a4-header">
+			<a target="_blank" href="html/paper.html">查看试卷</a>
+		</div>
+		<div class="a4-content">
+			<span>(+4)</span>
+		</div>
+		<div class="a4-footer">
+			<a href="#" class="a4-delete" title="删除试卷">╳</a>
+		</div>
+	</div>
+	<hr />
+	<div>
+		<form action="hobby/update" method='post'>
+			<input type='checkbox'	name='hobby' value='1' /> 	<br />
+			<input type='checkbox'	name='hobby' value='2' /> 	<br />
+			<input type='checkbox'	name='hobby' value='3' /> 	<br />
+			<input type='checkbox'	name='hobby' value='4' /> 	<br />
+			<input type="submit" />
+		</form>
+	</div>
+</body>
+</html>

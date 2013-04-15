@@ -1,0 +1,452 @@
+//radio
+/*{
+	success: true,
+	msg: "",
+	data:{
+	total:100,
+	data: [{
+		id: 12,
+		type:'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	},{
+		id: 11,
+		type:'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	},{
+		id: 10,
+		type:'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	},{
+		id: 9,
+		type:'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	},{
+		id: 8,
+		type:'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	},{
+		id: 7,
+		type:'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	},{
+		id: 6,
+		type:'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	},{
+		id: 5,
+		type:'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	},{
+		id: 4,
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	},{
+		id: 3,
+		type:'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	},{
+		id: 2,
+		type:'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	},{
+		id: 1,
+		type:'radio',
+		desc: "单选题单选题单选题单选题单选题单选题单选题单选题单选题单选题",
+		answer:'C',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'}
+		],
+		rating:3
+	}]
+	}
+}*/
+
+//checkbox
+/*{
+	success: true,
+	msg: "",
+	data:{
+	total:100,
+	data: [{
+		id: 1,
+		type:'checkbox',
+		desc: "多选题多选题多选题多选题多选题多选题多选题多选题",
+		answer:'CE',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'},
+			{label:"E",text:'选A就错了'},
+			{label:"F",text:'选A就错了啊'},
+		],
+		rating:4
+	},{
+		id: 2,
+		type:'checkbox',
+		desc: "多选题多选题多选题多选题多选题多选题多选题多选题",
+		answer:'CE',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'},
+			{label:"E",text:'选A就错了'},
+			{label:"F",text:'选A就错了啊'},
+		],
+		rating:4
+	},{
+		id:3,
+		type:'checkbox',
+		desc: "多选题多选题多选题多选题多选题多选题多选题多选题",
+		answer:'CE',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'},
+			{label:"E",text:'选A就错了'},
+			{label:"F",text:'选A就错了啊'},
+		],
+		rating:4
+	},{
+		id: 4,
+		type:'checkbox',
+		desc: "多选题多选题多选题多选题多选题多选题多选题多选题",
+		answer:'CE',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'},
+			{label:"E",text:'选A就错了'},
+			{label:"F",text:'选A就错了啊'},
+		],
+		rating:4
+	},{
+		id: 5,
+		type:'checkbox',
+		desc: "多选题多选题多选题多选题多选题多选题多选题多选题",
+		answer:'CE',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'},
+			{label:"E",text:'选A就错了'},
+			{label:"F",text:'选A就错了啊'},
+		],
+		rating:4
+	},{
+		id: 6,
+		type:'checkbox',
+		desc: "多选题多选题多选题多选题多选题多选题多选题多选题",
+		answer:'CE',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'},
+			{label:"E",text:'选A就错了'},
+			{label:"F",text:'选A就错了啊'},
+		],
+		rating:4
+	},{
+		id: 7,
+		type:'checkbox',
+		desc: "多选题多选题多选题多选题多选题多选题多选题多选题",
+		answer:'CE',
+		options: [
+			{label:"A",text:'选A不能选B'},
+			{label:"B",text:'选C不能选A'},
+			{label:"C",text:'选A就错了'},
+			{label:"D",text:'选B不能选D'},
+			{label:"E",text:'选A就错了'},
+			{label:"F",text:'选A就错了啊'},
+		],
+		rating:4
+	}]
+	}
+}*/
+//judge
+/*{
+	success: true,
+	msg: "",
+	data: {
+		total: 100,
+		data: [{
+			id: 1,
+			type: 'judge',
+			desc: "判断题判断题判断题判断题判断题",
+			answer: false,
+			rating: 3
+		}, {
+			id: 2,
+			type: 'judge',
+			desc: "判断题判断题判断题判断题判断题",
+			answer: false,
+			rating: 3
+		}, {
+			id: 3,
+			type: 'judge',
+			desc: "判断题判断题判断题判断题判断题",
+			answer: true,
+			rating: 3
+		}, {
+			id: 4,
+			type: 'judge',
+			desc: "判断题判断题判断题判断题判断题",
+			answer: false,
+			rating: 3
+		}, {
+			id: 5,
+			type: 'judge',
+			desc: "判断题判断题判断题判断题判断题",
+			answer: true,
+			rating: 3
+		}, {
+			id: 6,
+			type: 'judge',
+			desc: "判断题判断题判断题判断题判断题",
+			answer: false,
+			rating: 3
+		}]
+	}
+}*/
+
+//blank
+
+/*{
+	success: true,
+	msg: "",
+	data: {
+		total: 100,
+		data: [{
+			id: 1,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2：<input type='text' />",
+			answer: ['输入框1答案', '输入框2答案'],
+			rating: 3
+		}, {
+			id: 2,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2：<input type='text' />",
+			answer: ['输入框1答案', '输入框2答案'],
+			rating: 3
+		}, {
+			id: 3,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2：<input type='text' />",
+			answer: ['输入框1答案', '输入框2答案'],
+			rating: 3
+		}, {
+			id: 4,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2：<input type='text' />",
+			answer: ['输入框1答案', '输入框2答案'],
+			rating: 3
+		}, {
+			id: 5,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2：<input type='text' />",
+			answer: ['输入框1答案', '输入框2答案'],
+			rating: 3
+		}, {
+			id: 6,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2：<input type='text' />",
+			answer: ['输入框1答案', '输入框2答案'],
+			rating: 3
+		}, {
+			id: 7,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方<input type='text' />",
+			answer: ['输入框1答案', '输入框2答案'],
+			rating: 3
+		}, {
+			id: 8,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2 <input type='text' />ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方",
+			answer: ['输入框1答案', '输入框2答案', '输入框3答案'],
+			rating: 3
+		}, {
+			id: 9,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2 <input type='text' />ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方",
+			answer: ['输入框1答案', '输入框2答案' ],
+			rating: 3
+		}, {
+			id: 10,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2 <input type='text' />ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方",
+			answer: ['输入框1答案', '输入框2答案' ],
+			rating: 3
+		}, {
+			id: 11,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2 <input type='text' />ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方",
+			answer: ['输入框1答案', '输入框2答案' ],
+			rating: 3
+		}, {
+			id: 12,
+			type: 'blank',
+			desc: "填空题，输入框1：<input type='text' />输入框2 <input type='text' />ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方ds地方地方",
+			answer: ['输入框1答案', '输入框2答案' ],
+			rating: 3
+		}]
+	}
+}
+*/
+//subject
+{
+	success: true,
+	msg: "",
+	data: {
+		total: 100,
+		data: [{
+			id: 1,
+			type: 'subject',
+			desc: "简答题简单",
+			answer: '来点靠谱的解释',
+			rating: 3
+		},{
+			id: 2,
+			type: 'subject',
+			desc: "简答题简单",
+			answer: '来点靠谱的解释',
+			rating: 3
+		},{
+			id: 3,
+			type: 'subject',
+			desc: "简答题简单",
+			answer: '来点靠谱的解释',
+			rating: 3
+		},{
+			id: 4,
+			type: 'subject',
+			desc: "简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单",
+			answer: '来点靠谱的解释',
+			rating: 5
+		},{
+			id: 5,
+			type: 'subject',
+			desc: "简答题简单",
+			answer: '来点靠谱的解释',
+			rating: 3
+		},{
+			id: 6,
+			type: 'subject',
+			desc: "简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单",
+			answer: '来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释',
+			rating: 1
+		},{
+			id: 7,
+			type: 'subject',
+			desc: "简答题简单",
+			answer: '来点靠谱的解释',
+			rating: 3
+		},{
+			id: 8,
+			type: 'subject',
+			desc: "简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单",
+			answer: '来点靠谱的解释',
+			rating: 4
+		},{
+			id: 9,
+			type: 'subject',
+			desc: "简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单简答题简单",
+			answer: '来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释来点靠谱的解释',
+			rating: 3
+		},]
+	}
+}

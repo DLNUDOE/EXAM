@@ -1,0 +1,305 @@
+ {
+ 	"success": true,
+ 	"data": [{
+ 		"id": 43,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "这是一道单选题这是一道单选题这是一道单选题这是一道单选题这是一道单选题这是一道单选题这是一道单选题这是一道单选题这是一道单选题这是一道单选题这是一道单选题",
+ 			"option": ["sdf", "asdf", "asasdf", "asdfas"]
+ 		},
+ 		"answer": "B",
+ 		"kp": "无向图"
+ 	}, {
+ 		"id": 42,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsafasd",
+ 			"option": ["fdsaf", "asdfa", "sdfasdfasd"]
+ 		},
+ 		"answer": "D",
+ 		"kp": "简单标签,红黑树"
+ 	}, {
+ 		"id": 41,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fds",
+ 			"option": ["fdsaf", "sdf", "asdfasdf"]
+ 		},
+ 		"answer": "A",
+ 		"kp": "简单标签,图"
+ 	}, {
+ 		"id": 40,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsfasd",
+ 			"option": ["fdsaf", "asdf", "asdfadfasd"]
+ 		},
+ 		"answer": "C",
+ 		"kp": "简单标签,图"
+ 	}, {
+ 		"id": 39,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fsadfasdf",
+ 			"option": ["fdsaf", "asdfas", "df"]
+ 		},
+ 		"answer": "C",
+ 		"kp": "简单标签,图"
+ 	}, {
+ 		"id": 38,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsfasd",
+ 			"option": ["fdsaf", "fdsaf", "fdsafad"]
+ 		},
+ 		"answer": "C",
+ 		"kp": "简单标签,图"
+ 	}, {
+ 		"id": 37,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsfasdf",
+ 			"option": ["fdsaf", "fdasfasdf", "dfsaf"]
+ 		},
+ 		"answer": "C",
+ 		"kp": "二叉树"
+ 	}, {
+ 		"id": 36,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsaf",
+ 			"option": ["dsfa", "sdfasdf", "asdfsadf"]
+ 		},
+ 		"answer": "A",
+ 		"kp": "简单标签,红黑树"
+ 	}, {
+ 		"id": 35,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "dfasdfasd",
+ 			"option": ["asdfasdf", "asdf", "fdsaf"]
+ 		},
+ 		"answer": "C",
+ 		"kp": "有向图三角形余弦定理无向图,有向图三角形余弦定理无向图,有向图三角形余弦定理无向图"
+ 	}, {
+ 		"id": 34,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsfasd",
+ 			"option": ["fdsa", "fasdf", "asdfasdfa"]
+ 		},
+ 		"answer": "C",
+ 		"kp": "简单标签红黑树,简单标签红黑树"
+ 	}, {
+ 		"id": 33,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "dfsafsdfasd",
+ 			"option": ["fasdfsad", "fds", "fdsfasd"]
+ 		},
+ 		"answer": "B",
+ 		"kp": "二叉树"
+ 	}, {
+ 		"id": 32,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsaf",
+ 			"option": ["fdsaf", "dsfad", "f"]
+ 		},
+ 		"answer": "B",
+ 		"kp": "简单标签"
+ 	}, {
+ 		"id": 31,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsfasdfasd",
+ 			"option": ["fdsaf", "dfasf", "dafsdfasd"]
+ 		},
+ 		"answer": "C",
+ 		"kp": "简单标签红黑树,简单标签红黑树"
+ 	}, {
+ 		"id": 30,
+ 		"type": 1,
+ 		"courseid": 12,
+ 		"stem": {
+ 			"title": "fdsfasdf",
+ 			"option": ["dfasdf", "fdsfasdf", "dfsafsdfsad", "fdsfasd"]
+ 		},
+ 		"answer": "A",
+ 		"kp": "简单标签红黑树,简单标签红黑树"
+ 	}, {
+ 		"id": 29,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsfasdfadf",
+ 			"option": ["fdsaf", "dfas", "fsdfasd"]
+ 		},
+ 		"answer": "C",
+ 		"kp": "简单标签红黑树,简单标签红黑树"
+ 	}, {
+ 		"id": 28,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsfasdfadf",
+ 			"option": ["fdsaf", "dfas", "fsdfasd"]
+ 		},
+ 		"answer": "C",
+ 		"kp": "简单标签红黑树,简单标签红黑树"
+ 	}, {
+ 		"id": 27,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsfasdfadf",
+ 			"option": ["fdsaf", "dfas", "fsdfasd"]
+ 		},
+ 		"answer": "C",
+ 		"kp": "简单标签红黑树,简单标签红黑树"
+ 	}, {
+ 		"id": 26,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsfasdfasdf",
+ 			"option": ["dfasd", "fdsaf", "dsfadf", "fdsafasdf"]
+ 		},
+ 		"answer": "C",
+ 		"kp": "简单标签红黑树,简单标签红黑树"
+ 	}, {
+ 		"id": 25,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsafasd",
+ 			"option": ["fdsafasd", "fdsafasdf", "dfsafsd", "fdsafasdfasd", "fdsafsdf", "fdsfasdf", "fdsafdsfasd"]
+ 		},
+ 		"answer": "B",
+ 		"kp": "简单标签图红黑树无向图,简单标签图红黑树无向图,简单标签图红黑树无向图,简单标签图红黑树无向图"
+ 	}, {
+ 		"id": 24,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "fdsafasd",
+ 			"option": ["fdsafasd", "fdsafasdf", "dfsafsd", "fdsafasdfasd", "fdsafsdf", "fdsfasdf", "fdsafdsfasd"]
+ 		},
+ 		"answer": "B",
+ 		"kp": "简单标签图红黑树无向图,简单标签图红黑树无向图,简单标签图红黑树无向图,简单标签图红黑树无向图"
+ 	}, {
+ 		"id": 23,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "dfasdfasd",
+ 			"option": [12, 23, 4]
+ 		},
+ 		"answer": "[{"
+ 		type ":1,"
+ 		answer ":"
+ 		"},{"
+ 		type ":3,"
+ 		answer ":["空一
+ 		","空二
+ 		","空三
+ 		","空四
+ 		","空五
+ 		"]}]",
+ 		"kp": "知识点一,知识点二"
+ 	}, {
+ 		"id": 22,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "dfasdfasd",
+ 			"option": [12, 23, 4]
+ 		},
+ 		"answer": "[{"
+ 		type ":1,"
+ 		answer ":"
+ 		"},{"
+ 		type ":3,"
+ 		answer ":["空一
+ 		","空二
+ 		","空三
+ 		","空四
+ 		","空五
+ 		"]}]",
+ 		"kp": "知识点一,知识点二"
+ 	}, {
+ 		"id": 21,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "dfasdfasd",
+ 			"option": [12, 23, 4]
+ 		},
+ 		"answer": "[{"
+ 		type ":1,"
+ 		answer ":"
+ 		"},{"
+ 		type ":3,"
+ 		answer ":["空一
+ 		","空二
+ 		","空三
+ 		","空四
+ 		","空五
+ 		"]}]",
+ 		"kp": "知识点一,知识点二"
+ 	}, {
+ 		"id": 20,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "我的单选题问题 ",
+ 			"option": ["选项A", "选项B", "选项C", "选项D"]
+ 		},
+ 		"answer": "A",
+ 		"kp": "知识点一,知识点二"
+ 	}, {
+ 		"id": 19,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "我的单选题问题 ",
+ 			"option": ["选项A", "选项B", "选项C", "选项D"]
+ 		},
+ 		"answer": "A",
+ 		"kp": "知识点一,知识点二"
+ 	}, {
+ 		"id": 18,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "我的单选题问题 ",
+ 			"option": ["选项A", "选项B", "选项C", "选项D"]
+ 		},
+ 		"answer": "A",
+ 		"kp": "知识点一,知识点二"
+ 	}, {
+ 		"id": 11,
+ 		"type": 1,
+ 		"courseid": 2,
+ 		"stem": {
+ 			"title": "我的单选题问题 ",
+ 			"option": ["选项A", "选项B", "选项C", "选项D"]
+ 		},
+ 		"answer": "A",
+ 		"kp": "知识点一,知识点二"
+ 	}],
+ 	"total": 27
+ }

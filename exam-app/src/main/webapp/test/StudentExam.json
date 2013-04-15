@@ -1,0 +1,78 @@
+{
+          "success": true,
+          "data": [
+                    {
+                              "stuid": "2009081427",
+                              "name": "余成海",
+                              "collegename": "测试学院",
+                              "clazz": "测试班级1",
+                              "major": "测试专业",
+                              "status": "0"
+                    },
+                    {
+                              "stuid": "2009081430",
+                              "name": "张三",
+                              "collegename": "测试学院",
+                              "clazz": "测试班级1",
+                              "major": "测试专业",
+                              "status": "0"
+                    },
+                    {
+                              "stuid": "2009099901",
+                              "name": "测试1",
+                              "collegename": "测试学院",
+                              "clazz": "测试班级2",
+                              "major": "测试专业",
+                              "status": "0"
+                    },
+                    {
+                              "stuid": "2009099902",
+                              "name": "测试2",
+                              "collegename": "测试学院",
+                              "clazz": "测试班级2",
+                              "major": "测试专业",
+                              "status": "0"
+                    },
+                    {
+                              "stuid": "2009099903",
+                              "name": "测试3",
+                              "collegename": "测试学院",
+                              "clazz": "测试班级2",
+                              "major": "测试专业",
+                              "status": "0"
+                    },
+                    {
+                              "stuid": "2009099904",
+                              "name": "测试4",
+                              "collegename": "测试学院",
+                              "clazz": "测试班级2",
+                              "major": "测试专业",
+                              "status": "0"
+                    },
+                    {
+                              "stuid": "2009099905",
+                              "name": "测试5",
+                              "collegename": "测试学院",
+                              "clazz": "测试班级2",
+                              "major": "测试专业",
+                              "status": "0"
+                    },
+                    {
+                              "stuid": "2009099906",
+                              "name": "测试6",
+                              "collegename": "测试学院",
+                              "clazz": "测试班级1",
+                              "major": "测试专业",
+                              "status": "0"
+                    },
+                    {
+                              "stuid": "2009099907",
+                              "name": "测试7",
+                              "collegename": "测试学院",
+                              "clazz": "测试班级1",
+                              "major": "测试专业",
+                              "status": "0"
+                    }
+          ],
+          "total": 14
+}

@@ -1,0 +1,320 @@
+body
+{
+  font:12px/1.125 Arial,Helvetica,sans-serif;
+  font-family:"Microsoft Yahei";
+  background:#EDEFF1;
+  position:relative;
+  margin:0;
+  padding:0;
+}
+a{text-decoration: none}
+#header
+{
+  width:100%;
+  height:65px;
+  background:#124062;
+  position:relative;
+  margin:0;
+}
+
+.head
+{
+  padding-top:5px;
+  width:900px;
+  overflow:hidden;
+  zoom:1;
+  margin:0 auto;
+}
+
+.logo
+{
+  background :url(../img/client/list-logo.png) 0 0 no-repeat;
+ _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="../img/client/list-logo.png");
+  _background-image: none;
+  height:50px;
+  width:296px;
+  text-indent:-9999px;
+  float:left;
+  margin:0;
+  padding:0;
+}
+
+#content
+{
+  padding-top:20px;
+  margin:0;
+}
+
+.examlist
+{
+  width:900px;
+  background:#EDEFF1;
+  margin:0 auto;
+  padding:0;
+}
+
+.listhead
+{
+  font-size:16px;
+  color:#0F3D5E;
+}
+
+.list
+{
+  width:100%;
+  margin-bottom:100px;
+}
+
+.list th
+{
+  background:#DFE2E4;
+  border:1px solid #C6C8CB;
+  font-size:16px;
+  font-weight:400;
+  color:#0F3D5E;
+  padding:10px;
+}
+
+.list td
+{
+  background:#F6F6F6;
+  border:1px solid #E1E1E1;
+  text-align:center;
+  padding:10px;
+}
+
+.description
+{
+  font-size:14px;
+}
+
+#footer
+{
+  margin-top:40px;
+  width:100%;
+  text-align:center;
+  font-size:12px;
+  font-weight:700;
+  color:#708090;
+  padding:8px 0;
+}
+
+#footer span:hover
+{
+  color:#7E9CAF;
+}
+
+.user
+{
+  color:#fff;
+  float:right;
+  margin-top:15px;
+  padding-left:160px;
+}
+
+.userInfo
+{
+  background:none;
+  font-weight:700;
+  text-decoration:none;
+  color:#6C3;
+  cursor:pointer;
+  padding:2px 2px 2px 22px;
+}
+
+.userInfo:hover
+{
+  background-position:0 -20px;
+}
+
+.quit
+{
+  margin-left:20px;
+  text-decoration:none;
+  color:#fff;
+  cursor:pointer;
+}
+
+.quit:hover
+{
+  color:#6C3;
+}
+
+.go-exam
+{
+  text-align:center;
+  letter-spacing:2px;
+  width:88px;
+  font:normal normal bold 14px/28px Arial;
+  border:none;
+  background:#DFE2E4;
+  color:#124062;
+  cursor:pointer;
+}
+
+input.go-exam:hover
+{
+  background:#3775C7;
+  color:#fff;
+}
+
+#about-us
+{
+  margin-left:20px;
+}
+
+#about-us a
+{
+  color:#708090;
+  font-family:"Microsoft Yahei";
+  text-decoration:none;
+}
+
+#about-us a:hover
+{
+  text-decoration:underline;
+}
+
+</style>
+<style type=text/css>
+body
+{
+  font:16px/1.125 Arial, Helvetica, sans-serif;
+  font-family:"Microsoft Yahei";
+  background:#EDEFF1;
+  position:relative;
+  margin:0;
+  padding:0;
+}
+#mask{
+  _filter: Alpha(Opacity=50);
+  display:none;_width:100%;_height:100%;position:absolute;left:0;top:0;right:0;bottom:0;background:#000;opacity:0.618;
+}
+#dlg
+{
+  width: 610px;
+position: absolute;
+top: 250px;
+left: 200px;
+z-index: 10000;
+ 
+background: #fff;
+border: 1px solid #eee;
+box-shadow: 0 0 28px 0px #000;
+}
+
+#dlg-content
+{
+  position:relative;
+  padding: 12px;
+}
+ 
+
+#dlg-title
+{
+  position: relative;
+border-bottom: 1px solid #ddd;
+padding-bottom: 12px;
+
+}
+
+#dlg-title h2
+{
+   margin: 0;
+  font-weight: normal;
+   
+}
+
+#close
+{
+font: normal normal normal 16px Arial;
+color: #ddd;
+position: absolute;
+top: 0;
+right: 8px;
+cursor: pointer;
+z-index: 10000;
+}
+
+#close:hover
+{
+  font-weight:bold;
+  color:#000;
+}
+
+#dlg-body
+{
+  background-repeat:repeat-y;
+  background-position:-623px;
+  padding:12px 30px 12px 30px;
+}
+
+#desc,#duration
+{
+  font:normal normal normal 16px/20px Arial;
+  color:#1E1E1E;
+  margin-top: 12px;
+}
+
+#dlg-body #time
+{
+  font-size: 14px ;
+  color:orange;
+  margin-top: 20px;
+}
+
+#dlg-foot
+{
+  height:10px;
+  position:relative;
+  background-position:-5px -4px;
+  padding:4px;
+  height: 40px;
+}
+
+#dlg-foot input
+{
+  cursor:pointer;
+  color:#E8E8E8;
+  position:absolute;
+  top:0;
+  border:none;
+  text-align:center;
+  letter-spacing:4px;
+  width:88px;
+  font:normal normal bold 14px/32px Arial;
+  background:#6CA6CD;
+}
+
+#auto-go
+{
+  color:#1E1E1E;
+  zoom:1;
+  overflow:auto;
+}
+
+#auto-go label,#auto-go input
+{
+  float:left;
+  font-size:12px;
+  line-height:18px;
+}
+
+#dlg-foot input:hover
+{
+  color:#FFF;
+  background:#3775C7;
+}
+
+#cancel
+{
+  left:30px;
+}
+
+#ok
+{
+  right:30px;
+  top:-40px;
+  letter-spacing:2px;
+}
+

@@ -1,0 +1,11 @@
+{
+	success:true,
+	msg:"",	
+	data:[
+		{value:1,desc:'★'},
+		{value:2,desc:'★★'},
+		{value:3,desc:'★★★'},
+		{value:4,desc:'★★★★'},
+		{value:5,desc:'★★★★★'}
+	]
+}

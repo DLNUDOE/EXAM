@@ -1,0 +1,9 @@
+{
+	success:true,
+	msg:"",	
+	data:[
+		{id:11, name:"计算机科学与技术"},
+		{id:12, name:"软件工程"},
+		{id:13, name:"网络工程"}
+	]
+}

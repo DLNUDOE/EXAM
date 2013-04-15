@@ -1,0 +1,173 @@
+{
+	"success": true,
+	"data": {
+		"id": 1,
+		"title": "数据结构考试",
+		"c_time": "2013-4-1",
+		"creator": "王玲芬",
+		"cid": 1,
+		"cname": "数据结构",
+		"groups": [{
+			"title": "单选题",
+			"desc": "从ABCD选一个",
+			"questions": [{
+				"id": 11,
+				"score": 22
+			}, {
+				"id": 12,
+				"type": 1,
+				"stem": {
+					"title": "342342343地方撒发生",
+					"option": ["fdfasdfasdf等等a发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法"]
+				},
+				"kp": "",
+				"answer": "B",
+				"courseid": 1
+			}],
+			"scoreMap": {
+				"11": 3,
+				"12": 4
+			}
+		}, {
+			"title": "多选题",
+			"desc": "从ABCDEF选一个或多个",
+			"questions": [{
+				"id": 14,
+				"type": 2,
+				"stem": {
+					"title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发",
+					"option": ["fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法"]
+				},
+				"kp": "",
+				"answer": "C",
+				"courseid": 1
+			}, {
+				"id": 15,
+				"type": 2,
+				"stem": {
+					"title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发",
+					"option": ["fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法"]
+				},
+				"kp": "",
+				"answer": "C",
+				"courseid": 1
+			}],
+			"scoreMap": {
+				"14": 12
+			}
+		}, {
+			"title": "填空题",
+			"desc": "填天天天",
+			"questions": [{
+				"id": 34,
+				"type": 3,
+				"stem": {
+					"title": "多发省份试点范德萨发范德萨分<input type= \"text\"/>范德萨发送到分阿德法斯蒂芬阿斯蒂芬阿斯蒂芬"
+				},
+				"kp": "",
+				"answer": ["fdsafsd打发似的", "fdsafsd打发似的", "fdsafsd打发似的"],
+				"courseid": 1
+			}, {
+				"id": 38,
+				"type": 3,
+				"stem": {
+					"title": "多发省份试点范德萨发范德萨分<input type= \"text\"/>范德萨发送到分阿德法斯蒂芬阿斯蒂芬阿斯蒂芬"
+				},
+				"kp": "",
+				"answer": ["fdsafsd打发似的", "fdsafsd打发似的", "fdsafsd打发似的"],
+				"courseid": 1
+			}],
+			"scoreMap": {
+				"34": 12
+			}
+		}, {
+			"title": "判断题",
+			"desc": "到底",
+			"questions": [{
+				"id": 3333,
+				"type": 4,
+				"stem": {
+					"title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发"
+				},
+				"kp": "",
+				"answer": "1",
+				"courseid": 1
+			}],
+			"scoreMap": {
+				"3333": 12
+			}
+		}, {
+			"title": "主观题",
+			"desc": "这是一道主观题",
+			"questions": [{
+				"id": 3333,
+				"type": 5,
+				"stem": {
+					"title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发"
+				},
+				"kp": "",
+				"answer": "答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案",
+				"courseid": 1
+			}],
+			"scoreMap": {
+				"3333": 12,
+				"33233": 22
+			}
+		}, {
+			"title": "魔幻题",
+			"desc": "魔幻题",
+			"questions": [{
+				"id": 223,
+				"type": 1,
+				"stem": {
+					"title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发",
+					"option": ["fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法"]
+				},
+				"kp": "",
+				"answer": "答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案",
+				"courseid": 1
+			}, {
+				"id": 33233,
+				"type": 5,
+				"stem": {
+					"title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发"
+				},
+				"kp": "",
+				"answer": "答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案",
+				"courseid": 1
+			}, {
+				"id": 2223,
+				"type": 2,
+				"stem": {
+					"title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发",
+					"option": ["fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法"]
+				},
+				"kp": "",
+				"answer": "答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案",
+				"courseid": 1
+			}, {
+				"id": 3333,
+				"type": 4,
+				"stem": {
+					"title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发"
+				},
+				"kp": "",
+				"answer": "1",
+				"courseid": 1
+			}, {
+				"id": 34,
+				"type": 3,
+				"stem": {
+					"title": "多发省份试点范德萨发范德萨分<input type= \"text\"/>范德萨发送到分阿德法斯蒂芬阿斯蒂芬阿斯蒂芬"
+				},
+				"kp": "",
+				"answer": ["fdsafsd打发似的", "fdsafsd打发似的", "fdsafsd打发似的"],
+				"courseid": 1
+			}],
+			"scoreMap": {
+				"3333": 12,
+				"33233": 22
+			}
+		}]
+	}
+}

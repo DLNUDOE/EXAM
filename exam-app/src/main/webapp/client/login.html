@@ -1,0 +1,272 @@
+ 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>考试系统 Welcome to DLNU dream-online exam system</title>
+
+<script type="text/javascript" src="../static/js/jquery-1.8.0.js"></script>
+<script type="text/javascript" src="../static/js/jquery.ui.effect.js"></script>
+<script type="text/javascript" src="../static/js/jquery.ui.effect-shake.js"></script>
+
+<style type="text/css">
+   body{
+    font-family: "Microsoft Yahei";
+	   margin:0;
+	   padding:0;
+	   width:100%;
+	   background:#294C6A url(../static/img/client/login-bg.jpg) no-repeat 50% -326px;
+	   }
+   #logo{
+	   margin:0 auto;
+	   margin-top:200px;
+	   background-image:url(../static/img/client/login-logo.png);
+      background-repeat:no-repeat;
+	   background-position: center top;
+	   height:65px;
+	   width:385px;
+     text-indent: -9999px;  
+     _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="../static/img/client/login-logo.png");
+      _background-image: none;
+	   }
+   #login{
+	   margin:30px auto;
+	   width:556px;
+	    height: 100px;
+	   }
+   #login #inputaccount,#login #inputpsw{
+	   float:left;
+	   background-image:url(../static/img/client/inputaccount.png);
+        
+	   background-position:0 0;
+	   height:56px;
+	   width:202px;
+	   position:absolute;
+     left: 0;
+     top: 0;
+     z-index: 0;
+	   }
+       
+      #login #inputpsw{
+        
+       background-image:url(../static/img/client/inputpsw.png);
+       
+       }
+       
+
+       
+	#login .go{
+		float:left;
+	   background-image:url(../static/img/client/denglu.png);
+	   background-position:0 0;
+	   height:54px;
+	   width:150px;
+       cursor:pointer;
+  
+	   }
+	#login .inputbox{
+		width: 181px;
+        padding: 10px;
+        height: 35px;  
+        background: transparent url(../static/img/client/blank.$166.png) repeat;
+		border:0;
+        outline: none;        
+         font:normal normal bold 20px/32px Arial;
+       color:#fff;
+		position:absolute;
+		top:0;
+		left:0;
+		}
+        
+        
+    #login .submit{
+        text-indent: -9999px;
+        width: 150px;
+        height: 53px;
+        background:transparent;
+        border:none;
+        cursor: pointer;
+		}
+    #login #inputaccount:hover{background-position: 0 -96px;font-weight:bold}
+    #login #inputpsw:hover{background-position: 0 -96px;font-weight:bold}
+	#login .go:hover{
+	   background-position: 0 -53px;
+	   }
+	#footer
+	{
+		position:absolute;
+		bottom:50px;
+		width:100%;
+		text-align:center;
+		 
+		font-size:12px;
+		font-weight:bold;
+		color:#7E9Cee;
+	 }
+   #footer span:hover{
+	    color:#7E9CAF;
+		border:none;
+		font-size:12px;
+	   }
+	   
+ #reg{position: absolute;top:10px;right: 20px;font:normal normal  bold  14px Arial ;letter-spacing:2px; color:#fff;text-decoration: none}
+  #reg:hover{border-bottom: 1px solid   #fff;}
+  #about-us{margin-left:20px;}
+  #about-us a{color:#7E9Cee;font-family: "Microsoft Yahei";text-decoration: none;}
+  #about-us a:hover{text-decoration: underline;}
+  .input-wrapper{
+    height: 56px;
+    width: 202px;
+    position: relative;
+    float: left;
+  }
+</style>
+<!--[if IE 6]> 
+    <style type="text/css">
+      body{behavior:url(../static/css/csshover.htc);}
+    </style>                     
+    <script type="text/javascript" src="../static/js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript">     
+     DD_belatedPNG.fix('.input');
+     DD_belatedPNG.fix('.go');
+     </script>
+  <![endif]-->
+ 
+</head>
+
+<body>
+  <a href='reg.html' id='reg' >注册</a>
+  <h1 id="logo">考试系统Dream-Online</h1>
+  <div id="login">
+   
+    <div class="input-wrapper">
+      <a class="input" id='inputaccount'></a>
+      <input id='account' name='account'     class="inputbox" type="text" />
+    </div>
+    <div class="input-wrapper">
+       <a class="input" id='inputpsw'></a>
+       <input id='password'  name='password'   class="inputbox" type="password"  />
+    </div>
+   
+    <a class="go" id='btn-go' > </a>
+  
+  </div>
+  <div id="footer"><span>Copyright © 2008 - 2012 Dream-Online. All Rights Reserved.</span><span id='about-us'>@<a  href='#' target="_blank" >关于我们</a></span></div>
+  <script type='text/javascript'> 
+    var loginApp=(function(){
+      var illegalChar=/[,\.;\:、?\\\/"'!，。；？、\|\s]/g;
+      var onPageLoad=function(){
+        $('boyd').on('load',function(e){
+          if($('#account').val()==''){
+            document.getElementById("account").focus();
+          }
+        });
+      };
+      var onNameInput=function(){
+         $('#account').keyup(function(e){
+         
+          var txt=$(this).val();
+             $(this).val(txt.replace(  illegalChar,'')) ;
+             if(e.keyCode==13){
+                txt&&document.getElementById('password').focus();
+             }
+         });
+          $('#account').focusin(function(e){
+              $(this).prev('a').css("background-position","0px -195px");
+         });
+           $('#account').focusout(function(e){
+            var txt=$(this).val();
+              !txt&& $(this).prev('a').css("background-position","0px 0px");
+         });
+      };
+      var onPassInput=function(){
+         $('#password').focusin(function(e){
+              $(this).parent().css("background-position","0px -195px");
+         });
+           $('#password').focusout(function(e){
+              var txt=$(this).val();
+              !txt&&$(this).parent().css("background-position","0px 0px");
+         });
+         $('#password').keyup(function(e){
+             
+             if(e.keyCode==13){
+                if($('#account').val()!=''){
+                  $('#btn-go').trigger('click');
+                }
+             }
+              
+         });
+          $('#password').focusin(function(e){
+              $(this).prev('a').css("background-position","0px -195px");
+         });
+           $('#password').focusout(function(e){
+            var txt=$(this).val();
+              !txt&& $(this).prev('a').css("background-position","0px 0px");
+         });
+      };
+      var go=function(){
+        $('#btn-go').click(function(e){
+        
+          var id=$('#account').val();
+ 
+          var password=$('#password').val();
+
+          if($('#account').val()==''){
+            document.getElementById('account').focus();
+            return;
+          }
+          if($('#password').val()==''){
+            document.getElementById('password').focus();
+            return;
+          }
+          $.ajax({
+            type: "get",
+            url: "../student/login.do",
+            dataType: 'json',
+            data:{
+              user:id,
+              password:password
+            },
+            success: function(res, successful) {
+              if (!res.success) {
+                alert(res.msg);
+                return;
+              }
+              if(!res.data.pass){
+               
+               var agent=$.browser;
+                if('msie' in agent && agent.version=='6.0' ){
+                  alert('用户名或密码错误');
+                   return;
+                  }
+                $( "#login" ).effect('shake', null, 500  );
+                
+                return;
+              }              
+               location.href="../panel.html";
+            },
+            error: function(options, msg) {               
+              alert(msg);
+            }
+          });
+        });
+      };
+      var bingEvents=function(){
+        onNameInput();
+        onPassInput();
+        onPageLoad();
+        go();
+      };
+      var init=function(){
+
+        bingEvents();
+      };
+      return {
+        init:init
+      };
+    }());
+    loginApp.init();
+  </script>
+</body>
+
+</html>

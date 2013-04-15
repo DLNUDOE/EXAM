@@ -1,0 +1,19 @@
+{
+	"courseid_22":{
+		course:"计算机网络",
+		topicMap:{
+			22:{
+				id:22,stem:{title:"这是一道单选题",option:["暗暗","BBB","CCCC"]}
+			},
+			33:{
+				id:33,stem:{title:"这是一道单选题",option:["暗暗","BBB","CCCC"]}
+			},
+			44:{
+				id:44,stem:{title:"这是一道单选题",option:["暗暗","BBB","CCCC"]}
+			},		 
+			55:{
+				id:44,stem:{title:"这是一道单选题",option:["暗暗","BBB","CCCC"]}
+			}
+		}
+	}
+}

@@ -1,0 +1,1 @@
+define("output/paper/0.0.1/main",[],function(){});

@@ -1,0 +1,31 @@
+<div class="gp-topic gp-blank">
+	<h2><%index%>、<%title%></h2>
+	<h4><%desc%></h4>
+	<%each questions as item qIndex%>
+		<div class="topic-item">
+			<div class="label" data-id="<%item.id%>"><%qIndex+1%>.</div>
+			<span class="score">(<%scoreMap[item.id]%>分)</span>
+			<div class="content">
+				<div class="stem"><%echo item.stem.title%></div>
+					 
+				<div class="answer">
+					<span>答案：</span>
+					<span class="blank-aswlist"> 
+						<%each item.answer as basw%>
+							<strong  class="asw-tag"><%basw%></strong>													 
+						<%/each%>
+					</span>
+				</div>
+			</div>
+			<div class="item-op">
+				<span class="item-trigger-wrapper">
+					<span class="item-op-trigger">▼</span>
+					<ul>
+						<li><a href="#" class="mod-item">修改</a></li>
+						<li><a href="#" class="del-item">删除</a></li>
+					</ul>
+				</span>
+			</div>
+		</div>	
+	<%/each%>		 
+</div>

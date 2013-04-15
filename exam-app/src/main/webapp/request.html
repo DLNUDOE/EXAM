@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	 
+	<title>request plugin</title>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js">  </script>
+	<style type="text/css">
+		html,body{
+			margin:0;padding:0;
+		}
+		body{
+			width:960px;
+			margin:0 auto;
+			font-family:"Microsoft Yahei";
+		}
+		input{
+			padding:4px;
+		}
+		.field{
+			overflow:auto;
+			zoom:1
+		     
+		}
+		.field label{
+			width:80px;	
+			float:left;
+			display:block;
+			text-align:right;
+			padding-right:4px;	 
+		}
+		.field input,.field textarea{
+			 width:500px;
+			float:left;
+			display:block;
+			flex:2;	
+		}
+		.field textarea{
+			height:180px;
+			width:600px;
+			min-width:500px;
+		}
+	</style>
+</head>
+<body>
+	<h2>request 请求模拟插件</h2>
+
+	<div class="field"><label for="urlPrefix">urlPrefix</label> <input id='urlPrefix' type="url" value="" placeholder="打开request.html,更改config_default,如：http://localhost:8080/exam/" /> </div>
+	<div class="field"><label for="url">url:</label><input name="url"  type="text" placeholder="相对url,如：teacher/add或绝对路径，http://localhost:8080/project/paper/readlist"  id="url"/>*</div>
+	<div class="field"><label for="method">method:</label><input  name="method" type="text" id="method" placeholder="get或post" />*</div>
+	<div class="field"><label for="params">params:</label><textarea placeholder="json 如：{name:'fdsa',sex:'boy',friends:['alex','john']}" name="params" id="params" ></textarea></div>
+
+	<div  > <input type="button" id="btnSend" value='send request' style='margin-left:200px;'/></div>
+
+	<div class="field">
+		<label for="response">response:</label><textarea placeholder="result will be here！☺" id='response'></textarea>
+	</div>
+	<div style='padding-top:60px;text-align:center'>
+		DOE 2013-01-05,version reserved
+	</div>
+	<script type="text/javascript">
+	var config_default={
+		urlPrefix:"http://"+location.host,
+		method:'get',
+		params:'{}'
+	};
+	var request=(function(){
+
+		var settingInit=function(){
+			for(var pro in config_default){
+				$('#'+pro).val(config_default[pro]);
+			}
+		};
+		var sendRequest=function(){
+			$('#btnSend').click(function(e){
+				var URL='';
+				var	url=$("#url").val(),
+				 	method=$('#method').val(),
+					params=$("#params").val();
+				    url=$.trim(url);
+				    url=url.replace(/\s/g,'');
+					method=$.trim(method);
+					params=$.trim(params);
+				var urlPrefix=$('#urlPrefix').val();
+				urlPrefix=$.trim(urlPrefix);
+				if(urlPrefix!='' ){
+					if(urlPrefix.lastIndexOf('/')!=urlPrefix.length-1){
+						urlPrefix=urlPrefix+'/';
+						$('#urlPrefix').val(urlPrefix);
+					}
+					if(urlPrefix.indexOf("http://")==-1){
+						$('#urlPrefix').focus();
+						return;
+					}
+				}
+				if(url==''){
+					$('#url').focus();
+					return;
+				}
+				if(method==''){
+					$('#method').focus();
+					return;
+				}
+				 if(params==''){
+				 	params='{}';
+					$('#params').val(params);	
+
+				}
+				try{
+					var params=eval("("+params+")");
+				}catch(except){
+					alert('params 的 json 格式不对');
+				}
+				if(url!=''){
+					if( url.indexOf("http://")!=-1){						
+						URL=url;
+					}else{
+						if(urlPrefix==''){
+							$('#urlPrefix').focus();
+						}else{
+							if(url.indexOf('/')==0){
+								url=url.substring(1);
+								$('#url').val(url);
+							}
+							URL=urlPrefix+url;
+						}
+					}
+					
+				} 
+				var o={};
+				 for(var pro in params){
+				 	var value=params[pro] ;
+				 	if(typeof value=== 'object'){
+				 		o[pro]=JSON.stringify(value);
+				 	}else{
+				 		o[pro]=value;
+				 	}
+				 }
+				$.ajax({
+					type:method,
+					url:URL,
+					dataType:'json',
+					data:o,
+					success:function(res,successful){
+						 $('#response').val(JSON.stringify(res)) ;
+					},
+					error:function(options,msg){
+						debugger;
+						 alert(msg);
+					}
+				});
+			});
+		};
+		var bindEvents=function(){
+			sendRequest();
+		};
+		var init=function(){
+			settingInit();
+			bindEvents();
+			 
+		};
+		return {
+			init:init
+		};
+	})();
+	request.init();
+	</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+	success:true,
+	msg:"",
+	data:{
+		id:23233,
+		name:"添加班级" 
+	}
+}

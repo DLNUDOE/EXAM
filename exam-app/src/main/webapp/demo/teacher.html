@@ -1,0 +1,170 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+   <head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	
+	<!-- Import Google Font - Yanone Kaffeesatz  -->	
+ 
+	<title>CSS3 Contact Form</title> 
+	
+	<link rel="stylesheet" type="text/css" href="../static/css/teacher.css">
+	<script type="text/javascript" src="../static/js/jquery-1.8.0.js"></script>
+	</head> 
+ 
+<body> 
+	
+	<div class="wrapper" style="padding-bottom:50px;overflow:auto;zoom:1">
+	<form> 
+		<h1>个人信息管理</h1>
+		<div class="form_frame">
+			<div>
+			<label>ID:</label>
+			<input type="text" name="ID" readonly id="t_id" value=""> 
+		    </div>
+           <div>
+		    <label>姓名:</label>
+			<input type="text" name="name" id="t_name" value=""> 
+		   </div>
+		     <div>
+		    <label>学院:</label>
+		   <input type="text" name="college" readonly id="t_college" value=""> 
+		   </div>
+		   <div>
+			<label >邮箱:</label>
+			<input type="text" id="t_email" id="t_email" value="">
+			<div id="loc_mail"></div> 
+		   </div>
+		<div>
+			<label >电话:</label> 
+			<input type="text" name="phone" id="t_phone" value=""> 
+		</div>  
+		<div>
+			<label>角色:</label> 
+			<input type="radio" name="t_role" class="radio" disabled value="0"><span>教师</span>
+			<input type="radio" name="t_role" class="radio" disabled value="1"><span>管理员</span>
+        </div>
+        <div>
+		    <input type="button" value="保存" name="submit" class="submit">	
+		</div>
+	</form>	</div>
+ <script type="text/javascript">
+		
+		var infoApp=(function(){
+			var forbiddenSpace=function(){        <!--禁止输入空格--> 
+				$('#t_id,#t_phone,#t_email,#t_name').keydown(function(e){
+					if(e.keyCode==32){
+						return false;
+					}
+				});
+			};
+			var enterKeyEvent=function(){         <!--当输入回车时切换到下一行--> 
+
+				$('#t_id').keydown(function(e){
+
+					if(e.keyCode==13){
+						 document.getElementById('t_name').focus();
+					}
+				});
+				$('#t_email').keydown(function(e){
+					if(e.keyCode==13){
+						document.getElementById('t_phone').focus();
+					}
+				});
+			};
+			var onFormSubmit=function(){
+				$('input[type=button]').click(function(e){
+					var t_id=$('#t_id').val(),
+					t_name=$('#t_name').val(),
+					t_phone=$('#t_phone').val(),
+					t_email=$('#t_email').val(),
+					t_college=$('#t_erg:selected').val(),
+					item =$('input[name=t_role]:checked').val();
+					t_id=$.trim(t_id);
+					t_name=$.trim(t_name);
+					t_email=$.trim(t_email);
+					t_phone=$.trim(t_phone);
+					  if(t_id==''){
+					  	document.getElementById('t_id').focus();
+					  }
+					  if(t_name==''){
+					  	document.getElementById('t_name').focus();
+					  }
+					  if(t_phone=='')
+					  {
+					  	document.getElementById('t_phone').focus();
+					  }
+					  if(t_email=='')
+					  {
+					  	document.getElementById('t_email').focus();
+					  }
+					  if(t_email==''||t_phone==''||t_name==''||t_id==''){
+					  	return false;
+					  }
+					  
+					  $.ajax({
+					  	//url:eDomain.getURL('teacher/login/login'),
+					  	url:"teacher/login.do",
+					  	type:'post',
+					  	dataType:'json',
+					  	data:{
+					  		t_id:t_id,
+					  		t_name:t_name,
+					  		//t_college:t_college,
+					  		t_email:t_email,
+					  		t_phone:t_phone,
+					  	},
+					  	success:function(res,successful){
+					  		if(!res.success){
+					  			alert(res.msg);
+					  			return;
+					  		}else{
+                                  if(!res.data.pass){
+                                      alert(res.data.msg);
+                                  }else{
+                                      location.href='./';
+                                  }
+                              }
+					  	},
+					  	
+					  });
+					 e.preventDefault();
+					  return false;
+				});
+			};
+			
+			var bindEvents=function(){
+				forbiddenSpace();
+				enterKeyEvent();
+				onFormSubmit();
+			};
+			var init=function(){
+				bindEvents();
+			};
+			return {
+				init:init
+			};
+		})();
+		infoApp.init();
+
+	</script>
+ <script type="text/javascript">
+	var autoloadApp=(function(){
+       var auto=function(){
+	   var t_object=top.window.eUserInfo;
+       var tid=t_object.id;
+       var tcollege=t_object.college.name;
+       var temail=t_object.email;
+       var tname=t_object.name;
+       var tphone=t_object.tel;
+       var trole=t_object.role;
+	   $('#t_id').val(tid);
+       $('#t_college').val(tcollege);
+       $('#t_email').val(temail);
+       $('#t_name').val(tname);
+       $('#t_phone').val(tphone);
+       $('input[name=t_role]').get(trole).checked = true; 
+     };
+     return {auto:auto};
+     })();
+     autoloadApp.auto();
+	</script>
+ </body></html>

@@ -1,0 +1,38 @@
+{
+	success: true,
+	msg: "",
+	data: {
+		total: 22,
+		data: [{
+			id: 1,
+			name: "二教5楼大机房",
+			iprange: '222.222.222',
+			capacity:100
+		}, {
+			id: 2,
+			name: "二教5楼大机房",
+			iprange: '222.222.222',
+			capacity:100
+		}, {
+			id: 3,
+			name: "二教5楼大机房",
+			iprange: '222.222.222',
+			capacity:100
+		}, {
+			id: 4,
+			name: "二教5楼大机房",
+			iprange: '222.222.222',
+			capacity:100
+		}, {
+			id: 5,
+			name: "二教5楼大机房",
+			iprange: '222.222.222',
+			capacity:100
+		}, {
+			id: 6,
+			name: "二教5楼大机房",
+			iprange: '222.222.222',
+			capacity:100
+		}]
+	}
+}

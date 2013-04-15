@@ -1,0 +1,214 @@
+html,body
+{
+	margin:0;
+	padding:0;
+}
+
+body
+{
+	font-family:"Microsoft Yahei";
+	background:#F4F4F4;
+	font:12px/1.125 Arial,Helvetica,sans-serif;
+}
+
+ul,ol,h1,h2,h3,h4
+{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+a
+{
+	text-decoration:none;
+}
+
+.main
+{
+	background:#fff;	 
+	margin:12px;	 
+}
+
+.gp-topic
+{
+	padding-top:12px;
+}
+
+.gp-topic .gp-title
+{
+	color:#333;
+	margin-left:12px;
+	margin-bottom:8px;
+	cursor: default;
+}
+
+.gp-topic .gp-desc
+{
+	font-size:14px;
+	padding-left:40px;
+	color:#333;
+	line-height:20px;
+	cursor: default;
+}
+
+.topic-item
+{
+	_border:1px solid #fff;
+	position:relative;
+	border-bottom:1px solid #ddd;
+	margin:2px 12px;
+	padding:8px 32px 8px 0;
+}
+
+.topic-item .score
+{
+	position:absolute;
+	right:0;
+	_right:20px;
+	top:14px;
+	font-size:12px;
+	color:#F48C12;
+	
+	font-style: italic;
+}
+
+.topic-item .label
+{
+	float:left;
+	width:32px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.content
+{
+	background:#fff;
+	margin-left:40px;
+	display:block;
+	font-size:14px;
+	line-height:23px;
+}
+
+.options
+{
+	padding:12px;
+}
+
+.opts-judge:after
+{
+	clear:both;
+}
+
+.opts-judge
+{
+	overflow:auto;
+	zoom:1;
+	_position:relative;
+}
+
+.options li
+{
+	border-radius:4px;
+	cursor:pointer;
+	_border:1px solid #fff;
+	_position:relative;
+	margin:2px 0 0 4px;
+	padding:4px;
+}
+
+.options li:hover
+{
+	background:#eee;
+}
+
+.options .opt-judge
+{
+	float:left;
+	white-space:nowrap;
+	width:100px;
+}
+
+.options .opt-label
+{
+	width:40px;
+	text-align:center;
+	_position:absolute;
+	_left:0;
+	_top:0;
+	float:left;
+}
+
+.options .opt-field
+{
+	margin-left:40px;
+}
+
+.stem input
+{
+	border:none;
+	outline:none;
+	border-bottom:1px solid #999;
+	font-weight:700;
+	font-size:14px;
+	color:#000;
+	margin:0;
+	padding:0 4px;
+}
+
+.blank-aswlist .asw-tag
+{
+	margin-right:12px;
+	background:#ddd;
+	color:#333;
+	white-space:nowrap;
+	font-weight:400;
+	padding:2px;
+}
+
+.tablet
+{
+	padding:12px;
+}
+
+.tablet textarea
+{
+	height:200px;
+	min-height:200px;
+	max-height:400px;
+	width:100%;
+	max-width:100%;
+	min-width:100%;
+	overflow:auto;
+	text-align:left;
+	font-size:14px;
+	line-height:23px;
+	vertical-align:middle;
+	margin:0;
+	padding:4px;
+}
+
+.item-op
+{
+	position:relative;	 	
+	height: 0;
+	overflow: visible;
+}
+ 
+ 
+
+ 
+
+ 
+.item-op span 
+{
+	float: right;
+	padding: 4px;
+	position: relative;
+	top:-20px;
+	cursor: pointer;
+	margin-left: 12px;
+}
+ 

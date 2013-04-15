@@ -1,0 +1,24 @@
+{
+	"title": "asdf",
+	"creator": "zhangjie",
+	"cid": 1,
+	"cname": "sadfdsaf",
+	groups: [{
+		title: '选择题',
+		desc: '在下面ABCD中选一个',
+		scoreMap: [{
+			id: 69,
+			score: 3
+		}, {
+			id: 68,
+			score: 3
+		}]
+	}, {
+		title: '多选题',
+		desc: '在下面选项中选一个或者多个',
+		score_map: [{
+			id: 66,
+			score: 4
+		}]
+	}]
+}

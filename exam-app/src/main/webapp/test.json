@@ -1,0 +1,6 @@
+{
+    "success":false,
+    "msg":"no suit method:[GET] for path:[/auth/teacher/login]",
+    "data":null,
+    "status":602
+}

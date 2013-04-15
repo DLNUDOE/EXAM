@@ -1,0 +1,29 @@
+{
+	success: true,
+	msg: "",
+	data: [{
+		examid: 121,
+		examname: '数据结构测试',
+		paperid: 11,
+		papername: '数据结构测试',
+		delegator: ['teacher1', 'teacher2'],
+		date: '2012-12-12',
+		starttime: '11:30',
+		duration::120,
+		remarks: 'remarks 将被拿到考试列表中',
+		createdby: 'alex',
+		updatetime: '2012-11-11'
+	}, {
+		examid: 121,
+		examname: '数据结构测试',
+		paperid: 11,
+		papername: '数据结构测试',
+		delegator: ['teacher1', 'teacher2'],
+		date: '2012-12-12',
+		starttime: '11:30',
+		duration::120,
+		remarks: 'remarks 将被拿到考试列表中',
+		createdby: 'alex',
+		updatetime: '2012-11-11'
+	}]
+}

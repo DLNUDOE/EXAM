@@ -1,0 +1,11 @@
+{
+	success:true,
+	msg:"",	
+	data:[
+		{id:1, name:"计算机"},
+		{id:2, name:"商学院"},
+		{id:3, name:"经管学院"},
+		{id:4, name:"国际贸易"},
+		{id:5, name:"旅游管理"}
+	]
+}

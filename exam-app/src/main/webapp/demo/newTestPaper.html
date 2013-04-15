@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>DLNU DreamOnline 考试系统 </title>
+    <!--the base static resource start here-->
+    <link rel="stylesheet" href="../static/css/exam.css" type="text/css">
+    <script type="text/javascript" src="../static/js/exam/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="../static/js/exam/clock.js"></script>
+    <!-- the base static resource is end here      -->
+    <!--load the css selectively-->
+ <link rel="stylesheet" href="../static/art/skins/default.css">
+     <link rel="stylesheet" href="../static/css/preview.css">
+    <!--a block for the sub ftl to override it, and included when no override ,head position for loaded before what depend it -->
+<script type="text/javascript" src="../static/art/artDialog.js"></script>
+<script type="text/javascript" src="../static/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../static/js/template.js"></script>
+<script type="text/javascript" src="../static/js/template-syntax.js"></script>
+<style type="text/css">
+#p-title{
+        margin: 2px;
+        padding: 2px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #000;
+        width: 300px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #ddd;
+}
+</style>
+</head>
+
+<body debugger-onbeforeunload="return CloseEvent();" debugger-onunload="UnLoadEvent()">
+    <div id="content"></div>
+<div id="content">
+<div id="top_nav" class="fixed">     
+     <div class="top">
+        <div class="logo">
+            <img id="logo" src="../static/img/exam/logotest.png"
+          style="float:left" width="201" height="34" alt="Dream-Online" title="Dream-Online">
+            <span id='template-title' style='line-height: 24px;font-weight:bold;color:#00FF00'>预览试卷</span>        
+        </div>    
+        <div class="navi">
+                                          
+        </div>   
+        <div class="backclock">
+            <div id="backtobottom"><img src="../static/img/exam/backtobottom.gif" title="滚至底部" style="width:20px;margin-top:5px;"/></div>
+        </div>
+    </div>    
+</div>
+<div id="main">
+   <div class="main-top paperbg" id="main_top"> 
+    <div class="console-buttons">
+        <a href="#"  class="button-action add-group" >添加分组</a>
+        <a href="#" class="button-action add-item">添加小题</a>
+        <a href="#" class="button-action refresh">刷新</a>
+        <a href="#" class="button-action edit-item">编辑（改数、删题）</a>
+    </div>
+</div> 
+   <div class="main-body paperbg" id="main_body">
+        <div class="paperTitle" id="paperTitle">
+            <h2  >试卷名称:<input type="text" id="p-title" name="title">
+                <span id="p_name">(出卷人：唧唧)</span>
+            </h2>
+            <span><h4>满分： <a id="totalScore">100</a></h4> </span>
+        </div>
+        <div class="paperContent" id="paperContent"></div>
+    <div class="main-top paperbg" id="main_footer">
+        <a href="#" id="submit-paper">提交试卷</a>
+    </div>  
+</div>
+<div id="locker"  ></div>
+<div id="to_top" class="fixed" style="display: none;"> 回到顶部</div>
+ 
+<div class="vimiumReset vimiumHUD" style="right: 150px; opacity: 0; display: none;"></div>
+</div>
+<!--a block for the sub ftl to override it, and included when no override footer for loaded when the html is ready-->
+<script type="text/javascript" src="../static/js/preview.js"></script>
+<script type="text/javascript" src="../static/js/testSimple.js"> </script>
+    <script type="text/javascript">
+            previewApp.run();
+    </script>
+    <script type="text/javascript">
+           /* var t_object=top.window.eUserInfo;
+            debugger;
+            var t_name=t_object.name;
+            $('#p_name').append(t_name);*/
+    </script>
+</body>
+
+</html>

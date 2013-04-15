@@ -1,0 +1,154 @@
+{
+	"success":true,
+	"data": {
+	"id": 1,
+	"title": "数据结构考试",
+	"c_time": "2013-4-1",
+	"creator": "王玲芬",
+	"cid": 1,
+	"cname": "数据结构",
+	"courseid": "gyfnice",
+    "aoption":["A","B","C","D","E","F","G","H","I","J"],
+    "groups": [
+        {
+            "title": "单选题",
+            "desc": "以下选项中任选一个",
+            "questions": [
+                {
+                    "id": 20231,
+                    "courseid": 5,
+                    "type": 1,
+                    "kp": "二叉树",
+                    "stem": {
+                        "title": "<span id=\"__kindeditor_bookmark_start_0__\"></span>测试单选题​ &nbsp;测试单选题​ &nbsp;测试单选题​ &nbsp;测试单选题​ &nbsp;测试单选题​ &nbsp;测试单选题​ &nbsp;      <span id=\"__kindeditor_bookmark_end_1__\"></span>",
+                        "option": [
+                            "答案A",
+                            "答案B",
+                            "答案C",
+                            "答案D"
+                        ]
+                    },
+                    "answer": "A"
+                },
+                {
+                    "id": 20641,
+                    "courseid": 5,
+                    "type": 1,
+                    "kp": "二叉树",
+                    "stem": {
+                        "title": "<span id=\"__kindeditor_bookmark_start_0__\"></span>测试单选题​ &nbsp;测试单选题​ &nbsp;测试单选题​ &nbsp;测试单选题​ &nbsp;测试单选题​ &nbsp;测试单选题​ &nbsp;      <span id=\"__kindeditor_bookmark_end_1__\"></span>",
+                        "option": [
+                            "答案A",
+                            "答案B",
+                            "答案C",
+                            "答案D"
+                        ]
+                    },
+                    "answer": "C"
+                }
+            ],
+            "scoreMap": {
+                "20231": 3,
+                "20641": 3
+            }
+        },
+        {
+            "title": "多选题",
+            "desc": "以下选项中可选多个",
+           "questions": [{
+                "id": 14,
+                "type": 2,
+                "stem": {
+                    "title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发",
+                    "option": ["fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法"]
+                },
+                "kp": "",
+                "answer": "C",
+                "courseid": 1
+            }, {
+                "id": 15,
+                "type": 2,
+                "stem": {
+                    "title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发",
+                    "option": ["fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法", "fdfasdfasdfa发大水法"]
+                },
+                "kp": "",
+                "answer": "C",
+                "courseid": 1
+            }],
+            "scoreMap": {
+                "14": 12,
+                "15": 13
+            }
+        },
+        {
+           "title": "填空题",
+            "desc": "填天天天",
+            "questions": [{
+                "id": 34,
+                "type": 3,
+                "stem": {
+                    "title": "多发省份试点范德萨发范德萨分<input type= \"text\"/>范德萨发送到分阿德法斯蒂芬阿斯蒂芬阿斯蒂芬"
+                },
+                "kp": "",
+                "answer": ["fdsafsd打发似的", "fdsafsd打发似的", "fdsafsd打发似的"],
+                "courseid": 1
+            }, {
+                "id": 38,
+                "type": 3,
+                "stem": {
+                    "title": "多发省份试点范德萨发范德萨分<input type= \"text\"/>范德萨发送到分阿德法斯蒂芬阿斯蒂芬阿斯蒂芬"
+                },
+                "kp": "",
+                "answer": ["fdsafsd打发似的", "fdsafsd打发似的", "fdsafsd打发似的"],
+                "courseid": 1
+            }],
+            "scoreMap": {
+                "34": 12,
+                "38": 12
+            }
+        },
+        {
+            "title": "判断题",
+            "desc": "无",
+           "questions": [{
+                "id": 3333,
+                "type": 4,
+                "stem": {
+                    "title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发"
+                },
+                "kp": "",
+                "answer": "1",
+                "courseid": 1
+            }],
+            "scoreMap": {
+                "3333": 12
+            }
+        },
+        {
+            "title": "主观题",
+            "desc": "主观题作答",
+            "questions": [{
+                "id": 3333,
+                "type": 5,
+                "stem": {
+                    "title": "地方哈怂i地方哈桑迪of哈奋斗哈死哦地方哈死哦短发"
+                },
+                "kp": "",
+                "answer": "答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案答案",
+                "courseid": 1
+            }],
+            "scoreMap": {
+                "3333": 12,
+                "33233": 22
+            }
+        },
+        {
+            "title": "混合题",
+            "desc": "混合题",
+            "questions": [],
+            "scoreMap": {}
+        }
+    ]
+}
+}

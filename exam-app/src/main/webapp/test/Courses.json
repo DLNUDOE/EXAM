@@ -1,0 +1,50 @@
+{
+	success: true,
+	msg: "",	
+	data: {
+		total: 222,
+		data: [{
+			id: 1,
+			name: "Web前端研发基础",
+			college: "计算机",
+			kpoint: [{
+				id: 1,
+				name: "css与html基础"
+			}, {
+				id: 2,
+				name: "javascript开发"
+			}, {
+				id: 3,
+				name: "websocket实时通讯"
+			}]
+		}, {
+			id: 2,
+			name: "Web前端研发中级",
+			college: "计算机",
+			kpoint: [{
+				id: 1,
+				name: "css与html基础"
+			}, {
+				id: 2,
+				name: "javascript开发"
+			}, {
+				id: 3,
+				name: "websocket实时通讯"
+			}]
+		}, {
+			id: 3,
+			name: "Web前端研发高级",
+			college: "计算机",
+			kpoint: [{
+				id: 1,
+				name: "css与html基础"
+			}, {
+				id: 2,
+				name: "javascript开发"
+			}, {
+				id: 3,
+				name: "websocket实时通讯"
+			}]
+		}]
+	}
+}

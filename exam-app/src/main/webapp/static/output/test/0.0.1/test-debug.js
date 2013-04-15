@@ -1,0 +1,3 @@
+define("output/test/0.0.1/test-debug", [], function(require) {
+    var form = '<form id="monitor" action="./teacher/intel/paper.html"><input type="hidden" name="name" value="{0}"/><input type="hidden" name="cid"  value="{1}"/><input type="hidden" name="cname"  value="{2}"/><input type="hidden" name="radio"  value="{3}"/><input type="hidden" name="checkbox"  value="{4}"/><input type="hidden" name="judge"  value="{5}"/><input type="hidden" name="blank"  value="{6}"/><input type="hidden" name="subject"  value="{7}"/><input type="hidden" name="score"  value="{8}"/><input type="hidden" name="reload" value="{9}" /></form>';
+});

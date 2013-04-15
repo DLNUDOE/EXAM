@@ -1,0 +1,19 @@
+{
+	"name":"paper",
+	"version":"0.0.1",
+	"root":"output",
+	"output":{		 
+		"paper.js":"*" 
+	},
+	"dependencies":{
+		"jquery":"jquery",
+		"template":"../../js/template",
+		"template-syntax":"../../js/template-syntax"
+	},	 
+	"spmConfig":{
+		"build":{
+			"src":"./",
+			"to":"../../{{root}}/{{name}}/{{version}}"
+		}
+	}
+}

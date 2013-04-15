@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>	</title>
+	<style style="text/css">
+	body{
+		margin:0;
+		height: 4000px;
+	}
+	.tray{
+		position: fixed;
+		_position: absolute;/*兼容IE6*/
+ 		_top: expression(offsetParent.scrollTop+document.documentElement.clientHeight-this.offsetHeight);/*兼容IE6*/
+		bottom: 0;
+		right: 0;
+		display: block;
+		width:100%;
+	}
+	.tray-component{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		background: #ddd;
+		right: 0;
+		bottom: 0;
+	}
+	.window{
+		position: absolute;
+		background: #ddd;
+		right: 0;
+		bottom: 0;
+		position: absolute;
+		right: 0;
+		width:400px;
+		background: #fff;
+		font-size: 12px;
+	}
+	.win-panels{		
+		  
+		background: #fff;	
+		border: #56AEE1 1px solid;
+		border-top: 4px solid #56AEE1;
+		 
+	}
+	.win-panel-collapse{
+		border: none;
+	}
+	.window .win-panel{
+		display: block;
+		height: 100%;
+		overflow: auto;
+		display: none;
+	}
+	.window .win-panel .win-panel-title{
+		margin: 0;
+		color:#3E3E3E;
+		font-size: 12px;
+		padding: 4px;
+		background: #D8D8D8;
+		position: relative;
+		 
+	}
+	.window .win-panel-min{
+		position: absolute;
+right: 14px;
+top: 0;
+cursor: pointer;
+width: 18px;
+height: 18px;
+line-height: 18px;
+color: #000;
+font-size: 18px;
+background: url(../static/img/glyphicons-halflings.png) -430px -96px no-repeat;
+ 	}
+	.window .win-panel-min:hover{		 
+		font-weight: bold;
+	}
+	.win-panel-content{
+		padding: 8px;
+		line-height: 24px;
+		height: 300px;
+		overflow: auto;
+	}
+	.win-panel-content .msg-item{
+		padding: 2px 8px;
+		border-radius: 4px;
+		background: #ddd;
+		margin-bottom: 2px;
+	}
+	.window .active{
+		display: block;
+	}
+	.window .win-bars{		 		
+		position: relative;
+		height: 22px;		 
+	}
+	 .window .win-bar-wrapper{
+		position: absolute;
+		white-space: nowrap;
+		right: 0;
+		top:0;
+		padding-right: 4px;
+		background: #ECECEC;
+		border: 1px solid #D4D4D4;
+	}
+
+	.window .win-bars .win-bar{
+		text-decoration: none;
+		padding:   2px 6px;		  		
+		font-size:12px;		 
+		border-right: 1px solid #ddd;
+		position: relative;
+	 	display: inline-block;
+	}
+	
+	.window .win-bars .win-bar a{
+		text-decoration: none;
+		color: #333;
+		padding: 4px;
+		position: relative;
+	}
+
+	.window .win-bars .active{
+		border: #56AEE1 1px solid;
+		position: relative;
+		top: -2px;
+		color: #000;
+		background: #fff;
+		border-top:0 solid #fff;
+		z-index: 1000;		 
+	}
+	.win-tab-bar .none{
+		display: none !important;
+	}
+	.window .win-bars .win-bar-last{
+		 
+	}
+	.window .win-bars .win-bar i{
+		font-style: normal;
+		margin-left: 2px;
+		 display: line-block;
+		 *display: inline-block;
+		 zoom:1;
+		width: 12px;
+		height: 12px;
+		display: none;
+
+		background:#fff url(../static/img/glyphicons-halflings.png) -289px -120px no-repeat;		
+ 	}
+	.window .win-bars .win-bar i.down{
+		background-position: -314px -120px;
+	}
+	 .window .win-tray-bar a{
+		display: inline-block;
+		*display: inline-block;
+		_overflow:hidden;
+				 
+		zoom: 1;
+		width: 12px;
+		height: 3px;
+		background: url(../static/img/glyphicons-halflings.png) -236px -73px no-repeat;
+
+	}
+	.window  .exapnd a{
+		background-position: -330px -73px;
+		position: relative;
+		_top:4px;
+	}
+	.window .win-tray-bar a{
+		 
+		position: relative;
+		_top:-4px;
+	}
+	
+</style>
+<script  type='text/javascript' src="../static/js/jquery-1.8.0.js"></script>
+
+</head>
+<body>
+	
+	<div class="tray">
+		<!-- <div class="tray-component"></div> -->
+		<div class="window">
+		<div class="win-panels">
+			<div class="win-panel active">
+				<h2 class="win-panel-title"><span class='title-text'>系统通知</span><a href="#"class='win-panel-min'></a></h2>
+				<div class="win-panel-content">
+					dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+					dsfasdfas的发射点发 范德萨分
+				</div>
+			</div>
+			 <div class="win-panel">
+				<h2 class="win-panel-title"><span class='title-text'>系统通知</span><a href="#"class='win-panel-min'></a></h2>
+				<div class="win-panel-content">
+					33333333333333
+				</div>
+			</div>
+		</div>
+		<div class="win-bars">
+			 <div class="win-bar-wrapper">
+			 	
+				 
+				<span  class="win-bar win-tray-bar exapnd"><a href="#"></a></span>
+				<span class="win-bar win-tab-bar active"><a  href="#">通知<i> </i></a></span>
+				<span class="win-bar win-tab-bar win-bar-last"><a  href="#">状态<i class='down'> </i></a></span>
+				 
+			 </div>
+			 
+		</div>
+	</div>
+	</div>
+	<script type='text/javascript'>
+	var dialogKitty=(function(){
+		function panelExpand(pIndex){
+			$('.win-panels').removeClass('win-panel-collapse');
+			$('.win-panel').removeClass('active').eq(pIndex).addClass('active');
+			$('.win-tab-bar').removeClass('active').eq(pIndex).addClass('active');
+		};
+		function panelCollapse(pIndex){
+			$('.win-panels').addClass('win-panel-collapse');
+			$('.win-panel').eq(pIndex).removeClass('active');
+			$('.win-tab-bar').eq(pIndex).removeClass('active');
+		};
+		 
+		function pullMsg(pIndex,str,trucated){
+				var panel=$('.win-panel').eq(pIndex).find('.win-panel-content');
+				if(trucated){
+					panel.empty();
+					panel.append($('<div class="msg-item" />').text(str));
+					 
+				}else{
+					panel.append($('<div class="msg-item" />').text(str));
+				}
+			 
+			
+				/*var aniKeyFrames=[
+					function(){$('.win-tray-bar').css({'background-color':'green'});},
+					function(){$('.win-tray-bar').animate({opacity:1},200)},
+					function(){$('.win-tray-bar').animate({opacity:0},100)},
+					function(){$('.win-tray-bar').animate({opacity:1},200)},
+					function(){$('.win-tray-bar').animate({opacity:0.4},200)},
+					function(){$('.win-tray-bar').animate({opacity:1},200)},
+					function(){$('.win-tray-bar').animate({opacity:1},200)},
+					function(){$('.win-tray-bar').css({'background-color':'#ECECEC'})}
+				];
+*/
+				var target=$('.win-tray-bar').css({'background-color':'green'});
+
+				 
+				target.animate({opacity:1},100,function(){
+						target.animate({opacity:0},100,function(){
+							target.animate({opacity:1},200,function(){
+									target.animate({opacity:0},100,function(){
+										target.css({'background-color':'#ECECEC',opacity:1});
+									});
+							});
+							
+						})
+				 })
+		};
+		function bindEvents(){
+			 
+			$('.win-panel-min').click(function(e){
+				debugger;
+				var index=$(this).index('.win-panel-min');
+				panelCollapse(index);
+				e.preventDefault();
+				return false;
+			});
+
+			$('.win-tab-bar').click(function(e){	
+			debugger;			 
+				var index=$(this).index('.win-tab-bar');
+				var isActive=$(this).hasClass('active');
+				if(isActive){
+
+					panelCollapse(index);
+				}else{
+					panelExpand(index);
+				}
+				e.preventDefault();
+				return false;
+			});
+
+			$('.win-tray-bar').click(function(e){
+				if($(this).hasClass('exapnd')){
+					$(this).removeClass('exapnd');
+					 
+					$('.win-panels').addClass('win-panel-collapse');
+					$('.win-panel').removeClass('active');
+					$('.win-tab-bar').removeClass('active');
+					 $('.win-tab-bar').hide();
+				}else{
+					$(this).addClass('exapnd');
+					 
+					 
+					 $('.win-tab-bar').show();
+				}
+				e.preventDefault();
+				return false;
+			});
+		};
+		function init(){
+			bindEvents();
+		};
+
+		return {
+			init:init,
+			pullMsg:pullMsg
+		};
+	}());
+	dialogKitty.init();
+	dialogKitty.pullMsg(0,"dfasdfasd",true);
+	dialogKitty.pullMsg(1,"范德萨发送到",true);
+</script>
+</body>
+</html>
